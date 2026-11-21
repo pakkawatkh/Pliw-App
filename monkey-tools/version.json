@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.1.9",
+  "latestVersion": "2.1.10",
   "releaseDate": "2026-11-22",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/",
-  "releaseNotes": "Fix text selection bubble detection on drag highlights and Chromium/Electron apps while still blocking false-positive non-text double-clicks"
+  "releaseNotes": "Position the floating translate bubble cleanly above selected text (or below near screen top) so it never covers focused text"
 }
