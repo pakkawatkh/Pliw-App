@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.1.7",
-  "releaseDate": "2026-11-11",
+  "latestVersion": "2.1.8",
+  "releaseDate": "2026-11-22",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/",
-  "releaseNotes": "Quick Translate Shortcut (⌘+⇧+E), Category Filters (All, Text, Image, Pinned), ⌘1-9 Badges, Excluded Apps Manager, and instant Selection Translator toggle"
+  "releaseNotes": "Prevent false-positive translate bubble on non-text double-clicks, fix translation race conditions & panel animation races, safer atomic auto-updater with HTTP validation, thread-safe thumbnails, and background Finder image encoding"
 }
