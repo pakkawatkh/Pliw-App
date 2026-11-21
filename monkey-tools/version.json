@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.1.8",
+  "latestVersion": "2.1.9",
   "releaseDate": "2026-11-22",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/",
-  "releaseNotes": "Prevent false-positive translate bubble on non-text double-clicks, fix translation race conditions & panel animation races, safer atomic auto-updater with HTTP validation, thread-safe thumbnails, and background Finder image encoding"
+  "releaseNotes": "Fix text selection bubble detection on drag highlights and Chromium/Electron apps while still blocking false-positive non-text double-clicks"
 }
