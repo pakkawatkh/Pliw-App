@@ -22,7 +22,7 @@
 
 ### 📸 [Tiffy Scroll](tiffy-scroll/) (Chromium Browser Extension)
 - **Description**: Full-page scrolling screenshot extension for Google Chrome, Brave Browser, and Microsoft Edge with built-in interactive Crop Studio and instant clipboard copy.
-- **Direct Download**: [tiffy-scroll-v1.0.0.zip](tiffy-scroll/tiffy-scroll-v1.0.0.zip) (v1.0.0, 119 KB)
+- **Direct Download**: [tiffy-scroll-v1.0.1.zip](tiffy-scroll/tiffy-scroll-v1.0.1.zip) (v1.0.1, 121 KB)
 - **Official Website**: [https://pakkawatkh.github.io/tiffy-app/tiffy-scroll/](https://pakkawatkh.github.io/tiffy-app/tiffy-scroll/)
 - **GitHub Repository**: [https://github.com/pakkawatkh/tiffy-extension](https://github.com/pakkawatkh/tiffy-extension)
 - **Features**:
