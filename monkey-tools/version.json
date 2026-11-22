@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.1.12",
+  "latestVersion": "2.2.0",
   "releaseDate": "2026-11-22",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/",
-  "releaseNotes": "Allow double-click text translation inside toolbar inputs (URL bar, search boxes) and tabbed windows while keeping non-text UI chrome blocked"
+  "releaseNotes": "Instant Background Pre-Translation: warms translation while the translate bubble is visible (180ms settle delay, 4000-char cap) and immediately cancels & clears if dismissed without clicking"
 }
