@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.1.11",
+  "latestVersion": "2.1.12",
   "releaseDate": "2026-11-22",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/",
-  "releaseNotes": "Fine-tune floating translate bubble closer to the mouse cursor while staying cleanly above highlighted text"
+  "releaseNotes": "Allow double-click text translation inside toolbar inputs (URL bar, search boxes) and tabbed windows while keeping non-text UI chrome blocked"
 }

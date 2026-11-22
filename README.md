@@ -8,7 +8,7 @@
 
 ### 🐵 [monkey-tools](monkey-tools/) (macOS Application)
 - **Description**: Windows-style Clipboard History (`Win + V` / `Cmd + Shift + V`) & Smart Selection Translator for macOS.
-- **Direct Download**: [monkey-tools-Installer.dmg](monkey-tools/monkey-tools-Installer.dmg) (v2.1.11, 1.2 MB)
+- **Direct Download**: [monkey-tools-Installer.dmg](monkey-tools/monkey-tools-Installer.dmg) (v2.1.12, 1.2 MB)
 - **Official Website**: [https://pakkawatkh.github.io/tiffy-app/monkey-tools/](https://pakkawatkh.github.io/tiffy-app/monkey-tools/)
 - **Official App Promo Video**: [Watch Narrated Product Video (with Voiceover)](monkey-tools/assets/promo.mp4)
 - **Features**:
