@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.1.10",
+  "latestVersion": "2.1.11",
   "releaseDate": "2026-11-22",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/",
-  "releaseNotes": "Position the floating translate bubble cleanly above selected text (or below near screen top) so it never covers focused text"
+  "releaseNotes": "Fine-tune floating translate bubble closer to the mouse cursor while staying cleanly above highlighted text"
 }
