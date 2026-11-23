@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiffy Geo — Browser Fake Location Extension</title>
+  <meta name="description" content="Spoof your browser geolocation on MacBook (Chrome, Brave, Edge) with an interactive map picker, place search, favorites, and live movement controls." />
+  <style>
+    :root {
+      --bg: #070c18;
+      --surface: #0f172a;
+      --border: rgba(148, 163, 184, 0.18);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --emerald: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 0%, #111c36 0%, var(--bg) 55%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 36px 24px 72px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+      margin-bottom: 32px;
+    }
+    .back-link:hover { color: var(--text); }
+    .hero {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 24px;
+      padding: 32px; border-radius: 24px;
+      background: rgba(15, 23, 42, 0.75); border: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+    .hero img { width: 84px; height: 84px; border-radius: 20px; box-shadow: 0 12px 28px rgba(16, 185, 129, 0.28); }
+    .hero-copy { flex: 1; min-width: 240px; }
+    .badge {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #6ee7b7; font-size: 12px; font-weight: 600; margin-bottom: 10px;
+    }
+    h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px; border-radius: 12px; font-weight: 600; font-size: 14px;
+      text-decoration: none; transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.08); }
+    .btn-primary { background: linear-gradient(135deg, #0ea5e9, #10b981); color: #fff; }
+    .btn-secondary { background: rgba(30, 41, 59, 0.9); border: 1px solid var(--border); color: var(--text); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .card {
+      padding: 20px; border-radius: 18px;
+      background: rgba(15, 23, 42, 0.72); border: 1px solid var(--border);
+    }
+    .card h3 { font-size: 16px; margin-bottom: 6px; }
+    .card p { font-size: 13.5px; color: var(--muted); }
+    .install-box {
+      padding: 28px; border-radius: 20px;
+      background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+    .install-box h2 { font-size: 1.35rem; margin-bottom: 14px; }
+    ol { padding-left: 20px; display: flex; flex-direction: column; gap: 10px; color: #cbd5e1; font-size: 14.5px; }
+    code {
+      background: rgba(56, 189, 248, 0.12); color: #7dd3fc;
+      padding: 2px 7px; border-radius: 6px; font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../" class="back-link">← Back to Tiffy App Hub</a>
+
+    <section class="hero">
+      <img src="assets/icon128.png" alt="Tiffy Geo Icon" />
+      <div class="hero-copy">
+        <span class="badge">v1.0.0 · Chrome / Brave / Edge (Manifest V3)</span>
+        <h1>Tiffy Geo</h1>
+        <p class="subtitle">
+          Spoof your browser geolocation on MacBook with an interactive slippy map picker, place search, favorites, GPS jitter, and live movement controls.
+        </p>
+        <div class="actions">
+          <a href="tiffy-geo-v1.0.0.zip" download class="btn btn-primary">Download ZIP (v1.0.0 · 16 KB)</a>
+          <a href="#install" class="btn btn-secondary">Setup Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>🗺️ Interactive Map Picker</h3>
+        <p>Click anywhere on the map to drop your spoofed GPS pin, drag to pan, and scroll to zoom—built with zero external scripts.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ Real-Time Live Spoofing</h3>
+        <p>Injects into the page MAIN world at <code>document_start</code> and updates active <code>watchPosition</code> listeners immediately when you nudge N/S/E/W.</p>
+      </div>
+      <div class="card">
+        <h3>🎯 Realistic GPS Jitter</h3>
+        <p>Optional ±2–4 m micro-drift and configurable accuracy so web maps and check-in apps receive natural-looking coordinates.</p>
+      </div>
+    </section>
+
+    <section class="install-box" id="install">
+      <h2>Quick Install (Chrome / Brave / Edge on MacBook)</h2>
+      <ol>
+        <li>Download and unzip <code>tiffy-geo-v1.0.0.zip</code>.</li>
+        <li>Open <code>chrome://extensions/</code> (or <code>brave://extensions/</code> / <code>edge://extensions/</code>).</li>
+        <li>Enable <strong>Developer mode</strong> in the top-right corner.</li>
+        <li>Click <strong>Load unpacked</strong> and select the unzipped <code>tiffy-geo</code> folder.</li>
+        <li>Click the <strong>Tiffy Geo</strong> icon, toggle ON, pick your location, and reload Google Maps or any target site!</li>
+      </ol>
+    </section>
+  </div>
+</body>
+</html>
