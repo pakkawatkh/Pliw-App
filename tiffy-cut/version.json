@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.0.0",
+  "latestVersion": "2.0.1",
   "releaseDate": "2026-11-23",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/tiffy-cut-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/tiffy-cut.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/",
-  "releaseNotes": "Major v2.0.0 CapCut-style Studio Update: 4-Pane Dark Video Editor with Multi-Track Magnetic Timeline (Main Video, Overlay/PIP, Text, Audio), Split (Cmd+B), Trim, Undo/Redo, Speed (0.25x-4x), Color Grading & 7 Filter Presets, Transitions, Text Overlays, Saved Recent Projects, and 720p-4K H.264/HEVC Export — alongside Collage Studio."
+  "releaseNotes": "Fixed macOS alert beep / screen flash when dragging or scrubbing video previews by making AVPlayerLayer views hit-test transparent, preventing automatic TextField focus stealing, and prioritizing timeline/preview drag gestures."
 }
