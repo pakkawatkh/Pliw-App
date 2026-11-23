@@ -1,8 +1,8 @@
 {
-  "latestVersion": "1.0.2",
+  "latestVersion": "2.0.0",
   "releaseDate": "2026-11-23",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/tiffy-cut-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/tiffy-cut.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/",
-  "releaseNotes": "Fixed macOS app reopen after closing window; added freeform custom canvas dimensions, custom aspect ratios (W:H + swap), 16:9 preset, and custom grid slot count (Rows x Columns up to 6x6)."
+  "releaseNotes": "Major v2.0.0 CapCut-style Studio Update: 4-Pane Dark Video Editor with Multi-Track Magnetic Timeline (Main Video, Overlay/PIP, Text, Audio), Split (Cmd+B), Trim, Undo/Redo, Speed (0.25x-4x), Color Grading & 7 Filter Presets, Transitions, Text Overlays, Saved Recent Projects, and 720p-4K H.264/HEVC Export — alongside Collage Studio."
 }
