@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClipCollage — Video Collage Studio for TikTok &amp; Instagram on macOS</title>
-  <meta name="description" content="Create crisp 1080p video collages for TikTok (9:16) and Instagram (4:5, 1:1) natively on macOS. Drag &amp; drop clips, adjust trim, framing, audio, and export MP4 fast with zero watermarks.">
-  <link rel="canonical" href="https://pakkawatkh.github.io/tiffy-app/clip-collage/">
+  <title>tiffy-cut — Video Editor &amp; Collage Studio for TikTok &amp; Instagram on macOS</title>
+  <meta name="description" content="Native macOS video editing suite starting with Collage Studio for TikTok (9:16) and Instagram (4:5, 1:1). Drag &amp; drop clips, adjust trim, framing, audio, and export crisp 1080p MP4 fast with zero watermarks.">
+  <link rel="canonical" href="https://pakkawatkh.github.io/tiffy-app/tiffy-cut/">
   <link rel="icon" type="image/png" href="assets/icon.png">
   <meta name="theme-color" content="#ffffff">
   <style>
@@ -15,8 +15,6 @@
       --border: #e2e8f0;
       --text: #0f172a;
       --muted: #475569;
-      --accent: #ec4899;
-      --accent-2: #6366f1;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -52,20 +50,16 @@
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 13px 22px; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 0.96rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transition: transform 0.15s ease;
     }
     .btn:hover { transform: translateY(-1px); }
     .btn-primary { background: linear-gradient(135deg, #ec4899, #6366f1); color: #fff; box-shadow: 0 8px 24px rgba(99,102,241,0.25); }
     .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 40px 0 64px; }
-    .card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px;
-    }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
     .card h3 { font-size: 1.05rem; margin-bottom: 8px; }
     .card p { color: var(--muted); font-size: 0.92rem; }
-    .install-box {
-      background: #0f172a; color: #e2e8f0; border-radius: 16px; padding: 26px; margin-bottom: 64px;
-    }
+    .install-box { background: #0f172a; color: #e2e8f0; border-radius: 16px; padding: 26px; margin-bottom: 64px; }
     .install-box h2 { font-size: 1.25rem; margin-bottom: 12px; color: #fff; }
     .install-box ol { padding-left: 20px; display: grid; gap: 8px; font-size: 0.94rem; }
     .install-box code { background: rgba(255,255,255,0.12); padding: 2px 7px; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, monospace; }
@@ -76,8 +70,8 @@
   <header>
     <div class="container nav">
       <a href="./" class="brand">
-        <img src="assets/icon.png" alt="ClipCollage Icon">
-        <span>ClipCollage</span>
+        <img src="assets/icon.png" alt="tiffy-cut Icon">
+        <span>tiffy-cut</span>
       </a>
       <a href="../" class="back-link">← Back to Tiffy App Suite</a>
     </div>
@@ -85,14 +79,14 @@
 
   <main class="container">
     <section class="hero">
-      <div class="badge">● v1.0.0 • Native macOS 13+ (Apple Silicon &amp; Intel)</div>
-      <h1>Fast Video Collages for <span class="gradient">TikTok &amp; Instagram</span></h1>
+      <div class="badge">● v1.0.0 • Native macOS 13+ • Feature: Collage</div>
+      <h1>Fast Video Editing &amp; Collage for <span class="gradient">TikTok &amp; Instagram</span></h1>
       <p class="subtitle">
-        Drop 2 to 4 clips into ready-made vertical &amp; square grids, fine-tune framing, trim, and audio, then export crisp 1080p MP4 videos natively on Mac — zero watermarks, 100% offline.
+        A fast, lightweight macOS video editing suite — starting with <strong>Collage</strong>: drop 2 to 4 clips into 9:16, 4:5, or 1:1 grids, adjust trim, framing, and audio, and export crisp 1080p MP4 natively with zero watermarks.
       </p>
       <div class="actions">
-        <a href="ClipCollage-Installer.dmg" download class="btn btn-primary">Download DMG (v1.0.0)</a>
-        <a href="ClipCollage.zip" download class="btn btn-secondary">Download ZIP</a>
+        <a href="tiffy-cut-Installer.dmg" download class="btn btn-primary">Download DMG (v1.0.0)</a>
+        <a href="tiffy-cut.zip" download class="btn btn-secondary">Download ZIP</a>
       </div>
     </section>
 
@@ -102,7 +96,7 @@
         <p>Switch instantly between <strong>9:16</strong> (1080×1920 TikTok / Reels), <strong>4:5</strong> (1080×1350 IG Feed), and <strong>1:1</strong> (1080×1080 Square).</p>
       </div>
       <div class="card">
-        <h3>🧩 8 Clean Collage Templates</h3>
+        <h3>🧩 Collage Feature (8 Templates)</h3>
         <p>Top/bottom split, side-by-side, 3 rows, 3 top-big, 3 bottom-big, 3 columns, 2×2 grid, and 4 rows — with custom spacing, outer margin, corner radius, and background color.</p>
       </div>
       <div class="card">
@@ -118,9 +112,9 @@
     <section class="install-box" id="install">
       <h2>Quick Install on macOS</h2>
       <ol>
-        <li>Download <code>ClipCollage-Installer.dmg</code> and open it.</li>
-        <li>Drag <strong>ClipCollage.app</strong> into the <strong>Applications</strong> folder.</li>
-        <li>If macOS Gatekeeper asks on first launch, go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>, or run <code>xattr -cr /Applications/ClipCollage.app</code> in Terminal.</li>
+        <li>Download <code>tiffy-cut-Installer.dmg</code> and open it.</li>
+        <li>Drag <strong>tiffy-cut.app</strong> into the <strong>Applications</strong> folder.</li>
+        <li>If macOS Gatekeeper asks on first launch, go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>, or run <code>xattr -cr /Applications/tiffy-cut.app</code> in Terminal.</li>
       </ol>
     </section>
   </main>
