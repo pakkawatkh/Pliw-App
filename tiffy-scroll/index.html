@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiffy Scroll — Full-Page Scrolling Screenshot &amp; Crop Studio Extension</title>
-  <meta name="description" content="Full-page scrolling screenshot extension for Chrome, Brave, and Edge with sticky-header protection, 8-handle Crop Studio, and one-click clipboard copy.">
+  <title>Tiffy Scroll — Full-Page Scrolling Screenshot Extension</title>
+  <meta name="description" content="Full-page scrolling screenshot extension with 8-handle Crop Studio and one-click clipboard copy.">
   <link rel="canonical" href="https://pakkawatkh.github.io/Tiffy-App/tiffy-scroll/">
   <link rel="icon" type="image/png" href="assets/icon128.png">
   <meta name="theme-color" content="#ffffff">
@@ -18,7 +18,7 @@
       --glow-rgb: 2, 132, 199;
     }
     .crop-stage {
-      height: 270px; position: relative; overflow: hidden;
+      height: 250px; position: relative; overflow: hidden;
       background: linear-gradient(155deg, #f8fafc 0%, #e0f2fe 55%, #ede9fe 100%);
       display: flex; align-items: center; justify-content: center;
     }
@@ -28,7 +28,7 @@
       box-shadow: 0 12px 30px rgba(15,23,42,0.08);
     }
     .crop-overlay {
-      position: absolute; width: 290px; height: 150px;
+      position: absolute; width: 280px; height: 140px;
       border: 2px solid #0284c7; border-radius: 6px;
       background: rgba(2,132,199,0.08);
       box-shadow: 0 0 0 999px rgba(15,23,42,0.16);
@@ -54,7 +54,6 @@
       </a>
       <div class="nav-right">
         <a href="#preview" class="nav-link">Preview</a>
-        <a href="#features" class="nav-link">Features</a>
         <a href="#install" class="nav-link">Install</a>
         <a href="../" class="nav-link">← All Apps</a>
       </div>
@@ -64,19 +63,17 @@
   <main class="container">
     <section class="hero">
       <img src="assets/icon128.png" alt="Tiffy Scroll" class="hero-icon"><br>
-      <div class="badge">● v1.0.1 • Manifest V3 Extension for Chrome / Brave / Edge</div>
-      <h1>Full-Page Screenshots &amp; <span class="gradient">Crop Studio</span></h1>
+      <h1>Tiffy Scroll</h1>
       <p class="subtitle">
-        Automatically sweep and stitch crisp Retina 2x full-page screenshots with sticky-header suppression, an 8-handle interactive Crop Studio, and one-click <code>⌘V</code> clipboard copy.
+        Capture Retina 2x full-page scrolling screenshots with an 8-handle Crop Studio and one-click <code>⌘V</code> copy.
       </p>
       <div class="actions">
         <a href="tiffy-scroll-v1.0.1.zip" download class="btn btn-primary">Download ZIP (v1.0.1 · 121 KB)</a>
-        <a href="https://github.com/pakkawatkh/tiffy-extension" target="_blank" rel="noopener" class="btn btn-secondary">GitHub Source</a>
+        <a href="https://github.com/pakkawatkh/tiffy-extension" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
       </div>
       <div class="compat-strip">
         <span class="compat-pill">🌐 Chrome · Brave · Edge (Manifest V3)</span>
-        <span class="compat-pill">🔒 100% Offline</span>
-        <span class="compat-pill">🔓 Open Source (MIT)</span>
+        <span class="compat-pill">MIT License</span>
       </div>
     </section>
 
@@ -88,7 +85,7 @@
             <span style="background:#f59e0b"></span>
             <span style="background:#22c55e"></span>
           </div>
-          <span>Tiffy Scroll — 8-Handle Interactive Crop Studio</span>
+          <span>Crop Studio Preview</span>
           <span style="color:#0284c7">Retina 2x PNG</span>
         </div>
         <div class="crop-stage">
@@ -96,8 +93,8 @@
             <div style="width:55%; height:14px; border-radius:4px; background:linear-gradient(90deg,#0284c7,#6366f1);"></div>
             <div style="width:92%; height:9px; border-radius:4px; background:#e2e8f0;"></div>
             <div style="width:82%; height:9px; border-radius:4px; background:#e2e8f0;"></div>
-            <div style="height:64px; border-radius:8px; background:linear-gradient(135deg,#e0f2fe,#ede9fe); border:1px dashed #93c5fd; display:flex; align-items:center; justify-content:center; color:#0284c7; font-weight:700; font-size:0.84rem;">
-              📸 Stitched Full-Page Canvas
+            <div style="height:60px; border-radius:8px; background:linear-gradient(135deg,#e0f2fe,#ede9fe); border:1px dashed #93c5fd; display:flex; align-items:center; justify-content:center; color:#0284c7; font-weight:700; font-size:0.84rem;">
+              📸 Full-Page Canvas
             </div>
             <div style="width:88%; height:9px; border-radius:4px; background:#e2e8f0;"></div>
           </div>
@@ -112,50 +109,20 @@
       </div>
     </section>
 
-    <h2 class="section-title" id="features">Built for Crisp, Effortless Captures</h2>
-    <p class="section-sub">100% offline Manifest V3 architecture with zero cloud uploads and zero telemetry.</p>
-
-    <section class="bento">
-      <div class="card">
-        <div class="card-icon">📸</div>
-        <h3>Delta-Stitched Full Page</h3>
-        <p>Automatically scrolls through long web pages and stitches seamless high-DPI canvases without overlap glitches.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🚫</div>
-        <h3>Sticky Header Protection</h3>
-        <p>Temporarily neutralizes fixed headers and floating bars after the first frame so they never repeat across your screenshot.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">✂️</div>
-        <h3>8-Handle Crop Studio</h3>
-        <p>Resize from any edge or corner with live pixel dimension readouts before exporting or copying.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📋</div>
-        <h3>One-Click ⌘V Copy</h3>
-        <p>Copy directly to your macOS clipboard to paste straight into Figma, Slack, Notion, or Apple Notes.</p>
-      </div>
-    </section>
-
     <section class="install-box" id="install">
-      <h2>Quick Install on Chrome, Brave &amp; Edge</h2>
+      <h2>Quick Install</h2>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <div>Download <strong>tiffy-scroll-v1.0.1.zip</strong> and unzip it into a permanent folder.</div>
+          <div>Download and unzip <strong>tiffy-scroll-v1.0.1.zip</strong>.</div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div>Open <code>chrome://extensions/</code> (or <code>brave://extensions/</code> / <code>edge://extensions/</code>).</div>
+          <div>Open <code>chrome://extensions/</code> (or <code>brave://extensions/</code> / <code>edge://extensions/</code>) and enable <strong>Developer mode</strong>.</div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <div>Enable <strong>Developer mode</strong> using the toggle in the top-right corner.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div>Click <strong>Load unpacked</strong>, select the unzipped <code>tiffy-scroll</code> folder, and pin the icon to your toolbar.</div>
+          <div>Click <strong>Load unpacked</strong> and select the unzipped <code>tiffy-scroll</code> folder.</div>
         </div>
       </div>
     </section>
@@ -163,7 +130,7 @@
 
   <footer>
     <div class="container">
-      © 2026 Pakkawat.k • Manifest V3 Extension • Open Source (MIT)
+      © 2026 Pakkawat.k • Chrome / Brave / Edge • MIT License
     </div>
   </footer>
 </body>

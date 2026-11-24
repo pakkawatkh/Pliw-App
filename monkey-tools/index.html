@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monkey Tools — Liquid Glass Clipboard History, Offline OCR &amp; Translator for macOS</title>
-  <meta name="description" content="macOS Sequoia/Tahoe Liquid Glass Clipboard History (⌘⇧V), Offline Apple Vision OCR, Continuous Emoji Picker, Smart Selection Translator (⌘⇧E), and Menu Bar Network Speed.">
+  <title>Monkey Tools — Clipboard History, OCR &amp; Translator for macOS</title>
+  <meta name="description" content="macOS Menu Bar clipboard history, offline image OCR, emoji picker, and instant text translator.">
   <link rel="canonical" href="https://pakkawatkh.github.io/Tiffy-App/monkey-tools/">
   <link rel="icon" type="image/png" href="assets/icon.png">
   <meta name="theme-color" content="#ffffff">
@@ -18,9 +18,9 @@
       --glow-rgb: 2, 132, 199;
     }
     .stage-bg {
-      padding: 26px 20px;
+      padding: 24px 20px;
       background: linear-gradient(135deg, #e0f2fe 0%, #ede9fe 52%, #fce7f3 100%);
-      display: flex; justify-content: center; align-items: center; min-height: 280px;
+      display: flex; justify-content: center; align-items: center; min-height: 250px;
     }
     .mac-glass-panel {
       background: rgba(255,255,255,0.78);
@@ -54,7 +54,6 @@
       </a>
       <div class="nav-right">
         <a href="#preview" class="nav-link">Preview</a>
-        <a href="#features" class="nav-link">Features</a>
         <a href="#install" class="nav-link">Install</a>
         <a href="../" class="nav-link">← All Apps</a>
       </div>
@@ -64,20 +63,18 @@
   <main class="container">
     <section class="hero">
       <img src="assets/icon.png" alt="Monkey Tools" class="hero-icon"><br>
-      <div class="badge">● v2.3.2 • macOS Sequoia / Tahoe Liquid Glass UI</div>
-      <h1>Your macOS Menu Bar <span class="gradient">Supercharged</span></h1>
+      <h1>Monkey Tools</h1>
       <p class="subtitle">
-        Liquid Glass Clipboard History (<code>⌘⇧V</code>), Offline Apple Vision OCR, Continuous Emoji Picker, Smart Selection Translator (<code>⌘⇧E</code>), and Real-Time Network Speed — 100% native Swift &amp; private.
+        Clipboard history (<code>⌘⇧V</code>), offline image OCR, emoji picker, and instant text translator in your macOS Menu Bar.
       </p>
       <div class="actions">
         <a href="monkey-tools-Installer.dmg" download class="btn btn-primary">Download DMG (v2.3.2 · 1.3 MB)</a>
-        <a href="monkey-tools.zip" download class="btn btn-secondary">Download ZIP</a>
-        <a href="https://github.com/pakkawatkh/monkey-tools" target="_blank" rel="noopener" class="btn btn-secondary">GitHub Source</a>
+        <a href="https://github.com/pakkawatkh/monkey-tools" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
       </div>
       <div class="compat-strip">
         <span class="compat-pill"> macOS 13.0+ (Apple Silicon &amp; Intel)</span>
-        <span class="compat-pill">🔄 One-Click Auto-Update</span>
-        <span class="compat-pill">🔓 Open Source (MIT)</span>
+        <span class="compat-pill">🔄 Auto-Update</span>
+        <span class="compat-pill">MIT License</span>
       </div>
     </section>
 
@@ -89,18 +86,18 @@
             <span style="background:#f59e0b"></span>
             <span style="background:#22c55e"></span>
           </div>
-          <span>Monkey Tools — Interactive UI Preview</span>
+          <span>Monkey Tools Preview</span>
           <span style="color:#0284c7">Liquid Glass</span>
         </div>
         <div class="showcase-tabs">
-          <button class="tab-btn active" onclick="showTab('clipboard', this)">📋 Clipboard History</button>
-          <button class="tab-btn" onclick="showTab('translator', this)">🌐 Selection Translator</button>
-          <button class="tab-btn" onclick="showTab('shortcuts', this)">⌨️ Power Shortcuts</button>
+          <button class="tab-btn active" onclick="showTab('clipboard', this)">📋 Clipboard</button>
+          <button class="tab-btn" onclick="showTab('translator', this)">🌐 Translator</button>
+          <button class="tab-btn" onclick="showTab('shortcuts', this)">⌨️ Shortcuts</button>
         </div>
         <div class="stage-bg" style="margin: 16px; border-radius: 16px;">
           <div class="tab-pane active" id="tab-clipboard">
             <div class="mac-glass-panel">
-              <div class="search-bar">🔍 Search clipboard history… <span style="margin-left:auto" class="kbd">⌘⇧V</span></div>
+              <div class="search-bar">🔍 Search clipboard… <span style="margin-left:auto" class="kbd">⌘⇧V</span></div>
               <div class="pills">
                 <span class="pill active">All</span>
                 <span class="pill">Text</span>
@@ -108,105 +105,54 @@
                 <span class="pill">Pinned</span>
               </div>
               <div class="clip-row">
-                <div><strong>#0284C7</strong><br><span style="font-size:0.75rem;color:#64748b">Figma · Hex Color Swatch</span></div>
+                <div><strong>#0284C7</strong><br><span style="font-size:0.75rem;color:#64748b">Figma · Color Swatch</span></div>
                 <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;border-radius:5px;background:#0284c7;display:inline-block"></span><span class="kbd">⌘1</span></div>
               </div>
               <div class="clip-row">
-                <div><strong>🖼️ Screenshot (OCR Ready)</strong><br><span style="font-size:0.75rem;color:#64748b">Preview · Offline Apple Vision Text Extract</span></div>
+                <div><strong>🖼️ Screenshot (OCR Ready)</strong><br><span style="font-size:0.75rem;color:#64748b">Preview · Offline Vision OCR</span></div>
                 <span class="kbd">⌘2</span>
-              </div>
-              <div class="clip-row">
-                <div><strong>https://pakkawatkh.github.io/Tiffy-App/</strong><br><span style="font-size:0.75rem;color:#64748b">Chrome · Quick Open URL</span></div>
-                <span class="kbd">⌘3</span>
               </div>
             </div>
           </div>
 
           <div class="tab-pane" id="tab-translator">
             <div class="mac-glass-panel">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.84rem;font-weight:600">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:0.84rem;font-weight:600">
                 <span>🌐 Smart Translator</span>
-                <span style="color:#0284c7">English ↔ Spanish</span>
+                <span style="color:#0284c7">EN ↔ ES</span>
               </div>
-              <div style="background:rgba(255,255,255,0.92);border:1px solid #e2e8f0;border-radius:12px;padding:12px;margin-bottom:10px;font-size:0.86rem">
-                Highlight any text on macOS or press <span class="kbd">⌘⇧E</span> to translate instantly.
+              <div style="background:rgba(255,255,255,0.92);border:1px solid #e2e8f0;border-radius:12px;padding:10px;margin-bottom:8px;font-size:0.86rem">
+                Highlight any text or press <span class="kbd">⌘⇧E</span> to translate.
               </div>
-              <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:12px;font-size:0.86rem;color:#0c4a6e">
-                Resalta cualquier texto en macOS o presiona <strong>⌘⇧E</strong> para traducir al instante.
-              </div>
-              <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end;font-size:0.78rem">
-                <span class="pill">🔊 Speak</span>
-                <span class="pill">📋 Copy</span>
-                <span class="pill active">🔄 Replace In-Place</span>
+              <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:10px;font-size:0.86rem;color:#0c4a6e">
+                Resalta cualquier texto o presiona <strong>⌘⇧E</strong> para traducir.
               </div>
             </div>
           </div>
 
           <div class="tab-pane" id="tab-shortcuts">
-            <div class="mac-glass-panel" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-              <div class="clip-row" style="margin:0"><span>Open Clipboard</span><span class="kbd">⌘⇧V</span></div>
-              <div class="clip-row" style="margin:0"><span>Quick Translate</span><span class="kbd">⌘⇧E</span></div>
-              <div class="clip-row" style="margin:0"><span>Quick Paste #1–9</span><span class="kbd">⌘1–9</span></div>
-              <div class="clip-row" style="margin:0"><span>Quick Preview</span><span class="kbd">⌘Y</span></div>
-              <div class="clip-row" style="margin:0"><span>Pin / Unpin Item</span><span class="kbd">⌘P</span></div>
-              <div class="clip-row" style="margin:0"><span>Translate Item</span><span class="kbd">⌘T</span></div>
+            <div class="mac-glass-panel" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div class="clip-row" style="margin:0"><span>Clipboard</span><span class="kbd">⌘⇧V</span></div>
+              <div class="clip-row" style="margin:0"><span>Translate</span><span class="kbd">⌘⇧E</span></div>
+              <div class="clip-row" style="margin:0"><span>Quick Paste</span><span class="kbd">⌘1–9</span></div>
+              <div class="clip-row" style="margin:0"><span>Preview</span><span class="kbd">⌘Y</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <h2 class="section-title" id="features">Everything You Need in One Menu Bar App</h2>
-    <p class="section-sub">Built 100% natively with Swift &amp; SwiftUI for zero lag and automatic macOS Light &amp; Dark Mode.</p>
-
-    <section class="bento">
-      <div class="card">
-        <div class="card-icon">📋</div>
-        <h3>Liquid Glass Clipboard History</h3>
-        <p>Saves text, code, URLs, passwords, and images with source app icons, category pills, Pinning, and instant Auto-Paste.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🔍</div>
-        <h3>Offline Image OCR</h3>
-        <p>Powered by Apple Vision — extract selectable text from any copied screenshot completely offline with zero cloud uploads.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🌐</div>
-        <h3>Smart Selection Translator</h3>
-        <p>Floating 🌐 bubble on highlight + <code>⌘⇧E</code> quick popup supporting 37 languages, TTS audio, and Replace In-Place.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">😊</div>
-        <h3>Continuous Emoji Picker</h3>
-        <p>Search emojis and insert multiple emojis continuously without the window closing.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📶</div>
-        <h3>Live Network Speed</h3>
-        <p>Minimalist Menu Bar download/upload monitor powered by native kernel counters with near-zero CPU usage.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🌍</div>
-        <h3>Multi-Language &amp; Auto-Update</h3>
-        <p>Full English, Thai, and Chinese interface with built-in one-click Auto-Updater and per-app exclusion lists.</p>
-      </div>
-    </section>
-
     <section class="install-box" id="install">
-      <h2>Quick Install on macOS</h2>
+      <h2>Quick Install</h2>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <div>Download <strong>monkey-tools-Installer.dmg</strong> and double-click to mount it.</div>
+          <div>Open <strong>monkey-tools-Installer.dmg</strong> and drag <strong>monkey-tools.app</strong> to <strong>Applications</strong>.</div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div>Drag <strong>monkey-tools.app</strong> into your <strong>Applications</strong> folder.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
           <div style="width:100%">
-            <strong>First-Time Launch (Gatekeeper):</strong> Go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>, or run:
+            If blocked by Gatekeeper, allow in <strong>System Settings → Privacy &amp; Security</strong> or run:
             <div class="cmd-bar">
               <code>xattr -cr /Applications/monkey-tools.app</code>
               <button class="copy-btn" onclick="copyCmd('xattr -cr /Applications/monkey-tools.app', this)">Copy</button>
@@ -214,8 +160,8 @@
           </div>
         </div>
         <div class="step">
-          <div class="step-num">4</div>
-          <div>Enable <strong>monkey-tools</strong> in <strong>System Settings → Privacy &amp; Security → Accessibility</strong> for instant Auto-Paste and global hotkeys.</div>
+          <div class="step-num">3</div>
+          <div>Enable <strong>monkey-tools</strong> in <strong>System Settings → Privacy &amp; Security → Accessibility</strong>.</div>
         </div>
       </div>
     </section>
@@ -223,7 +169,7 @@
 
   <footer>
     <div class="container">
-      © 2026 Pakkawat.k • Native macOS 13.0+ • Open Source (MIT)
+      © 2026 Pakkawat.k • macOS 13.0+ • MIT License
     </div>
   </footer>
 

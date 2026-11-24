@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiffy Geo — Browser Fake Location &amp; Live GPS Simulator Extension</title>
-  <meta name="description" content="Spoof your browser geolocation on Chrome, Brave, and Edge with an interactive map picker, place search, favorites, realistic GPS jitter, and live N/S/E/W movement controls.">
+  <title>Tiffy Geo — Browser GPS Location Simulator Extension</title>
+  <meta name="description" content="Spoof browser geolocation with an interactive map picker, GPS jitter, and live N/S/E/W movement controls.">
   <link rel="canonical" href="https://pakkawatkh.github.io/Tiffy-App/tiffy-geo/">
   <link rel="icon" type="image/png" href="assets/icon128.png">
   <meta name="theme-color" content="#ffffff">
@@ -18,7 +18,7 @@
       --glow-rgb: 16, 185, 129;
     }
     .geo-stage {
-      height: 270px; position: relative; overflow: hidden;
+      height: 250px; position: relative; overflow: hidden;
       background: linear-gradient(145deg, #ecfdf5 0%, #e0f2fe 100%);
       background-image: linear-gradient(rgba(16,185,129,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.12) 1px, transparent 1px);
       background-size: 26px 26px;
@@ -36,7 +36,6 @@
     .geo-btn {
       width: 32px; height: 32px; border-radius: 8px; border: 1px solid #cbd5e1;
       background: rgba(255,255,255,0.95); color: #0f172a; font-weight: 700; cursor: pointer;
-      box-shadow: 0 3px 10px rgba(15,23,42,0.08);
     }
     .geo-btn:hover { background: #059669; color: #fff; border-color: #059669; }
     .geo-hint {
@@ -56,7 +55,6 @@
       </a>
       <div class="nav-right">
         <a href="#preview" class="nav-link">Preview</a>
-        <a href="#features" class="nav-link">Features</a>
         <a href="#install" class="nav-link">Install</a>
         <a href="../" class="nav-link">← All Apps</a>
       </div>
@@ -66,19 +64,17 @@
   <main class="container">
     <section class="hero">
       <img src="assets/icon128.png" alt="Tiffy Geo" class="hero-icon"><br>
-      <div class="badge">● v1.0.1 • Manifest V3 Geolocation Simulator for Chrome / Brave / Edge</div>
-      <h1>Simulate Any GPS Location <span class="gradient">Instantly</span></h1>
+      <h1>Tiffy Geo</h1>
       <p class="subtitle">
-        Spoof your browser geolocation seamlessly across Google Maps and web apps. Includes an interactive map picker, place search, saved favorites, realistic GPS jitter, and live N/S/E/W movement controls.
+        Simulate any browser GPS location with an interactive map picker, favorites, GPS jitter, and live N/S/E/W controls.
       </p>
       <div class="actions">
         <a href="tiffy-geo-v1.0.1.zip" download class="btn btn-primary">Download ZIP (v1.0.1 · 16 KB)</a>
-        <a href="https://github.com/pakkawatkh/tiffy-extension" target="_blank" rel="noopener" class="btn btn-secondary">GitHub Source</a>
+        <a href="https://github.com/pakkawatkh/tiffy-extension" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
       </div>
       <div class="compat-strip">
         <span class="compat-pill">🌐 Chrome · Brave · Edge (Manifest V3)</span>
-        <span class="compat-pill">🔒 100% Local</span>
-        <span class="compat-pill">🔓 Open Source (MIT)</span>
+        <span class="compat-pill">MIT License</span>
       </div>
     </section>
 
@@ -90,7 +86,7 @@
             <span style="background:#f59e0b"></span>
             <span style="background:#22c55e"></span>
           </div>
-          <span>Interactive Preview — Click N / S / E / W to Simulate Live GPS Movement</span>
+          <span>Interactive GPS Preview</span>
           <span style="color:#059669">Spoofing Active</span>
         </div>
         <div class="geo-stage">
@@ -102,7 +98,7 @@
             </div>
           </div>
           <div class="geo-coords" id="geo-coords">35.6762° N, 139.6503° E</div>
-          <div class="geo-hint">Try nudging the pin with N / S / E / W</div>
+          <div class="geo-hint">Click N / S / E / W to move pin</div>
           <div class="geo-pad">
             <button type="button" class="geo-btn" onclick="nudgeGeo(0.002, 0)">N</button>
             <button type="button" class="geo-btn" onclick="nudgeGeo(-0.002, 0)">S</button>
@@ -113,50 +109,20 @@
       </div>
     </section>
 
-    <h2 class="section-title" id="features">Precision Geolocation Controls</h2>
-    <p class="section-sub">Injected cleanly via Manifest V3 MAIN World so web apps receive realistic coordinates immediately.</p>
-
-    <section class="bento">
-      <div class="card">
-        <div class="card-icon">📍</div>
-        <h3>Interactive Map Picker</h3>
-        <p>Click anywhere on the built-in slippy map or search by city, landmark, or exact latitude/longitude coordinates.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🧭</div>
-        <h3>Live N/S/E/W Nudge</h3>
-        <p>Walk or shift your simulated GPS position in real time with directional controls while testing location-aware apps.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎯</div>
-        <h3>Realistic GPS Jitter</h3>
-        <p>Optional subtle coordinate drift mimics real hardware GPS accuracy so apps never flag static coordinates.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">★</div>
-        <h3>Saved Favorites</h3>
-        <p>Bookmark frequently used test locations and jump between cities in a single click.</p>
-      </div>
-    </section>
-
     <section class="install-box" id="install">
-      <h2>Quick Install on Chrome, Brave &amp; Edge</h2>
+      <h2>Quick Install</h2>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <div>Download <strong>tiffy-geo-v1.0.1.zip</strong> and unzip it into a permanent folder.</div>
+          <div>Download and unzip <strong>tiffy-geo-v1.0.1.zip</strong>.</div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div>Open <code>chrome://extensions/</code> (or <code>brave://extensions/</code> / <code>edge://extensions/</code>).</div>
+          <div>Open <code>chrome://extensions/</code> (or <code>brave://extensions/</code> / <code>edge://extensions/</code>) and enable <strong>Developer mode</strong>.</div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <div>Enable <strong>Developer mode</strong> using the toggle in the top-right corner.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div>Click <strong>Load unpacked</strong>, select the unzipped <code>tiffy-geo</code> folder, and pin the icon to your toolbar.</div>
+          <div>Click <strong>Load unpacked</strong> and select the unzipped <code>tiffy-geo</code> folder.</div>
         </div>
       </div>
     </section>
@@ -164,7 +130,7 @@
 
   <footer>
     <div class="container">
-      © 2026 Pakkawat.k • Manifest V3 Extension • Open Source (MIT)
+      © 2026 Pakkawat.k • Chrome / Brave / Edge • MIT License
     </div>
   </footer>
 
