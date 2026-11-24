@@ -11,7 +11,7 @@
 | :--- | :--- | :---: | :--- | :--- | :--- |
 | 🐵 **Monkey Tools** | macOS 13+ | `v2.3.2` | [DMG (1.3 MB)](monkey-tools/monkey-tools-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/monkey-tools/) | [GitHub](https://github.com/pakkawatkh/monkey-tools) |
 | 🖱️ **Tiffy Click** | macOS 13+ | `v1.2.2` | [DMG (2.1 MB)](tiffy-click/tiffy-click-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-click/) | [GitHub](https://github.com/pakkawatkh/Tiffy-Click) |
-| 🧩 **Tiffy Collage** | macOS 13+ | `v3.0.0` | [DMG](tiffy-collage/tiffy-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-collage/) | [GitHub](https://github.com/pakkawatkh/Tiffy-Collage) |
+| 🧩 **Tiffy Collage** | macOS 13+ | `v3.0.0` | [DMG (1.7 MB)](tiffy-collage/tiffy-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-collage/) | [GitHub](https://github.com/pakkawatkh/Tiffy-Collage) |
 | 📸 **Tiffy Scroll** | Chrome / Brave / Edge | `v1.0.1` | [ZIP (121 KB)](tiffy-scroll/tiffy-scroll-v1.0.1.zip) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-scroll/) | [GitHub](https://github.com/pakkawatkh/tiffy-extension) |
 | 📍 **Tiffy Geo** | Chrome / Brave / Edge | `v1.0.1` | [ZIP (16 KB)](tiffy-geo/tiffy-geo-v1.0.1.zip) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-geo/) | [GitHub](https://github.com/pakkawatkh/tiffy-extension) |
 
