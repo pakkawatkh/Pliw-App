@@ -1,7 +1,7 @@
 {
-  "latestVersion": "1.1.3",
+  "latestVersion": "1.1.4",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-click/tiffy-click-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-click/tiffy-click.zip",
-  "releaseNotes": "- Removed center dot for a pure Liquid Glass orb when idle\n- Added sculpted Apple-style gradient pointer arrow that glides and rotates 360° toward the cursor while scrolling",
-  "publishedAt": "2026-11-24T04:12:00Z"
+  "releaseNotes": "- Refined slender rim-hugging chevron arrow that orbits 360° right along the inner edge of the Liquid Glass orb",
+  "publishedAt": "2026-11-24T04:14:00Z"
 }
