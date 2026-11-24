@@ -59,4 +59,6 @@
 
 ---
 
-© 2026 Pakkawat.k. All Rights Reserved.
+## 📄 License
+
+All apps and extensions in the **Tiffy App** suite are **Open Source** (MIT License / GPL-3.0 for Tiffy Click). Distribution hub licensed under the **[MIT License](LICENSE)**. Copyright © 2026 Pakkawat.k.
