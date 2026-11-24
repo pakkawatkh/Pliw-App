@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.3.3",
+  "latestVersion": "2.3.4",
   "releaseDate": "2026-11-24",
   "downloadUrl": "https://pakkawatkh.github.io/Pliw-App/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/Pliw-App/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/Pliw-App/monkey-tools/",
-  "releaseNotes": "v2.3.3: Migrated in-app Auto-Updater endpoint to the new Pliw-App GitHub Pages URL."
+  "releaseNotes": "v2.3.4: Updated app icon with the unified Pliw App corner badge."
 }
