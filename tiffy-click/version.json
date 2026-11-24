@@ -1,7 +1,7 @@
 {
-  "latestVersion": "1.0.7",
+  "latestVersion": "1.0.8",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-click/tiffy-click-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-click/tiffy-click.zip",
-  "releaseNotes": "- Upgraded Autoscroll orb to Apple Liquid Glass design: true circular NSVisualEffectView maskImage backdrop, dome specular sheen, prismatic rim catchlights, precision inner ring, and glowing directional chevrons",
-  "publishedAt": "2026-11-24T03:49:00Z"
+  "releaseNotes": "- Compact 28pt Apple Liquid Glass Autoscroll micro-orb\n- Minimalist design: hides arrows while idle and reveals directional chevron only in the active scroll direction",
+  "publishedAt": "2026-11-24T03:53:00Z"
 }
