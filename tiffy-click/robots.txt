@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pakkawatkh.github.io/Tiffy-App/tiffy-click/sitemap.xml

@@ -1,0 +1,8 @@
+{
+  "latestVersion": "3.1.0",
+  "releaseDate": "2026-11-24",
+  "downloadUrl": "https://pakkawatkh.github.io/Pliw-App/pliw-collage/pliw-collage-Installer.dmg",
+  "zipUrl": "https://pakkawatkh.github.io/Pliw-App/pliw-collage/pliw-collage.zip",
+  "pageUrl": "https://pakkawatkh.github.io/Pliw-App/pliw-collage/",
+  "releaseNotes": "Rebranded to Pliw Collage and migrated Auto-Updater endpoint to Pliw-App."
+}

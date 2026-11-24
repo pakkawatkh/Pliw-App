@@ -37,8 +37,8 @@ jobs:
             3. Launch Monkey Tools and grant Accessibility permissions on first launch.
 
             ---
-            - 🌐 **Live Website**: [https://pakkawatkh.github.io/tiffy-app/](https://pakkawatkh.github.io/tiffy-app/)
-            - 📖 **Documentation**: [https://pakkawatkh.github.io/tiffy-app/monkey-tools/](https://pakkawatkh.github.io/tiffy-app/monkey-tools/)
+            - 🌐 **Live Website**: [https://pakkawatkh.github.io/pliw-app/](https://pakkawatkh.github.io/pliw-app/)
+            - 📖 **Documentation**: [https://pakkawatkh.github.io/pliw-app/monkey-tools/](https://pakkawatkh.github.io/pliw-app/monkey-tools/)
           files: |
             monkey-tools/monkey-tools-Installer.dmg
             monkey-tools/monkey-tools.zip
