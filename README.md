@@ -37,7 +37,7 @@
 
 ---
 
-## 🛠️ Installation Guide (วิธีติดตั้งทุกแอป)
+## 🛠️ Installation Guide
 
 ### 🅰️ macOS Native Apps (`Monkey Tools`, `tiffy-click`, `tiffy-cut`)
 1. Download the `.dmg` installer from the table above and open it.
