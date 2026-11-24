@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tiffy-click — Universal Middle-Click, Middle-Drag &amp; Windows-Style Autoscroll for macOS</title>
+  <meta name="description" content="Bring Windows-style middle-click Autoscroll (Hold Scroll &amp; Toggle) plus 3-finger Trackpad Middle-Click and Middle-Drag to every app on macOS.">
+  <link rel="canonical" href="https://pakkawatkh.github.io/tiffy-app/tiffy-click/">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.05rem; }
+    .brand-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: linear-gradient(135deg, #06b6d4, #2563eb);
+      color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .back-link { color: var(--muted); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
+    .back-link:hover { color: var(--text); }
+    .hero { text-align: center; padding: 72px 0 48px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #ecfeff; color: #0e7490; border: 1px solid #a5f3fc;
+      padding: 6px 14px; border-radius: 999px; font-size: 0.84rem; font-weight: 600;
+      margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(2.1rem, 4.5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .gradient { background: linear-gradient(135deg, #06b6d4, #2563eb, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { max-width: 660px; margin: 0 auto 30px; color: var(--muted); font-size: 1.08rem; }
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 0.96rem;
+      transition: transform 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: linear-gradient(135deg, #06b6d4, #2563eb); color: #fff; box-shadow: 0 8px 24px rgba(37,99,235,0.25); }
+    .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 40px 0 64px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+    .card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 0.92rem; }
+    .install-box { background: #0f172a; color: #e2e8f0; border-radius: 16px; padding: 26px; margin-bottom: 64px; }
+    .install-box h2 { font-size: 1.25rem; margin-bottom: 12px; color: #fff; }
+    .install-box ol { padding-left: 20px; display: grid; gap: 8px; font-size: 0.94rem; }
+    .install-box code { background: rgba(255,255,255,0.12); padding: 2px 7px; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, monospace; }
+    footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; color: var(--muted); font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="./" class="brand">
+        <span class="brand-icon">🖱️</span>
+        <span>tiffy-click</span>
+      </a>
+      <a href="../" class="back-link">← Back to Tiffy App Suite</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">● v1.0.0 • Middle-Click &amp; Windows-Style Autoscroll for macOS</div>
+      <h1>True Middle-Click &amp; <span class="gradient">Hold Scroll</span> on macOS</h1>
+      <p class="subtitle">
+        Bring Windows-style 4-way <strong>Autoscroll (Hold Scroll &amp; Toggle)</strong>, 3-finger Trackpad middle-click, and full <strong>Middle-Drag</strong> to Chrome, Safari, Arc, VS Code, Figma, and every macOS app.
+      </p>
+      <div class="actions">
+        <a href="tiffy-click-Installer.dmg" download class="btn btn-primary">Download DMG (v1.0.0)</a>
+        <a href="tiffy-click.zip" download class="btn btn-secondary">Download ZIP</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>🧭 Windows-Style Universal Autoscroll</h3>
+        <p>Middle-click empty areas on any webpage or document to lock 4-way smooth scrolling with a floating directional HUD, or hold &amp; drag to scroll and stop on release.</p>
+      </div>
+      <div class="card">
+        <h3>🔗 Smart Link &amp; Tab Detection</h3>
+        <p>Automatically detects links and browser tabs via macOS Accessibility — middle-clicking a link still opens a background tab, and middle-clicking a tab still closes it.</p>
+      </div>
+      <div class="card">
+        <h3>🖐️ 3-Finger Trackpad &amp; Middle-Drag</h3>
+        <p>Click or tap with 3 fingers (configurable 2–5) with Palm Rejection edge filtering, plus proper <code>otherMouseDragged</code> support for panning in Figma &amp; Blender.</p>
+      </div>
+      <div class="card">
+        <h3>⚙️ Native Settings &amp; Per-App Rules</h3>
+        <p>Tune scroll speed, deadzone, horizontal scroll, invert direction, and one-click ignore per app right from the Menu Bar.</p>
+      </div>
+    </section>
+
+    <section class="install-box" id="install">
+      <h2>Quick Install on macOS</h2>
+      <ol>
+        <li>Download <code>tiffy-click-Installer.dmg</code> and open it.</li>
+        <li>Drag <strong>tiffy-click.app</strong> into the <strong>Applications</strong> folder.</li>
+        <li>If macOS Gatekeeper asks on first launch, open <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>, or run <code>xattr -cr /Applications/tiffy-click.app</code>.</li>
+        <li>Enable <strong>tiffy-click</strong> in <strong>System Settings → Privacy &amp; Security → Accessibility</strong>.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Built for macOS 13.0+ • Inspired by artginzburg/MiddleClick • GPL-3.0
+    </div>
+  </footer>
+</body>
+</html>
