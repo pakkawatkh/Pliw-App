@@ -3,1658 +3,355 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Primary SEO Meta Tags -->
-  <title>monkey-tools 🐵 — Stop Losing What You Copy. Instant Clipboard History & Translator for Mac</title>
-  <meta name="title" content="monkey-tools 🐵 — Stop Losing What You Copy. Instant Clipboard History & Translator for Mac">
-  <meta name="description" content="Never lose a copied snippet, link, or image again. Windows-style clipboard history (Cmd+Shift+V), offline Apple Vision OCR, Quick Preview, and instant highlight translation in 37+ languages on your Mac. Free, lightweight, and 100% private.">
-  <meta name="keywords" content="mac clipboard manager, windows win v on mac, clipboard history macos, mac selection translator, highlight text translate mac, quick translator mac, emoji picker mac, macos productivity app, mac translate popup, free mac utilities">
-  <meta name="author" content="Pakkawat.k">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <title>Monkey Tools — Liquid Glass Clipboard History, Offline OCR &amp; Translator for macOS</title>
+  <meta name="description" content="macOS Sequoia/Tahoe Liquid Glass Clipboard History (⌘⇧V), Offline Apple Vision OCR, Continuous Emoji Picker, Smart Selection Translator (⌘⇧E), and Menu Bar Network Speed.">
   <link rel="canonical" href="https://pakkawatkh.github.io/tiffy-app/monkey-tools/">
-
-  <!-- Favicon & Icons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="icon" type="image/png" href="assets/icon.png">
   <meta name="theme-color" content="#ffffff">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pakkawatkh.github.io/tiffy-app/monkey-tools/">
-  <meta property="og:site_name" content="monkey-tools for macOS">
-  <meta property="og:title" content="monkey-tools 🐵 — The Essential Productivity Superpower for Mac">
-  <meta property="og:description" content="Never lose what you copy. Windows-style clipboard history (Cmd+Shift+V), offline Image OCR, Quick Preview, and instant highlight translation. Free, featherweight, and 100% private.">
-  <meta property="og:image" content="https://pakkawatkh.github.io/tiffy-app/monkey-tools/assets/icon.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://pakkawatkh.github.io/tiffy-app/monkey-tools/">
-  <meta name="twitter:title" content="monkey-tools 🐵 — The Essential Productivity Superpower for Mac">
-  <meta name="twitter:description" content="Never lose what you copy. Windows-style clipboard history (Cmd+Shift+V), offline Image OCR, Quick Preview, and instant highlight translation. Free, featherweight, and 100% private.">
-  <meta name="twitter:image" content="https://pakkawatkh.github.io/tiffy-app/monkey-tools/assets/icon.png">
-
-  <!-- Schema.org JSON-LD (SoftwareApplication) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "monkey-tools",
-    "alternateName": ["Monkey Tools", "monkey-copy"],
-    "operatingSystem": "macOS 13.0 or later (Ventura, Sonoma, Sequoia)",
-    "applicationCategory": "UtilitiesApplication",
-    "softwareVersion": "2.3.1",
-    "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools-Installer.dmg",
-    "fileFormat": "application/x-apple-diskimage",
-    "fileSize": "1.2MB",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Pakkawat.k"
-    },
-    "description": "Windows-style Clipboard History (Win + V), Smart Selection Translator (highlight to translate), and Continuous Emoji Picker for macOS.",
-    "image": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/assets/icon.png",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "ratingCount": "38"
-    }
-  }
-  </script>
-
-  <!-- Schema.org JSON-LD (FAQPage) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How to get Windows Win + V clipboard history on Mac?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "With monkey-tools, you can press Cmd + Shift + V (or customize to any hotkey) to open an acrylic floating clipboard history window that shows previous text snippets, links, and image copies."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does the selection translator work on Mac?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Highlight any text in any macOS application (Safari, Chrome, Notes, Xcode, Mail, etc.). A small floating bubble appears next to your selection. Click it to view instant translation in 37 languages, listen to speech audio, or replace the original text in-place."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is monkey-tools free and private?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, monkey-tools is free to download and use. It runs 100% locally on your Mac with zero telemetry, zero analytics, and offline Apple Native translation capabilities for maximum privacy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which macOS versions and Macs are supported?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "monkey-tools supports macOS 13.0 Ventura, macOS 14 Sonoma, and macOS 15 Sequoia on both Apple Silicon (M1/M2/M3/M4) and Intel Macs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does macOS show a security warning when opening on other Macs?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "monkey-tools is an independent utility signed with a local developer certificate. When downloaded from the web, macOS Gatekeeper may show a warning. To launch it, go to System Settings > Privacy & Security, scroll to Security, and click 'Open Anyway' (or run 'xattr -cr /Applications/monkey-tools.app' in Terminal). This only unblocks monkey-tools without affecting your Mac's overall security."
-        }
-      }
-    ]
-  }
-  </script>
-
   <style>
     :root {
-      --bg: #ffffff;
-      --bg-alt: #f8fafc;
-      --bg-card: #ffffff;
-      --border-card: #e2e8f0;
-      --border-card-hover: #cbd5e1;
-      --accent-blue: #0284c7;
-      --accent-cyan: #0ea5e9;
-      --accent-purple: #6366f1;
-      --accent-gradient: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #9333ea 100%);
-      --text-main: #0f172a;
-      --text-sub: #334155;
-      --text-muted: #64748b;
-      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg: #fbfbfd;
+      --surface: #ffffff;
+      --border: #e5e7eb;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0284c7;
+      --accent-2: #4f46e5;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      color-scheme: light;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
-
-    /* Ambient Soft Backgrounds */
-    .glow-sphere {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(120px);
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.6;
+    .glow {
+      position: fixed; top: -180px; left: 50%; transform: translateX(-50%);
+      width: 780px; height: 420px; pointer-events: none; z-index: 0;
+      background: radial-gradient(circle, rgba(2,132,199,0.12) 0%, rgba(99,102,241,0.06) 45%, transparent 75%);
+      filter: blur(70px);
     }
-    .glow-1 {
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 450px;
-      background: radial-gradient(circle, rgba(14, 165, 233, 0.12), rgba(99, 102, 241, 0.06), transparent 70%);
-    }
-    .glow-2 {
-      top: 900px;
-      right: -150px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.07), transparent 70%);
-    }
-    .glow-3 {
-      top: 1800px;
-      left: -150px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(14, 165, 233, 0.08), transparent 70%);
-    }
-
-    /* Container */
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Navigation */
+    .container { max-width: 1020px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid #e2e8f0;
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(251,251,253,0.82);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(226,232,240,0.8);
     }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 700;
-      font-size: 1.18rem;
-      letter-spacing: -0.02em;
-    }
-    .brand img {
-      width: 36px;
-      height: 36px;
-      border-radius: 9px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--text-sub);
-      text-decoration: none;
-      font-size: 0.94rem;
-      font-weight: 500;
-      transition: color 0.15s ease;
-    }
-    .nav-links a:hover {
-      color: var(--accent-blue);
-    }
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .btn-nav {
-      background: #f1f5f9;
-      color: var(--text-main);
-      border: 1px solid #e2e8f0;
-      padding: 8px 18px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .btn-nav:hover {
-      background: #e2e8f0;
-      transform: translateY(-1px);
-    }
+    .nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em; }
+    .brand img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .nav-link:hover { color: var(--text); }
 
-    /* Hero Section */
-    .hero {
-      padding: 84px 0 60px;
-      text-align: center;
-    }
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #f0f9ff;
-      border: 1px solid #bae6fd;
-      color: #0284c7;
-      padding: 6px 16px;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-      box-shadow: 0 1px 3px rgba(2, 132, 199, 0.08);
-    }
-    .badge-pill span.dot {
-      width: 7px;
-      height: 7px;
-      background: #0284c7;
-      border-radius: 50%;
-      box-shadow: 0 0 6px rgba(2, 132, 199, 0.6);
-    }
-    .hero-title {
-      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-      font-weight: 800;
-      line-height: 1.12;
-      letter-spacing: -0.035em;
-      margin-bottom: 22px;
-      max-width: 960px;
-      margin-left: auto;
-      margin-right: auto;
-      color: var(--text-main);
-    }
-    .gradient-text {
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.3rem);
-      color: var(--text-sub);
-      max-width: 760px;
-      margin: 0 auto 38px;
-      font-weight: 400;
-    }
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-      color: #ffffff;
-      padding: 15px 32px;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: 1.05rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.35);
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 30px -5px rgba(2, 132, 199, 0.5);
-      filter: brightness(1.05);
-    }
-    .btn-secondary {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      color: var(--text-main);
-      padding: 15px 28px;
-      border-radius: 14px;
-      font-weight: 600;
-      font-size: 1.02rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-      transition: all 0.2s ease;
-    }
-    .btn-secondary:hover {
-      background: #f8fafc;
-      border-color: #cbd5e1;
-      transform: translateY(-1px);
-    }
-    .hero-meta {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Hero Mockup Preview */
-    .hero-visual {
-      margin-top: 54px;
-      position: relative;
-    }
-    .mockup-window {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
-      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.04);
-      overflow: hidden;
-      max-width: 880px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .mockup-header {
-      background: #f8fafc;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .traffic-lights {
-      display: flex;
-      gap: 8px;
-    }
-    .traffic-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-    .dot-close { background: #ff5f56; border: 1px solid #e0443e; }
-    .dot-min { background: #ffbd2e; border: 1px solid #dea123; }
-    .dot-max { background: #27c93f; border: 1px solid #1aab29; }
-    .mockup-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-    }
-    .mockup-body {
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      background: #ffffff;
-    }
-    @media (max-width: 768px) {
-      .mockup-body {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .unmute-badge {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      z-index: 10;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      backdrop-filter: blur(10px);
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-    .unmute-badge:hover {
-      background: #0284c7;
-      border-color: #38bdf8;
-      transform: scale(1.04);
-    }
-
-    /* Video & Interactive Demo Theater */
-    .demo-tabs-bar {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .demo-tab-btn {
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      color: var(--text-muted);
-      padding: 5px 12px;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .demo-tab-btn:hover {
-      background: #e2e8f0;
-      color: var(--text-main);
-    }
-    .demo-tab-btn.active {
-      background: #e0f2fe;
-      border-color: #7dd3fc;
-      color: #0284c7;
-    }
-    .demo-pane {
-      display: none;
-    }
-    .demo-pane.active {
-      display: block;
-    }
-    .video-wrapper {
-      position: relative;
-      background: #0b0f19;
-      border-radius: 0 0 20px 20px;
-      overflow: hidden;
-    }
-    .demo-video {
-      width: 100%;
-      max-height: 520px;
-      display: block;
-      object-fit: contain;
-      background: #0b0f19;
-    }
-    .video-info-bar {
-      padding: 12px 20px;
-      background: #f8fafc;
-      border-top: 1px solid #e2e8f0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-    .video-empty-state {
-      padding: 60px 24px;
-      text-align: center;
-      background: #f8fafc;
-    }
-    .video-play-pulse {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #0284c7, #4f46e5);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+    .hero { text-align: center; padding: 68px 0 40px; }
+    .hero-icon { width: 84px; height: 84px; border-radius: 20px; box-shadow: 0 14px 36px rgba(2,132,199,0.22); margin-bottom: 20px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd;
+      padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
       margin-bottom: 18px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
     }
-    .video-play-pulse:hover {
-      transform: scale(1.08);
+    h1 { font-size: clamp(2.2rem, 4.8vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 16px; }
+    .gradient { background: linear-gradient(135deg, #0284c7, #4f46e5, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { max-width: 660px; margin: 0 auto 30px; color: var(--muted); font-size: 1.08rem; }
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; border-radius: 14px; font-weight: 600; text-decoration: none; font-size: 0.95rem;
+      transition: all 0.18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, #0284c7, #4f46e5); color: #fff; box-shadow: 0 10px 26px rgba(2,132,199,0.28); }
+    .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(15,23,42,0.04); }
+
+    /* Interactive UI Showcase */
+    .showcase {
+      margin: 40px 0 64px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 24px 60px rgba(15,23,42,0.07);
+    }
+    .showcase-tabs {
+      display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .tab-btn {
+      border: 1px solid var(--border); background: #f8fafc; color: var(--muted);
+      padding: 8px 16px; border-radius: 999px; font-size: 0.86rem; font-weight: 600; cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .tab-btn.active {
+      background: var(--text); color: #fff; border-color: var(--text);
+      box-shadow: 0 6px 16px rgba(15,23,42,0.16);
+    }
+    .stage-bg {
+      border-radius: 18px;
+      padding: 28px 20px;
+      background: linear-gradient(135deg, #e0f2fe 0%, #ede9fe 52%, #fce7f3 100%);
+      display: flex; justify-content: center; align-items: center;
+      min-height: 310px;
+    }
+    .tab-pane { display: none; width: 100%; max-width: 560px; }
+    .tab-pane.active { display: block; animation: fadeIn 0.22s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    .mac-glass-panel {
+      background: rgba(255,255,255,0.76);
+      backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(255,255,255,0.92);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 18px 44px rgba(15,23,42,0.14);
+    }
+    .search-bar {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.85); border: 1px solid #e2e8f0; border-radius: 11px;
+      padding: 8px 12px; font-size: 0.85rem; color: #64748b; margin-bottom: 10px;
+    }
+    .pills { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+    .pill { font-size: 0.75rem; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.8); color: #475569; border: 1px solid #e2e8f0; }
+    .pill.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .clip-row {
+      background: rgba(255,255,255,0.88); border: 1px solid #e2e8f0; border-radius: 12px;
+      padding: 10px 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
+      font-size: 0.84rem;
+    }
+    .clip-row:last-child { margin-bottom: 0; }
+    .kbd {
+      font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.72rem; font-weight: 600;
+      background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; padding: 2px 6px; border-radius: 6px;
     }
 
-    /* Preview Cards Inside Mockup */
-    .preview-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 18px;
+    /* Bento Features */
+    .section-title { text-align: center; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .section-sub { text-align: center; color: var(--muted); margin-bottom: 32px; }
+    .bento { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 64px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .preview-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
+    .card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(15,23,42,0.06); }
+    .card-icon {
+      width: 40px; height: 40px; border-radius: 11px; background: #f0f9ff;
+      display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 14px;
     }
-    .preview-card-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 3px 8px;
-      border-radius: 6px;
-      background: #e0f2fe;
-      color: #0284c7;
-    }
-    .preview-card-tag.trans {
-      background: #f3e8ff;
-      color: #9333ea;
-    }
-    .preview-shortcut {
-      font-family: ui-monospace, Menlo, Monaco, monospace;
-      font-size: 0.78rem;
-      background: #ffffff;
-      padding: 2px 7px;
-      border-radius: 5px;
-      color: var(--text-muted);
-      border: 1px solid #e2e8f0;
-    }
+    .card h3 { font-size: 1.04rem; margin-bottom: 6px; }
+    .card p { color: var(--muted); font-size: 0.91rem; }
 
-    /* Fake Clipboard List */
-    .fake-item {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 9px;
-      padding: 10px 12px;
-      margin-bottom: 8px;
-      font-size: 0.85rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    /* Install Box */
+    .install-box {
+      background: #0f172a; color: #e2e8f0; border-radius: 22px; padding: 32px; margin-bottom: 64px;
+      box-shadow: 0 20px 50px rgba(15,23,42,0.16);
     }
-    .fake-item.active {
-      background: #eff6ff;
-      border-color: #93c5fd;
+    .install-box h2 { font-size: 1.35rem; margin-bottom: 16px; color: #fff; }
+    .steps { display: grid; gap: 14px; }
+    .step { display: flex; gap: 14px; align-items: flex-start; }
+    .step-num {
+      width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%;
+      background: linear-gradient(135deg, #0284c7, #6366f1); color: #fff;
+      font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px;
     }
-    .fake-item-text {
-      color: var(--text-main);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 240px;
-      font-weight: 500;
+    .cmd-bar {
+      margin-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
+      padding: 8px 12px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.84rem;
     }
-    .fake-time {
-      font-size: 0.72rem;
-      color: var(--text-muted);
+    .copy-btn {
+      background: rgba(255,255,255,0.15); color: #fff; border: none; border-radius: 7px;
+      padding: 4px 10px; font-size: 0.76rem; font-weight: 600; cursor: pointer;
     }
-
-    /* Fake Translator Box */
-    .fake-trans-box {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .fake-trans-source {
-      background: #ffffff;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      color: var(--text-main);
-      border: 1px solid #e2e8f0;
-    }
-    .fake-trans-arrow {
-      font-size: 0.8rem;
-      color: #0284c7;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 600;
-    }
-    .fake-trans-target {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #1e40af;
-    }
-
-    /* Feature Grid Section */
-    .section {
-      padding: 90px 0;
-    }
-    .section-header {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 60px;
-    }
-    .section-tag {
-      color: #0284c7;
-      font-size: 0.88rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: clamp(2rem, 3.5vw, 2.7rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      color: var(--text-main);
-    }
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .feature-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
-      padding: 32px;
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
-    }
-    .feature-card:hover {
-      border-color: #cbd5e1;
-      transform: translateY(-3px);
-      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
-    }
-    .feature-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 22px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-    }
-    .feature-card h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-      color: var(--text-main);
-    }
-    .feature-card p {
-      color: var(--text-muted);
-      font-size: 0.98rem;
-      line-height: 1.65;
-    }
-    .feature-list {
-      margin-top: 18px;
-      list-style: none;
-    }
-    .feature-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: var(--text-sub);
-      margin-bottom: 8px;
-    }
-    .feature-list li::before {
-      content: "✓";
-      color: #0284c7;
-      font-weight: 800;
-    }
-
-    /* Comparison Table */
-    .table-wrapper {
-      overflow-x: auto;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
-      padding: 12px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-    th, td {
-      padding: 16px 20px;
-      border-bottom: 1px solid #f1f5f9;
-      font-size: 0.96rem;
-    }
-    th {
-      color: var(--text-muted);
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    th.highlight, td.highlight {
-      background: #f0f9ff;
-      font-weight: 700;
-      color: #0369a1;
-    }
-    td.check { color: #16a34a; font-weight: 800; font-size: 1.1rem; }
-    td.cross { color: #dc2626; font-weight: 800; }
-
-    /* Spotlight Card */
-    .spotlight-card {
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-      border: 1px solid #e2e8f0;
-      border-radius: 22px;
-      padding: 40px;
-      margin: 60px 0;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-    }
-    .spotlight-card h2 {
-      font-size: 1.7rem;
-      margin-bottom: 16px;
-      color: var(--text-main);
-    }
-    .spotlight-card p {
-      color: var(--text-sub);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    /* Installation Guide Section */
-    .install-steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin: 40px auto 20px;
-    }
-    @media (max-width: 960px) {
-      .install-steps {
-        grid-template-columns: 1fr;
-      }
-    }
-    .install-step-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 22px;
-      padding: 30px;
-      position: relative;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
-      display: flex;
-      flex-direction: column;
-      transition: all 0.25s ease;
-    }
-    .install-step-card:hover {
-      border-color: #cbd5e1;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.06);
-    }
-    .install-step-card.highlight-card {
-      border: 1.5px solid #38bdf8;
-      background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
-      box-shadow: 0 8px 24px -4px rgba(14, 165, 233, 0.12);
-    }
-    .install-step-card.highlight-card:hover {
-      border-color: #0284c7;
-      box-shadow: 0 16px 32px -6px rgba(14, 165, 233, 0.2);
-    }
-    .install-card-icon {
-      font-size: 2.2rem;
-      margin-bottom: 14px;
-    }
-    .step-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #0284c7;
-      background: #f0f9ff;
-      border: 1px solid #bae6fd;
-      padding: 4px 12px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-      width: fit-content;
-    }
-    .step-badge.highlight {
-      color: #0369a1;
-      background: #e0f2fe;
-      border-color: #7dd3fc;
-    }
-    .install-step-card h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text-main);
-    }
-    .install-step-card p {
-      color: var(--text-sub);
-      font-size: 0.94rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-    .step-methods {
-      margin-top: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .method-box {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 14px;
-      font-size: 0.88rem;
-    }
-    .method-title {
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 6px;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .btn-step-download {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: #0284c7;
-      color: #ffffff;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: all 0.2s;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-    }
-    .btn-step-download:hover {
-      background: #0369a1;
-      transform: translateY(-1px);
-    }
-    .code-snippet {
-      background: #0f172a;
-      color: #38bdf8;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.82rem;
-      padding: 10px 12px;
-      border-radius: 8px;
-      margin-top: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      word-break: break-all;
-    }
-    .btn-copy-code {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-    .btn-copy-code:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-
-    /* FAQ Section */
-    .faq-grid {
-      max-width: 860px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .faq-item {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 22px 26px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-    }
-    .faq-item h4 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text-main);
-    }
-    .faq-item p {
-      color: var(--text-muted);
-      font-size: 0.96rem;
-    }
-
-    /* Download Banner CTA */
-    .cta-banner {
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
-      border: 1px solid #bae6fd;
-      border-radius: 26px;
-      padding: 64px 32px;
-      text-align: center;
-      margin: 60px 0 90px;
-      box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.15);
-    }
-    .cta-banner h2 {
-      font-size: clamp(2rem, 4vw, 2.9rem);
-      font-weight: 800;
-      margin-bottom: 16px;
-      color: var(--text-main);
-    }
-    .cta-banner p {
-      font-size: 1.15rem;
-      color: var(--text-sub);
-      max-width: 600px;
-      margin: 0 auto 32px;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid #e2e8f0;
-      background: #ffffff;
-      padding: 50px 0 40px;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-    .footer-links a:hover {
-      color: var(--text-main);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      .hero {
-        padding: 50px 0 40px;
-      }
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
+    .copy-btn:hover { background: rgba(255,255,255,0.25); }
+    footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; color: var(--muted); font-size: 0.88rem; }
   </style>
 </head>
 <body>
-
-  <!-- Ambient Glow Backgrounds -->
-  <div class="glow-sphere glow-1"></div>
-  <div class="glow-sphere glow-2"></div>
-  <div class="glow-sphere glow-3"></div>
-
-  <!-- Header -->
+  <div class="glow"></div>
   <header>
-    <div class="container nav-inner">
-      <a href="../" class="brand" title="Back to Tiffy App Suite">
-        <img src="assets/icon.png" alt="monkey-tools app icon" width="36" height="36">
-        <span>monkey-tools</span>
+    <div class="container nav">
+      <a href="./" class="brand">
+        <img src="assets/icon.png" alt="Monkey Tools Icon">
+        <span>Monkey Tools</span>
       </a>
-
-      <ul class="nav-links">
-        <li><a href="../" style="color: #0284c7; font-weight: 600;">← All Apps</a></li>
-        <li><a href="../tiffy-scroll/">Tiffy Scroll</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#demo">Demo</a></li>
-        <li><a href="#comparison">Comparison</a></li>
-        <li><a href="#install" style="color: #0284c7; font-weight: 600;">Installation</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-
-      <div class="nav-cta">
-        <a href="monkey-tools-Installer.dmg" download class="btn-nav">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          Download DMG (1.2 MB)
-        </a>
+      <div class="nav-right">
+        <a href="#preview" class="nav-link">Preview</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#install" class="nav-link">Install</a>
+        <a href="../" class="nav-link">← All Apps</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="badge-pill">
-        <span class="dot"></span>
-        <span>⚡ What's New in v2.3.1: Modern macOS Liquid Glass UI (Light &amp; Dark Mode), System Settings Sidebar, Offline OCR &amp; Quick Preview • 1.2 MB</span>
-      </div>
-
-      <h1 class="hero-title">
-        Never Lose What You Copy. <br><span class="gradient-text">Search, Paste &amp; Translate in 1 Click.</span>
-      </h1>
-
-      <p class="hero-subtitle">
-        Bring Windows-style clipboard history (<strong><code>⌘ + Shift + V</code></strong>), category filter pills, and quick translate hotkey (<strong><code>⌘ + Shift + E</code></strong>) to your Mac. Never lose a link, address, or code snippet again. Ultra-fast, zero battery drain, and respects your privacy.
+  <main class="container">
+    <section class="hero">
+      <img src="assets/icon.png" alt="Monkey Tools" class="hero-icon"><br>
+      <div class="badge">● v2.3.1 • macOS Sequoia / Tahoe Liquid Glass UI</div>
+      <h1>Your macOS Menu Bar <span class="gradient">Supercharged</span></h1>
+      <p class="subtitle">
+        Liquid Glass Clipboard History (<code>⌘⇧V</code>), Offline Apple Vision OCR, Continuous Emoji Picker, Smart Selection Translator (<code>⌘⇧E</code>), and Real-Time Network Speed — 100% native Swift &amp; private.
       </p>
-
-      <div class="hero-actions">
-        <a href="monkey-tools-Installer.dmg" download class="btn-primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          Download Free for Mac (1.2 MB DMG)
-        </a>
-
-        <a href="https://github.com/pakkawatkh/tiffy-app" target="_blank" rel="noopener" class="btn-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          View on GitHub
-        </a>
+      <div class="actions">
+        <a href="monkey-tools-Installer.dmg" download class="btn btn-primary">Download DMG (v2.3.1 · 1.3 MB)</a>
+        <a href="monkey-tools.zip" download class="btn btn-secondary">Download ZIP</a>
+        <a href="https://github.com/pakkawatkh/monkey-tools" target="_blank" rel="noopener" class="btn btn-secondary">GitHub Source</a>
       </div>
+    </section>
 
-      <div style="margin: 14px 0 20px; display: flex; justify-content: center;">
-        <a href="#install" style="color: #0284c7; text-decoration: none; font-size: 0.92rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(2, 132, 199, 0.08); border-radius: 999px; transition: all 0.2s;">
-          📖 Easy 1-minute installation &amp; security guide →
-        </a>
+    <section class="showcase" id="preview">
+      <div class="showcase-tabs">
+        <button class="tab-btn active" onclick="showTab('clipboard', this)">📋 Clipboard History</button>
+        <button class="tab-btn" onclick="showTab('translator', this)">🌐 Selection Translator</button>
+        <button class="tab-btn" onclick="showTab('shortcuts', this)">⌨️ Power Shortcuts</button>
       </div>
-
-      <div class="hero-meta">
-        <span>🍏 Apple Silicon (M1/M2/M3/M4) &amp; Intel</span>
-        <span>•</span>
-        <span>📦 1.2 MB Featherweight</span>
-        <span>•</span>
-        <span>🔒 100% Offline &amp; Private</span>
-        <span>•</span>
-        <span>⚡ Zero Background Battery Drain</span>
-      </div>
-
-      <!-- Hero Visual: Video Theater with Tabs -->
-      <div class="hero-visual" id="demo">
-        <div class="mockup-window">
-          <div class="mockup-header">
-            <div class="traffic-lights">
-              <span class="traffic-dot dot-close"></span>
-              <span class="traffic-dot dot-min"></span>
-              <span class="traffic-dot dot-max"></span>
+      <div class="stage-bg">
+        <!-- Tab 1: Clipboard -->
+        <div class="tab-pane active" id="tab-clipboard">
+          <div class="mac-glass-panel">
+            <div class="search-bar">🔍 Search clipboard history… <span style="margin-left:auto" class="kbd">⌘⇧V</span></div>
+            <div class="pills">
+              <span class="pill active">All</span>
+              <span class="pill">Text</span>
+              <span class="pill">Images</span>
+              <span class="pill">Pinned</span>
             </div>
-            
-            <!-- Interactive Switcher Tabs -->
-            <div class="demo-tabs-bar">
-              <button class="demo-tab-btn active" data-tab="promo" onclick="switchDemoTab('promo')">
-                🔥 Promo Video
-              </button>
-              <button class="demo-tab-btn" data-tab="demo" onclick="switchDemoTab('demo')">
-                🎬 Feature Demo
-              </button>
-              <button class="demo-tab-btn" data-tab="clipboard" onclick="switchDemoTab('clipboard')">
-                📋 Clipboard History
-              </button>
-              <button class="demo-tab-btn" data-tab="translator" onclick="switchDemoTab('translator')">
-                🌐 Selection Translator
-              </button>
+            <div class="clip-row">
+              <div><strong>#0284C7</strong><br><span style="font-size:0.75rem;color:#64748b">Figma · Hex Color Swatch</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;border-radius:5px;background:#0284c7;display:inline-block"></span><span class="kbd">⌘1</span></div>
             </div>
-
-            <span class="mockup-title">Instant Response • Zero Lag</span>
-          </div>
-
-          <!-- Tab 1: App Promo Video Player -->
-          <div class="demo-pane active" id="pane-promo">
-            <div class="video-wrapper">
-              <button id="btn-unmute-promo" class="unmute-badge" onclick="toggleMutePromo()">
-                🔊 Enable Voiceover Audio
-              </button>
-              <video id="promo-video-player" class="demo-video" controls autoplay loop muted playsinline poster="assets/promo-poster.png?v=2.2.0">
-                <source src="assets/promo.mp4?v=2.2.0" type="video/mp4">
-                Your browser does not support HTML5 video.
-              </video>
-
-              <div class="video-info-bar">
-                <span>🔥 <strong>Official Overview:</strong> See how monkey-tools saves hours of daily copy-paste work • Click 🔊 to Listen</span>
-                <span>🍏 Universal Mac Support (Apple Silicon &amp; Intel)</span>
-              </div>
+            <div class="clip-row">
+              <div><strong>🖼️ Screenshot (OCR Ready)</strong><br><span style="font-size:0.75rem;color:#64748b">Preview · Offline Apple Vision Text Extract</span></div>
+              <span class="kbd">⌘2</span>
             </div>
-          </div>
-
-          <!-- Tab 2: Feature Walkthrough Video Player -->
-          <div class="demo-pane" id="pane-demo">
-            <div class="video-wrapper">
-              <video id="demo-video-player" class="demo-video" controls loop muted playsinline poster="assets/demo-poster.png?v=2.1.0">
-                <source src="assets/demo.mp4?v=2.1.0" type="video/mp4">
-                Your browser does not support HTML5 video.
-              </video>
-
-              <div class="video-info-bar">
-                <span>🎬 <strong>Live Walkthrough:</strong> Instant response • Zero battery drain • Seamless across all Mac apps</span>
-                <span>🍏 Universal Mac Support (Apple Silicon &amp; Intel)</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab 2: Interactive Clipboard Mockup -->
-          <div class="demo-pane" id="pane-clipboard">
-            <div class="mockup-body" style="grid-template-columns: 1fr;">
-              <div class="preview-card" id="clipboard">
-                <div class="preview-card-header">
-                  <span class="preview-card-tag">Clipboard History</span>
-                  <span class="preview-shortcut">Press ⌘ + ⇧ + V Anywhere</span>
-                </div>
-                <div class="fake-item active">
-                  <span class="fake-item-text">📌 Shipping Address: 742 Evergreen Terrace, Springfield, OR 97477</span>
-                  <span class="fake-time">Pinned</span>
-                </div>
-                <div class="fake-item">
-                  <span class="fake-item-text">Thanks for your help! The document has been reviewed and approved.</span>
-                  <span class="fake-time">Just now</span>
-                </div>
-                <div class="fake-item">
-                  <span class="fake-item-text">FedEx Tracking: 1Z9999999999999999</span>
-                  <span class="fake-time">5m ago</span>
-                </div>
-                <div class="fake-item">
-                  <span class="fake-item-text">Invoice Total: $145.00 (Apple Pay confirmed)</span>
-                  <span class="fake-time">15m ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab 3: Interactive Translator Mockup -->
-          <div class="demo-pane" id="pane-translator">
-            <div class="mockup-body" style="grid-template-columns: 1fr;">
-              <div class="preview-card" id="translator">
-                <div class="preview-card-header">
-                  <span class="preview-card-tag trans">Selection Translator</span>
-                  <span class="preview-shortcut">Highlight Any Text ➔ Click 🌐</span>
-                </div>
-                <div class="fake-trans-box">
-                  <div class="fake-trans-source">
-                    <strong>French (Source Detected):</strong><br>
-                    "Bonjour! Nous confirmons la réception de votre commande."
-                  </div>
-                  <div class="fake-trans-arrow">
-                    <span>↓ Instant Translation (37 Languages)</span>
-                  </div>
-                  <div class="fake-trans-target">
-                    <strong>English (Translated):</strong><br>
-                    "Hello! We confirm receipt of your order and are processing it."
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Grid -->
-  <section class="section" id="features">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">Everyday Superpowers</div>
-        <h2 class="section-title">Everything You Wish macOS Had Built-In</h2>
-        <p class="section-desc">Designed to eliminate daily friction, save you hundreds of repetitive keystrokes, and keep your workflow fast and uninterrupted.</p>
-      </div>
-
-      <div class="features-grid">
-        <!-- Feature 1 -->
-        <div class="feature-card">
-          <div class="feature-icon">📋</div>
-          <h3>Never Lose Anything You Copy</h3>
-          <p>Overwritten an important link, address, or snippet by copying something else? Never again. monkey-tools keeps an organized, searchable history of your text, links, code, and screenshots.</p>
-          <ul class="feature-list">
-            <li>Press <code>Cmd + Shift + V</code> anywhere to view history</li>
-            <li>Category filter pills (All, Text, Images, Pinned)</li>
-            <li>Instant 1-click paste using number badges <code>⌘1</code> to <code>⌘9</code></li>
-            <li>Pin frequently used snippets, templates, and text</li>
-            <li>Press Enter to paste directly into your active document</li>
-          </ul>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="feature-card">
-          <div class="feature-icon">🌐</div>
-          <h3>Translate Anywhere Without Tab Switching</h3>
-          <p>Highlight text in Slack, Safari, PDFs, or emails. A discreet floating bubble appears beside your cursor — translate into 37+ languages instantly without interrupting your reading flow.</p>
-          <ul class="feature-list">
-            <li>Press <code>Cmd + Shift + E</code> to translate selection instantly or type to translate</li>
-            <li>Selection bubble appears beside cursor when text is highlighted</li>
-            <li>One-click "Replace" to swap original text with translation</li>
-            <li>Native Text-To-Speech pronunciation audio playback</li>
-          </ul>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="feature-card">
-          <div class="feature-icon">😃</div>
-          <h3>Continuous Emoji Picker That Stays Open</h3>
-          <p>Tired of macOS closing the emoji panel every single time you click one emoji? monkey-tools stays open so you can search and compose strings of emojis effortlessly.</p>
-          <ul class="feature-list">
-            <li>Click and insert multiple emojis sequentially</li>
-            <li>Instant search in English and Thai</li>
-            <li>Clean, categorized layout with zero lag</li>
-            <li>Press Esc to dismiss whenever you're finished</li>
-          </ul>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Instant Launch &amp; Zero Battery Drain</h3>
-          <p>Why let heavy background apps drain your MacBook's battery? monkey-tools is featherweight at only 1.2 MB, uses virtually zero CPU while idle, and opens in the blink of an eye.</p>
-          <ul class="feature-list">
-            <li>Featherweight 1.2 MB installer (vs 150 MB+ bloated apps)</li>
-            <li>Opens instantaneously with zero perceptible delay</li>
-            <li>Virtually zero background CPU and battery consumption</li>
-            <li>Smooth 120Hz ProMotion display animation</li>
-          </ul>
-        </div>
-
-        <!-- Feature 5 -->
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>100% Private — Stays on Your Mac Only</h3>
-          <p>Your clipboard holds your most confidential data: passwords, bank details, and personal notes. monkey-tools keeps everything 100% on your local disk. No cloud sync, no tracking, and no accounts.</p>
-          <ul class="feature-list">
-            <li>Data stored strictly in your local user directory</li>
-            <li>Excluded Apps Manager: exclude sensitive apps from clipboard history</li>
-            <li>Zero analytics, telemetry, or behavioral tracking</li>
-            <li>Fully functional offline without an internet connection</li>
-          </ul>
-        </div>
-
-        <!-- Feature 6 -->
-        <div class="feature-card">
-          <div class="feature-icon">🔍</div>
-          <h3>Offline Image OCR &amp; Quick Preview</h3>
-          <p>Extract text directly from any copied screenshot using on-device Apple Vision OCR (EN/TH/ZH), inspect long snippets or full images with <code>⌘Y</code>, and see live color swatches for Hex codes.</p>
-          <ul class="feature-list">
-            <li>1-click offline text extraction from copied images</li>
-            <li>Source app icon &amp; search by app name on every card</li>
-            <li>Keyboard power shortcuts: <code>⌘P</code> Pin, <code>⌘⌫</code> Delete, <code>⌘T</code> Translate</li>
-            <li>Pause/Resume clipboard capture anytime from Menu Bar</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Spotlight Content Card -->
-      <div class="spotlight-card">
-        <h2>Replace 3 Separate Paid Subscriptions with 1 Free Powerhouse</h2>
-        <p>
-          Most Mac power users end up paying $15–$30 every year for a clipboard manager, another subscription for a translation popup, and still struggle with clumsy emoji pickers. <strong>monkey-tools</strong> unites all three workflows into a single featherweight menu bar app weighing just 1.2 MB.
-        </p>
-        <p>
-          • <strong>Clipboard History:</strong> Never lose an important copy again. Search, pin, and paste text, code, links, and screenshots in one keystroke.<br>
-          • <strong>Selection Translator:</strong> Highlight text anywhere to translate, listen to native speech, or replace text in-place.<br>
-          • <strong>100% Free &amp; Private:</strong> No subscriptions, no ads, no cloud sync, and zero battery drain.
-        </p>
-      </div>
-
-      <!-- Comparison Section -->
-      <div class="section-header" id="comparison" style="margin-top: 80px;">
-        <div class="section-tag">Why Choose monkey-tools</div>
-        <h2 class="section-title">How monkey-tools Compares</h2>
-        <p class="section-desc">More power, zero subscription fees, and no heavy bloat.</p>
-      </div>
-
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th class="highlight">monkey-tools</th>
-              <th>macOS Default</th>
-              <th>Typical Third-Party Apps</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Clipboard History (Text &amp; Images)</td>
-              <td class="highlight check">✓ Yes (Search &amp; Pin)</td>
-              <td class="cross">✕ Single item only</td>
-              <td>✓ (Often paid subscription)</td>
-            </tr>
-            <tr>
-              <td>Instant Highlight Selection Translator</td>
-              <td class="highlight check">✓ Yes (37+ Languages)</td>
-              <td class="cross">✕ Requires nested menus</td>
-              <td>✕ (Separate app needed)</td>
-            </tr>
-            <tr>
-              <td>Continuous Multi-Emoji Picker</td>
-              <td class="highlight check">✓ Yes (Stays Open)</td>
-              <td class="cross">✕ Closes on every click</td>
-              <td class="cross">✕ Not supported</td>
-            </tr>
-            <tr>
-              <td>Offline Image OCR &amp; Quick Preview (⌘Y)</td>
-              <td class="highlight check">✓ Built-in (Apple Vision)</td>
-              <td class="cross">✕ No</td>
-              <td>✕ (Separate paid utility)</td>
-            </tr>
-            <tr>
-              <td>Replace Highlighted Text In-Place</td>
-              <td class="highlight check">✓ 1-Click Replace</td>
-              <td class="cross">✕ No</td>
-              <td>△ Limited</td>
-            </tr>
-            <tr>
-              <td>App Size &amp; Battery Impact</td>
-              <td class="highlight"><strong>1.1 MB (Zero Idle CPU)</strong></td>
-              <td>Built-in</td>
-              <td>50 MB – 200 MB+ (Heavy RAM/Battery)</td>
-            </tr>
-            <tr>
-              <td>Pricing</td>
-              <td class="highlight"><strong>100% Free Forever</strong></td>
-              <td>Included</td>
-              <td>$10 – $30/yr or Monthly Subscriptions</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Installation & Quick Setup Section -->
-      <div class="section-header" id="install" style="margin-top: 90px;">
-        <div class="section-tag">Quick Setup • 1-Minute Guide</div>
-        <h2 class="section-title">How to Install &amp; Quick Setup</h2>
-        <p class="section-desc" style="font-size: 1.05rem; color: var(--text-sub);">
-          Get up and running on macOS in 3 simple steps.
-        </p>
-      </div>
-
-      <div class="install-steps">
-        <!-- Step 1 -->
-        <div class="install-step-card">
-          <div class="step-badge">Step 1 • Install</div>
-          <div class="install-card-icon">📦</div>
-          <h3>1. Download &amp; Drag</h3>
-          <p>Download <strong>monkey-tools-Installer.dmg</strong> (1.2 MB), double-click to open it, and drag the <strong>monkey-tools</strong> icon into the <strong>Applications</strong> shortcut.</p>
-          <div class="step-methods">
-            <a href="monkey-tools-Installer.dmg" download class="btn-step-download">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Download DMG Installer (1.2 MB)
-            </a>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="install-step-card highlight-card">
-          <div class="step-badge highlight">Step 2 • First-Launch Security</div>
-          <div class="install-card-icon">🛡️</div>
-          <h3>2. Gatekeeper Notice</h3>
-          <p>Because monkey-tools is free, open, and independently maintained without an expensive Apple Developer subscription ($99/yr), macOS Gatekeeper may show a warning (<em>"cannot be opened because the developer cannot be verified"</em>). Choose either quick option:</p>
-          <div class="step-methods">
-            <div class="method-box">
-              <div class="method-title">
-                <span>Option A: System Settings (Recommended)</span>
-              </div>
-              <p style="font-size: 0.86rem; margin-bottom: 0; color: var(--text-sub);">
-                Open the app once ➔ Go to <strong>System Settings > Privacy &amp; Security</strong> ➔ Scroll down to <strong>Security</strong> ➔ Click <strong>"Open Anyway"</strong>.
-              </p>
-            </div>
-
-            <div class="method-box">
-              <div class="method-title">
-                <span>Option B: Terminal (1 Second)</span>
-              </div>
-              <p style="font-size: 0.86rem; margin-bottom: 6px; color: var(--text-sub);">
-                Open Terminal and paste this one-liner command:
-              </p>
-              <div class="code-snippet">
-                <span id="cmd-text">xattr -cr /Applications/monkey-tools.app</span>
-                <button class="btn-copy-code" onclick="copyInstallCmd(this)">Copy</button>
-              </div>
-            </div>
-            <p style="font-size: 0.8rem; color: #16a34a; margin-top: 2px; font-weight: 600;">
-              ✓ 100% Safe: Unblocks only monkey-tools without compromising macOS security.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="install-step-card">
-          <div class="step-badge">Step 3 • Permissions &amp; Ready</div>
-          <div class="install-card-icon">⚡</div>
-          <h3>3. Accessibility &amp; Flow</h3>
-          <p>To enable instant auto-pasting (<code>Cmd + V</code>) and global hotkey clipboard history:</p>
-          <div class="step-methods">
-            <div class="method-box">
-              <div class="method-title">
-                <span>Grant Accessibility Permission</span>
-              </div>
-              <p style="font-size: 0.86rem; margin-bottom: 0; color: var(--text-sub);">
-                Go to <strong>System Settings > Privacy &amp; Security > Accessibility</strong> and toggle <strong>monkey-tools</strong> to <strong>ON (Blue)</strong>.
-              </p>
-            </div>
-            <div class="method-box" style="background: #f0fdf4; border-color: #bbf7d0;">
-              <div class="method-title" style="color: #166534;">
-                <span>🎉 Ready to use!</span>
-              </div>
-              <ul style="list-style: none; font-size: 0.86rem; color: #14532d; padding-left: 0; display: flex; flex-direction: column; gap: 4px;">
-                <li>• Press <strong><code>Cmd + Shift + V</code></strong> anywhere to open clipboard history.</li>
-                <li>• Highlight any text in any app to translate with <strong>🌐</strong>.</li>
-              </ul>
+            <div class="clip-row">
+              <div><strong>https://pakkawatkh.github.io/tiffy-app/</strong><br><span style="font-size:0.75rem;color:#64748b">Chrome · Quick Open URL</span></div>
+              <span class="kbd">⌘3</span>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- FAQ Section -->
-      <div class="section-header" id="faq" style="margin-top: 90px;">
-        <div class="section-tag">FAQ</div>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h4>How do I open monkey-tools?</h4>
-          <p>By default, press <strong><code>Cmd + Shift + V</code></strong> to toggle the clipboard history panel. You can also customize this hotkey in Settings at any time.</p>
+        <!-- Tab 2: Translator -->
+        <div class="tab-pane" id="tab-translator">
+          <div class="mac-glass-panel">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.84rem;font-weight:600">
+              <span>🌐 Smart Translator</span>
+              <span style="color:#0284c7">English ↔ ไทย</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.9);border:1px solid #e2e8f0;border-radius:12px;padding:12px;margin-bottom:10px;font-size:0.86rem">
+              Highlight any text on macOS or press <span class="kbd">⌘⇧E</span> to translate instantly.
+            </div>
+            <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:12px;font-size:0.86rem;color:#0c4a6e">
+              คลุมดำข้อความใดก็ได้บน macOS หรือกด <strong>⌘⇧E</strong> เพื่อแปลภาษาได้ทันที
+            </div>
+            <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end;font-size:0.78rem">
+              <span class="pill">🔊 Speak</span>
+              <span class="pill">📋 Copy</span>
+              <span class="pill active">🔄 Replace In-Place</span>
+            </div>
+          </div>
         </div>
 
-        <div class="faq-item">
-          <h4>How does the highlight selection translator work?</h4>
-          <p>Select/highlight any translatable text in any application (Safari, Chrome, Notes, Mail, Slack, Xcode, etc.). A small floating bubble (🌐) appears right beside your cursor. Click it to view the translation, listen to native speech, or replace original text.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>Does monkey-tools store or upload my clipboard data?</h4>
-          <p>No. monkey-tools is 100% private. All your clipboard data is stored strictly on your local disk in your user Application Support directory. No analytics, tracking, or network telemetry exist.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>Which macOS versions are supported?</h4>
-          <p>macOS 13.0 Ventura, macOS 14 Sonoma, and macOS 15 Sequoia (both Apple Silicon M-series and Intel Macs).</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>Why does macOS show a security warning when opening?</h4>
-          <p>macOS Gatekeeper protects Macs by warning for apps downloaded from the internet that are self-signed. You can open it in seconds: go to <strong>System Settings > Privacy &amp; Security</strong>, scroll down to <strong>Security</strong>, and click <strong>"Open Anyway"</strong> (or run <code>xattr -cr /Applications/monkey-tools.app</code> in Terminal). This only allows monkey-tools without compromising system security.</p>
-        </div>
-      </div>
-
-      <!-- Download Banner CTA -->
-      <div class="cta-banner">
-        <h2>Ready to Upgrade Your Daily Mac Flow?</h2>
-        <p>Get Windows-style clipboard history, instant translation, and continuous emojis in one featherweight app. Free forever, no signup required.</p>
-        <a href="monkey-tools-Installer.dmg" download class="btn-primary" style="font-size: 1.15rem; padding: 18px 40px;">
-          Download Free for Mac (1.2 MB DMG)
-        </a>
-        <div style="margin-top: 18px; font-size: 0.9rem; color: var(--text-muted);">
-          100% Free Forever • No Account Needed • macOS 13+ Ventura, Sonoma &amp; Sequoia
+        <!-- Tab 3: Shortcuts -->
+        <div class="tab-pane" id="tab-shortcuts">
+          <div class="mac-glass-panel" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div class="clip-row" style="margin:0"><span>Open Clipboard</span><span class="kbd">⌘⇧V</span></div>
+            <div class="clip-row" style="margin:0"><span>Quick Translate</span><span class="kbd">⌘⇧E</span></div>
+            <div class="clip-row" style="margin:0"><span>Quick Paste #1–9</span><span class="kbd">⌘1–9</span></div>
+            <div class="clip-row" style="margin:0"><span>Quick Preview</span><span class="kbd">⌘Y</span></div>
+            <div class="clip-row" style="margin:0"><span>Pin / Unpin Item</span><span class="kbd">⌘P</span></div>
+            <div class="clip-row" style="margin:0"><span>Translate Item</span><span class="kbd">⌘T</span></div>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <h2 class="section-title" id="features">Everything You Need in One Menu Bar App</h2>
+    <p class="section-sub">Built 100% natively with Swift &amp; SwiftUI for zero lag and automatic macOS Light &amp; Dark Mode.</p>
 
-  <!-- Footer -->
+    <section class="bento">
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Liquid Glass Clipboard History</h3>
+        <p>Saves text, code, URLs, passwords, and images with source app icons, category pills, Pinning, and instant Auto-Paste.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3>Offline Image OCR</h3>
+        <p>Powered by Apple Vision — extract selectable text from any copied screenshot completely offline with zero cloud uploads.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Smart Selection Translator</h3>
+        <p>Floating 🌐 bubble on highlight + <code>⌘⇧E</code> quick popup supporting 37 languages, TTS audio, and Replace In-Place.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">😊</div>
+        <h3>Continuous Emoji Picker</h3>
+        <p>Search emojis in Thai or English and insert multiple emojis continuously without the window closing.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📶</div>
+        <h3>Live Network Speed</h3>
+        <p>Minimalist Menu Bar download/upload monitor powered by native kernel counters with near-zero CPU usage.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>TH / EN / ZH + Auto-Update</h3>
+        <p>Full Thai, English, and Chinese interface with built-in one-click Auto-Updater and per-app exclusion lists.</p>
+      </div>
+    </section>
+
+    <section class="install-box" id="install">
+      <h2>Quick Install on macOS (วิธีติดตั้งบน macOS)</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>Download <strong>monkey-tools-Installer.dmg</strong> and double-click to mount it.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>Drag <strong>monkey-tools.app</strong> into your <strong>Applications</strong> folder.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div style="width:100%">
+            <strong>First-Time Launch (Gatekeeper):</strong> Go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>, or run:
+            <div class="cmd-bar">
+              <code>xattr -cr /Applications/monkey-tools.app</code>
+              <button class="copy-btn" onclick="copyCmd('xattr -cr /Applications/monkey-tools.app', this)">Copy</button>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>Enable <strong>monkey-tools</strong> in <strong>System Settings → Privacy &amp; Security → Accessibility</strong> for instant Auto-Paste and global hotkeys.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <div class="container footer-inner">
-      <div>
-        <p>© 2026 Pakkawat.k. All Rights Reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 4px; color: #64748b;">monkey-tools is a proprietary macOS utility designed for productivity.</p>
-      </div>
-
-      <div class="footer-links">
-        <a href="../">← All Apps</a>
-        <a href="../tiffy-scroll/">Tiffy Scroll</a>
-        <a href="https://github.com/pakkawatkh/tiffy-app" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://github.com/pakkawatkh/tiffy-app/issues" target="_blank" rel="noopener">Issues</a>
-      </div>
+    <div class="container">
+      © 2026 Pakkawat.k • Native macOS 13.0+ • 100% Local &amp; Private
     </div>
   </footer>
 
   <script>
-    function copyInstallCmd(btn) {
-      const cmd = document.getElementById('cmd-text').innerText;
-      navigator.clipboard.writeText(cmd).then(() => {
-        const originalText = btn.innerText;
-        btn.innerText = 'Copied! ✓';
-        btn.style.background = '#16a34a';
-        setTimeout(() => {
-          btn.innerText = originalText;
-          btn.style.background = '';
-        }, 2000);
-      }).catch(() => {
-        // Fallback for older browsers
-        const textarea = document.createElement('textarea');
-        textarea.value = cmd;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        btn.innerText = 'Copied! ✓';
-        setTimeout(() => { btn.innerText = 'Copy'; }, 2000);
+    function showTab(id, btn) {
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+    function copyCmd(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
       });
     }
-
-    function toggleMutePromo() {
-      const vid = document.getElementById('promo-video-player');
-      const btn = document.getElementById('btn-unmute-promo');
-      if (vid) {
-        vid.muted = !vid.muted;
-        if (btn) {
-          btn.innerHTML = vid.muted ? '🔊 Enable Voiceover Audio' : '🔊 Voiceover Active (Mute)';
-          btn.style.background = vid.muted ? 'rgba(15, 23, 42, 0.85)' : '#0284c7';
-        }
-      }
-    }
-
-    function switchDemoTab(tabId) {
-      document.querySelectorAll('.demo-tab-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-tab') === tabId);
-      });
-      document.querySelectorAll('.demo-pane').forEach(pane => {
-        pane.classList.toggle('active', pane.id === 'pane-' + tabId);
-      });
-      const promoVideo = document.getElementById('promo-video-player');
-      const demoVideo = document.getElementById('demo-video-player');
-      if (promoVideo) {
-        if (tabId === 'promo') {
-          promoVideo.play().catch(() => {});
-        } else {
-          promoVideo.pause();
-        }
-      }
-      if (demoVideo) {
-        if (tabId === 'demo') {
-          demoVideo.play().catch(() => {});
-        } else {
-          demoVideo.pause();
-        }
-      }
-    }
-
-    // Reliable Autoplay & Playback Initializer
-    window.addEventListener('DOMContentLoaded', () => {
-      const promoVideo = document.getElementById('promo-video-player');
-      const demoVideo = document.getElementById('demo-video-player');
-      
-      const setupVideo = (vid) => {
-        if (!vid) return;
-        vid.muted = true;
-        vid.defaultMuted = true;
-        
-        const startPlay = () => {
-          vid.play().catch(() => {});
-        };
-
-        if (vid.readyState >= 2) {
-          startPlay();
-        } else {
-          vid.addEventListener('canplay', startPlay, { once: true });
-          vid.addEventListener('loadeddata', startPlay, { once: true });
-        }
-      };
-
-      setupVideo(promoVideo);
-      setupVideo(demoVideo);
-
-      // Play active on first user interaction
-      const handleUserGesture = () => {
-        if (promoVideo && document.getElementById('pane-promo').classList.contains('active')) {
-          promoVideo.play().catch(() => {});
-        }
-        window.removeEventListener('click', handleUserGesture);
-        window.removeEventListener('keydown', handleUserGesture);
-        window.removeEventListener('touchstart', handleUserGesture);
-      };
-      window.addEventListener('click', handleUserGesture, { once: true });
-      window.addEventListener('keydown', handleUserGesture, { once: true });
-      window.addEventListener('touchstart', handleUserGesture, { once: true });
-    });
   </script>
-
 </body>
 </html>

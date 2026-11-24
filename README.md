@@ -21,7 +21,7 @@
 
 ### 🐵 Monkey Tools (`v2.3.1`)
 - **What it does:** Liquid Glass Clipboard History (`⌘⇧V` / `⌥V`), Offline Image OCR (Apple Vision), Continuous Emoji Picker, Smart Selection Translator (`⌘⇧E`), and live Menu Bar Network Speed.
-- **Preview:** [Watch Promo Video](monkey-tools/assets/promo.mp4) · [Interactive Tour](https://pakkawatkh.github.io/tiffy-app/monkey-tools/)
+- **Preview:** [Interactive Showcase & Details](https://pakkawatkh.github.io/tiffy-app/monkey-tools/)
 
 ### 🖱️ tiffy-click (`v1.1.9`)
 - **What it does:** Windows-style Browser Autoscroll with a compact `28pt` Apple Liquid Glass 360° orb, 2–10 finger Trackpad Middle-Click & Tap, full Middle-Drag (`otherMouseDragged`), Thai/English UI, and auto-fading glass update toast.
