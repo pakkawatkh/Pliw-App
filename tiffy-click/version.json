@@ -1,7 +1,7 @@
 {
-  "latestVersion": "1.1.1",
+  "latestVersion": "1.1.2",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-click/tiffy-click-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-click/tiffy-click.zip",
-  "releaseNotes": "- Refined minimal macOS-native Menu Bar & Settings UI with crisp SF Symbols and cleaner Thai/English copy\n- Grouped per-app actions into a clean current-app submenu and moved Restart Listeners to Option+Settings alternate",
-  "publishedAt": "2026-11-24T04:03:00Z"
+  "releaseNotes": "- Autoscroll is now strictly browser-only; Pause Autoscroll in the Menu Bar automatically disables (dims) for non-browser apps\n- Simplified Settings by removing redundant browser-only toggle",
+  "publishedAt": "2026-11-24T04:07:00Z"
 }
