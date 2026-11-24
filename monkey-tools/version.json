@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.3.1",
+  "latestVersion": "2.3.2",
   "releaseDate": "2026-11-24",
-  "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools-Installer.dmg",
-  "zipUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools.zip",
-  "pageUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/",
-  "releaseNotes": "v2.3.1: Modern macOS Sequoia/Tahoe Liquid Glass UI refresh — automatic Light & Dark Mode support, translucent popover glass with specular rim highlights, capsule controls, and a redesigned System Settings sidebar layout."
+  "downloadUrl": "https://pakkawatkh.github.io/Tiffy-App/monkey-tools/monkey-tools-Installer.dmg",
+  "zipUrl": "https://pakkawatkh.github.io/Tiffy-App/monkey-tools/monkey-tools.zip",
+  "pageUrl": "https://pakkawatkh.github.io/Tiffy-App/monkey-tools/",
+  "releaseNotes": "v2.3.2: Updated in-app Auto-Updater endpoint to the new Tiffy-App GitHub Pages URL and switched project to Open Source (MIT License)."
 }

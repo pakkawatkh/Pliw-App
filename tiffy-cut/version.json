@@ -1,8 +1,8 @@
 {
   "latestVersion": "2.0.2",
   "releaseDate": "2026-11-24",
-  "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/tiffy-cut-Installer.dmg",
-  "zipUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/tiffy-cut.zip",
-  "pageUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/",
+  "downloadUrl": "https://pakkawatkh.github.io/Tiffy-App/tiffy-cut/tiffy-cut-Installer.dmg",
+  "zipUrl": "https://pakkawatkh.github.io/Tiffy-App/tiffy-cut/tiffy-cut.zip",
+  "pageUrl": "https://pakkawatkh.github.io/Tiffy-App/tiffy-cut/",
   "releaseNotes": "Renamed application to Tiffy Cut (Tiffy Cut.app) and repository to Tiffy-Cut, with persistent developer code-signing and updated UI titles."
 }
