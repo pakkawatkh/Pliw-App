@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.0.1",
-  "releaseDate": "2026-11-23",
+  "latestVersion": "2.0.2",
+  "releaseDate": "2026-11-24",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/tiffy-cut-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/tiffy-cut.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-cut/",
-  "releaseNotes": "Fixed macOS alert beep / screen flash when dragging or scrubbing video previews by making AVPlayerLayer views hit-test transparent, preventing automatic TextField focus stealing, and prioritizing timeline/preview drag gestures."
+  "releaseNotes": "Renamed application to Tiffy Cut (Tiffy Cut.app) and repository to Tiffy-Cut, with persistent developer code-signing and updated UI titles."
 }
