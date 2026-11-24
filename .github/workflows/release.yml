@@ -41,6 +41,6 @@ jobs:
             - 📖 **Documentation**: [https://pakkawatkh.github.io/tiffy-app/monkey-tools/](https://pakkawatkh.github.io/tiffy-app/monkey-tools/)
           files: |
             monkey-tools/monkey-tools-Installer.dmg
-            assets/promo.mp4
+            monkey-tools/monkey-tools.zip
           draft: false
           prerelease: false
