@@ -338,6 +338,62 @@
       color: var(--text-main);
     }
 
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 24px 0 36px;
+      flex-wrap: wrap;
+    }
+
+    .category-tab {
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .category-tab:hover {
+      border-color: #94a3b8;
+      color: var(--text-main);
+    }
+
+    .category-tab.active {
+      background: var(--text-main);
+      color: #ffffff;
+      border-color: var(--text-main);
+    }
+
+    .category-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 12px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .category-heading h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .category-heading span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #f1f5f9;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
     /* Apps Grid */
     .apps-grid {
       display: grid;
@@ -829,13 +885,13 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="#apps">Apps Catalog</a></li>
+        <li><a href="#apps" onclick="filterCategory('app')">Apps</a></li>
+        <li><a href="#extensions" onclick="filterCategory('extension')">Extensions</a></li>
         <li><a href="monkey-tools/">Monkey Tools</a></li>
         <li><a href="tiffy-cut/">Tiffy Cut</a></li>
         <li><a href="tiffy-click/">Tiffy Click</a></li>
         <li><a href="tiffy-scroll/">Tiffy Scroll</a></li>
         <li><a href="tiffy-geo/">Tiffy Geo</a></li>
-        <li><a href="#philosophy">Design Core</a></li>
       </ul>
 
       <div>
@@ -880,11 +936,21 @@
   <!-- Apps Collection Section -->
   <section class="container" id="apps">
     <div class="section-header">
-      <div class="section-tag">Applications Catalog</div>
-      <h2 class="section-title">Explore Our Apps &amp; Extensions</h2>
+      <div class="section-tag">Catalog</div>
+      <h2 class="section-title">Apps &amp; Extensions</h2>
+      <div class="category-tabs">
+        <button type="button" class="category-tab active" data-cat="all" onclick="filterCategory('all')">All (5)</button>
+        <button type="button" class="category-tab" data-cat="app" onclick="filterCategory('app')">Apps (3)</button>
+        <button type="button" class="category-tab" data-cat="extension" onclick="filterCategory('extension')">Extensions (2)</button>
+      </div>
     </div>
 
-    <div class="apps-grid">
+    <div class="category-group" data-group="app">
+      <div class="category-heading">
+        <h3> Apps</h3>
+        <span>macOS 13.0+ · 3 Apps</span>
+      </div>
+      <div class="apps-grid">
       <!-- 1. Featured App: Monkey Tools -->
       <article class="app-card-featured">
         <div class="card-ribbon">
@@ -937,7 +1003,7 @@
                 <span class="traffic-dot dot-min"></span>
                 <span class="traffic-dot dot-max"></span>
               </div>
-              <span class="hub-window-title" style="color: #0f172a;">🐵 Monkey Tools • Liquid Glass</span>
+              <span class="hub-window-title" style="color: #0f172a;">🐵 Monkey Tools</span>
               <span style="font-size: 0.7rem; font-weight: 700; color: #0284c7; background: #e0f2fe; padding: 2px 8px; border-radius: 10px;">v2.3.2</span>
             </div>
             <div style="padding: 12px; display: grid; gap: 7px;">
@@ -1004,7 +1070,7 @@
             <span class="feature-tag">📱 9:16 / 4:5 / 1:1 / 16:9</span>
             <span class="feature-tag">🎨 7 Filters &amp; Grading</span>
             <span class="feature-tag">🔊 Per-Clip Audio</span>
-            <span class="feature-tag">⚡ 4K H.264 / HEVC</span>
+            <span class="feature-tag">⚡ 4K MP4 Export</span>
           </div>
 
           <div class="app-actions">
@@ -1072,16 +1138,16 @@
             <img src="tiffy-click/assets/icon.png" alt="Tiffy Click App Icon" class="app-icon">
             <div class="app-meta">
               <h3>Tiffy Click</h3>
-              <p>Middle-Click, Middle-Drag &amp; Liquid Glass Browser Autoscroll</p>
+              <p>Middle-Click, Middle-Drag &amp; Browser Autoscroll</p>
             </div>
           </div>
 
           <p class="app-desc">
-            Brings Windows-style <strong>Browser Autoscroll</strong> with a compact macOS Liquid Glass 360° orb, 2–10 finger Trackpad middle-click &amp; tap, and full <strong>Middle-Drag</strong> — while keeping links, tabs, and non-browser apps 100% native.
+            Brings Windows-style <strong>Browser Autoscroll</strong>, 2–10 finger Trackpad middle-click &amp; tap, and full <strong>Middle-Drag</strong> — while keeping links, tabs, and non-browser apps 100% native.
           </p>
 
           <div class="feature-tags">
-            <span class="feature-tag">🫧 Liquid Glass 360° Orb</span>
+            <span class="feature-tag">🫧 360° Autoscroll Orb</span>
             <span class="feature-tag">🖐️ 2–10 Finger Click &amp; Tap</span>
             <span class="feature-tag">🎯 Browser-Only Autoscroll</span>
             <span class="feature-tag">🎨 Full Middle-Drag</span>
@@ -1145,7 +1211,15 @@
           </div>
         </div>
       </article>
+      </div>
+    </div>
 
+    <div class="category-group" id="extensions" data-group="extension">
+      <div class="category-heading">
+        <h3>🧩 Extensions</h3>
+        <span>Chrome · Brave · Edge · 2 Extensions</span>
+      </div>
+      <div class="apps-grid">
       <!-- 2. Featured Extension: Tiffy Scroll -->
       <article class="app-card-featured">
         <div class="card-ribbon">
@@ -1338,8 +1412,11 @@
           </div>
         </div>
       </article>
+      </div>
+    </div>
 
       <!-- 3. Upcoming Apps Sub-grid -->
+      <div class="apps-grid">
       <div class="sub-grid">
         <!-- Upcoming App 1 -->
         <article class="app-card-upcoming">
@@ -1423,6 +1500,15 @@
   </footer>
 
   <script>
+    function filterCategory(cat) {
+      document.querySelectorAll('.category-tab').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.cat === cat);
+      });
+      document.querySelectorAll('.category-group').forEach(group => {
+        group.style.display = (cat === 'all' || group.dataset.group === cat) ? '' : 'none';
+      });
+    }
+
     let hubGeoLat = 35.6762, hubGeoLng = 139.6503, hubGeoX = 0, hubGeoY = 0;
     function nudgeHubGeo(dLat, dLng) {
       hubGeoLat += dLat;
