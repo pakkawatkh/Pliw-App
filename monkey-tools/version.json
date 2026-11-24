@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.3.4",
+  "latestVersion": "2.3.5",
   "releaseDate": "2026-11-24",
   "downloadUrl": "https://pakkawatkh.github.io/Pliw-App/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/Pliw-App/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/Pliw-App/monkey-tools/",
-  "releaseNotes": "v2.3.4: Updated app icon with the unified Pliw App corner badge."
+  "releaseNotes": "v2.3.5: Refined Monkey Tools icon by removing the overlapping clipboard graphic for a cleaner Pliw App badge."
 }
