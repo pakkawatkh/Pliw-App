@@ -6,6 +6,7 @@
   <title>Tiffy App — Native macOS Productivity Tools &amp; Browser Extensions</title>
   <meta name="description" content="Discover premium, lightweight macOS productivity utilities and Chromium extensions handcrafted by Pakkawat.k. Featuring Monkey Tools and Tiffy Scroll.">
   <link rel="canonical" href="https://pakkawatkh.github.io/Tiffy-App/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <meta name="theme-color" content="#ffffff">
@@ -147,26 +148,30 @@
     }
 
     .brand-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      background: var(--accent-gradient);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
-      font-size: 1.1rem;
-      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+      overflow: hidden;
+    }
+
+    .brand-icon svg {
+      width: 32px;
+      height: 32px;
+      display: block;
     }
 
     .brand-badge {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 20px;
-      background: #f0f9ff;
-      color: var(--accent-primary);
-      border: 1px solid #bae6fd;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f4f4f5;
+      color: #52525b;
+      border: 1px solid #e4e4e7;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -879,7 +884,19 @@
   <header>
     <div class="container nav-inner">
       <a href="./" class="brand-logo">
-        <div class="brand-icon">⚡</div>
+        <div class="brand-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="navMacBg" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#2c2c2e"/>
+                <stop offset="100%" stop-color="#141416"/>
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="15" fill="url(#navMacBg)"/>
+            <path d="M19 21.5H45M32 21.5V44.5" stroke="#f5f5f7" stroke-width="4.5" stroke-linecap="round"/>
+            <circle cx="43.5" cy="42.5" r="2.6" fill="#a1a1a6"/>
+          </svg>
+        </div>
         <span>Tiffy App</span>
         <span class="brand-badge">Suite</span>
       </a>
@@ -887,11 +904,6 @@
       <ul class="nav-links">
         <li><a href="#apps" onclick="filterCategory('app')">Apps</a></li>
         <li><a href="#extensions" onclick="filterCategory('extension')">Extensions</a></li>
-        <li><a href="monkey-tools/">Monkey Tools</a></li>
-        <li><a href="tiffy-cut/">Tiffy Cut</a></li>
-        <li><a href="tiffy-click/">Tiffy Click</a></li>
-        <li><a href="tiffy-scroll/">Tiffy Scroll</a></li>
-        <li><a href="tiffy-geo/">Tiffy Geo</a></li>
       </ul>
 
       <div>
