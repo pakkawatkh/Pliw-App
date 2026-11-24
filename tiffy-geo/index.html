@@ -1,122 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tiffy Geo — Browser Fake Location Extension</title>
-  <meta name="description" content="Spoof your browser geolocation on MacBook (Chrome, Brave, Edge) with an interactive map picker, place search, favorites, and live movement controls." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiffy Geo — Browser Fake Location &amp; Live GPS Simulator Extension</title>
+  <meta name="description" content="Spoof your browser geolocation on Chrome, Brave, and Edge with an interactive map picker, place search, favorites, realistic GPS jitter, and live N/S/E/W movement controls.">
+  <link rel="canonical" href="https://pakkawatkh.github.io/tiffy-app/tiffy-geo/">
+  <link rel="icon" type="image/png" href="assets/icon128.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="../assets/app-page.css">
   <style>
     :root {
-      --bg: #070c18;
-      --surface: #0f172a;
-      --border: rgba(148, 163, 184, 0.18);
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --emerald: #10b981;
+      --accent: #059669;
+      --accent-2: #0284c7;
+      --accent-soft: #ecfdf5;
+      --accent-border: #a7f3d0;
+      --glow-rgb: 16, 185, 129;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: radial-gradient(circle at 50% 0%, #111c36 0%, var(--bg) 55%);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-      min-height: 100vh;
+    .geo-stage {
+      height: 270px; position: relative; overflow: hidden;
+      background: linear-gradient(145deg, #ecfdf5 0%, #e0f2fe 100%);
+      background-image: linear-gradient(rgba(16,185,129,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.12) 1px, transparent 1px);
+      background-size: 26px 26px;
+      display: flex; align-items: center; justify-content: center;
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 36px 24px 72px; }
-    .back-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
-      margin-bottom: 32px;
+    .geo-coords {
+      position: absolute; top: 14px; left: 16px;
+      background: rgba(15,23,42,0.88); color: #f8fafc;
+      font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.78rem;
+      padding: 6px 12px; border-radius: 10px;
     }
-    .back-link:hover { color: var(--text); }
-    .hero {
-      display: flex; flex-wrap: wrap; align-items: center; gap: 24px;
-      padding: 32px; border-radius: 24px;
-      background: rgba(15, 23, 42, 0.75); border: 1px solid var(--border);
-      margin-bottom: 28px;
+    .geo-pad {
+      position: absolute; bottom: 16px; right: 16px; display: flex; gap: 6px;
     }
-    .hero img { width: 84px; height: 84px; border-radius: 20px; box-shadow: 0 12px 28px rgba(16, 185, 129, 0.28); }
-    .hero-copy { flex: 1; min-width: 240px; }
-    .badge {
-      display: inline-block; padding: 4px 10px; border-radius: 999px;
-      background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.35);
-      color: #6ee7b7; font-size: 12px; font-weight: 600; margin-bottom: 10px;
+    .geo-btn {
+      width: 32px; height: 32px; border-radius: 8px; border: 1px solid #cbd5e1;
+      background: rgba(255,255,255,0.95); color: #0f172a; font-weight: 700; cursor: pointer;
+      box-shadow: 0 3px 10px rgba(15,23,42,0.08);
     }
-    h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
-    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 11px 20px; border-radius: 12px; font-weight: 600; font-size: 14px;
-      text-decoration: none; transition: transform 0.15s ease, filter 0.15s ease;
-    }
-    .btn:hover { transform: translateY(-1px); filter: brightness(1.08); }
-    .btn-primary { background: linear-gradient(135deg, #0ea5e9, #10b981); color: #fff; }
-    .btn-secondary { background: rgba(30, 41, 59, 0.9); border: 1px solid var(--border); color: var(--text); }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
-    .card {
-      padding: 20px; border-radius: 18px;
-      background: rgba(15, 23, 42, 0.72); border: 1px solid var(--border);
-    }
-    .card h3 { font-size: 16px; margin-bottom: 6px; }
-    .card p { font-size: 13.5px; color: var(--muted); }
-    .install-box {
-      padding: 28px; border-radius: 20px;
-      background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.25);
-    }
-    .install-box h2 { font-size: 1.35rem; margin-bottom: 14px; }
-    ol { padding-left: 20px; display: flex; flex-direction: column; gap: 10px; color: #cbd5e1; font-size: 14.5px; }
-    code {
-      background: rgba(56, 189, 248, 0.12); color: #7dd3fc;
-      padding: 2px 7px; border-radius: 6px; font-size: 13px;
+    .geo-btn:hover { background: #059669; color: #fff; border-color: #059669; }
+    .geo-hint {
+      position: absolute; bottom: 16px; left: 16px;
+      font-size: 0.78rem; color: #0f172a; background: rgba(255,255,255,0.88);
+      padding: 5px 12px; border-radius: 999px; border: 1px solid #e2e8f0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="../" class="back-link">← Back to Tiffy App Hub</a>
+  <div class="glow"></div>
+  <header>
+    <div class="container nav">
+      <a href="./" class="brand">
+        <img src="assets/icon128.png" alt="Tiffy Geo Icon">
+        <span>Tiffy Geo</span>
+      </a>
+      <div class="nav-right">
+        <a href="#preview" class="nav-link">Preview</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#install" class="nav-link">Install</a>
+        <a href="../" class="nav-link">← All Apps</a>
+      </div>
+    </div>
+  </header>
 
+  <main class="container">
     <section class="hero">
-      <img src="assets/icon128.png" alt="Tiffy Geo Icon" />
-      <div class="hero-copy">
-        <span class="badge">v1.0.1 · Chrome / Brave / Edge (Manifest V3)</span>
-        <h1>Tiffy Geo</h1>
-        <p class="subtitle">
-          Spoof your browser geolocation on MacBook with an interactive slippy map picker, place search, favorites, GPS jitter, and live movement controls.
-        </p>
-        <div class="actions">
-          <a href="tiffy-geo-v1.0.1.zip" download class="btn btn-primary">Download ZIP (v1.0.1 · 16 KB)</a>
-          <a href="#install" class="btn btn-secondary">Setup Guide</a>
+      <img src="assets/icon128.png" alt="Tiffy Geo" class="hero-icon"><br>
+      <div class="badge">● v1.0.1 • Manifest V3 Geolocation Simulator for Chrome / Brave / Edge</div>
+      <h1>Simulate Any GPS Location <span class="gradient">Instantly</span></h1>
+      <p class="subtitle">
+        Spoof your browser geolocation seamlessly across Google Maps and web apps. Includes an interactive map picker, place search, saved favorites, realistic GPS jitter, and live N/S/E/W movement controls.
+      </p>
+      <div class="actions">
+        <a href="tiffy-geo-v1.0.1.zip" download class="btn btn-primary">Download ZIP (v1.0.1 · 16 KB)</a>
+        <a href="https://github.com/pakkawatkh/tiffy-extension" target="_blank" rel="noopener" class="btn btn-secondary">GitHub Source</a>
+      </div>
+    </section>
+
+    <section class="preview-section" id="preview">
+      <div class="preview-window">
+        <div class="preview-bar">
+          <div class="dots">
+            <span style="background:#ef4444"></span>
+            <span style="background:#f59e0b"></span>
+            <span style="background:#22c55e"></span>
+          </div>
+          <span>Interactive Preview — Click N / S / E / W to Simulate Live GPS Movement</span>
+          <span style="color:#059669">Spoofing Active</span>
+        </div>
+        <div class="geo-stage">
+          <div style="position:absolute; width:120%; height:7px; background:rgba(255,255,255,0.75); transform:rotate(-12deg); top:48%;"></div>
+          <div style="position:absolute; height:120%; width:6px; background:rgba(255,255,255,0.65); transform:rotate(16deg); left:44%;"></div>
+          <div id="geo-pin" style="position:relative; transition:transform 0.2s ease;">
+            <div style="width:36px; height:36px; border-radius:50%; background:rgba(16,185,129,0.22); display:flex; align-items:center; justify-content:center;">
+              <div style="width:14px; height:14px; border-radius:50%; background:#10b981; border:2.5px solid #fff; box-shadow:0 3px 10px rgba(16,185,129,0.55);"></div>
+            </div>
+          </div>
+          <div class="geo-coords" id="geo-coords">35.6762° N, 139.6503° E</div>
+          <div class="geo-hint">Try nudging the pin with N / S / E / W</div>
+          <div class="geo-pad">
+            <button type="button" class="geo-btn" onclick="nudgeGeo(0.002, 0)">N</button>
+            <button type="button" class="geo-btn" onclick="nudgeGeo(-0.002, 0)">S</button>
+            <button type="button" class="geo-btn" onclick="nudgeGeo(0, -0.002)">W</button>
+            <button type="button" class="geo-btn" onclick="nudgeGeo(0, 0.002)">E</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="grid">
+    <h2 class="section-title" id="features">Precision Geolocation Controls</h2>
+    <p class="section-sub">Injected cleanly via Manifest V3 MAIN World so web apps receive realistic coordinates immediately.</p>
+
+    <section class="bento">
       <div class="card">
-        <h3>🗺️ Interactive Map Picker</h3>
-        <p>Click anywhere on the map to drop your spoofed GPS pin, drag to pan, and scroll to zoom—built with zero external scripts.</p>
+        <div class="card-icon">📍</div>
+        <h3>Interactive Map Picker</h3>
+        <p>Click anywhere on the built-in slippy map or search by city, landmark, or exact latitude/longitude coordinates.</p>
       </div>
       <div class="card">
-        <h3>⚡ Real-Time Live Spoofing</h3>
-        <p>Injects into the page MAIN world at <code>document_start</code> and updates active <code>watchPosition</code> listeners immediately when you nudge N/S/E/W.</p>
+        <div class="card-icon">🧭</div>
+        <h3>Live N/S/E/W Nudge</h3>
+        <p>Walk or shift your simulated GPS position in real time with directional controls while testing location-aware apps.</p>
       </div>
       <div class="card">
-        <h3>🎯 Realistic GPS Jitter</h3>
-        <p>Optional ±2–4 m micro-drift and configurable accuracy so web maps and check-in apps receive natural-looking coordinates.</p>
+        <div class="card-icon">🎯</div>
+        <h3>Realistic GPS Jitter</h3>
+        <p>Optional subtle coordinate drift mimics real hardware GPS accuracy so apps never flag static coordinates.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">★</div>
+        <h3>Saved Favorites</h3>
+        <p>Bookmark frequently used test locations and jump between cities in a single click.</p>
       </div>
     </section>
 
     <section class="install-box" id="install">
-      <h2>Quick Install (Chrome / Brave / Edge on MacBook)</h2>
-      <ol>
-        <li>Download and unzip <code>tiffy-geo-v1.0.1.zip</code>.</li>
-        <li>Open <code>chrome://extensions/</code> (or <code>brave://extensions/</code> / <code>edge://extensions/</code>).</li>
-        <li>Enable <strong>Developer mode</strong> in the top-right corner.</li>
-        <li>Click <strong>Load unpacked</strong> and select the unzipped <code>tiffy-geo</code> folder.</li>
-        <li>Click the <strong>Tiffy Geo</strong> icon, toggle ON, pick your location, and reload Google Maps or any target site!</li>
-      </ol>
+      <h2>Quick Install on Chrome, Brave &amp; Edge</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>Download <strong>tiffy-geo-v1.0.1.zip</strong> and unzip it into a permanent folder.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>Open <code>chrome://extensions/</code> (or <code>brave://extensions/</code> / <code>edge://extensions/</code>).</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>Enable <strong>Developer mode</strong> using the toggle in the top-right corner.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>Click <strong>Load unpacked</strong>, select the unzipped <code>tiffy-geo</code> folder, and pin the icon to your toolbar.</div>
+        </div>
+      </div>
     </section>
-  </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Pakkawat.k • Manifest V3 Extension • 100% Local &amp; Private
+    </div>
+  </footer>
+
+  <script>
+    let geoLat = 35.6762, geoLng = 139.6503, geoX = 0, geoY = 0;
+    function nudgeGeo(dLat, dLng) {
+      geoLat += dLat;
+      geoLng += dLng;
+      geoY = Math.max(-60, Math.min(60, geoY - dLat * 5000));
+      geoX = Math.max(-110, Math.min(110, geoX + dLng * 5000));
+      document.getElementById('geo-pin').style.transform = `translate(${geoX}px, ${geoY}px)`;
+      document.getElementById('geo-coords').textContent = `${geoLat.toFixed(4)}° N, ${geoLng.toFixed(4)}° E`;
+    }
+  </script>
 </body>
 </html>

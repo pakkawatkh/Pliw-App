@@ -8,165 +8,40 @@
   <link rel="canonical" href="https://pakkawatkh.github.io/tiffy-app/monkey-tools/">
   <link rel="icon" type="image/png" href="assets/icon.png">
   <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="../assets/app-page.css">
   <style>
     :root {
-      --bg: #fbfbfd;
-      --surface: #ffffff;
-      --border: #e5e7eb;
-      --text: #0f172a;
-      --muted: #475569;
       --accent: #0284c7;
       --accent-2: #4f46e5;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    .glow {
-      position: fixed; top: -180px; left: 50%; transform: translateX(-50%);
-      width: 780px; height: 420px; pointer-events: none; z-index: 0;
-      background: radial-gradient(circle, rgba(2,132,199,0.12) 0%, rgba(99,102,241,0.06) 45%, transparent 75%);
-      filter: blur(70px);
-    }
-    .container { max-width: 1020px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-    header {
-      position: sticky; top: 0; z-index: 20;
-      background: rgba(251,251,253,0.82);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(226,232,240,0.8);
-    }
-    .nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
-    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em; }
-    .brand img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .nav-right { display: flex; align-items: center; gap: 18px; }
-    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
-    .nav-link:hover { color: var(--text); }
-
-    .hero { text-align: center; padding: 68px 0 40px; }
-    .hero-icon { width: 84px; height: 84px; border-radius: 20px; box-shadow: 0 14px 36px rgba(2,132,199,0.22); margin-bottom: 20px; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd;
-      padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
-      margin-bottom: 18px;
-    }
-    h1 { font-size: clamp(2.2rem, 4.8vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 16px; }
-    .gradient { background: linear-gradient(135deg, #0284c7, #4f46e5, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .subtitle { max-width: 660px; margin: 0 auto 30px; color: var(--muted); font-size: 1.08rem; }
-    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 22px; border-radius: 14px; font-weight: 600; text-decoration: none; font-size: 0.95rem;
-      transition: all 0.18s ease;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(135deg, #0284c7, #4f46e5); color: #fff; box-shadow: 0 10px 26px rgba(2,132,199,0.28); }
-    .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(15,23,42,0.04); }
-
-    /* Interactive UI Showcase */
-    .showcase {
-      margin: 40px 0 64px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 20px;
-      box-shadow: 0 24px 60px rgba(15,23,42,0.07);
-    }
-    .showcase-tabs {
-      display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;
-    }
-    .tab-btn {
-      border: 1px solid var(--border); background: #f8fafc; color: var(--muted);
-      padding: 8px 16px; border-radius: 999px; font-size: 0.86rem; font-weight: 600; cursor: pointer;
-      transition: all 0.18s ease;
-    }
-    .tab-btn.active {
-      background: var(--text); color: #fff; border-color: var(--text);
-      box-shadow: 0 6px 16px rgba(15,23,42,0.16);
+      --accent-soft: #f0f9ff;
+      --accent-border: #bae6fd;
+      --glow-rgb: 2, 132, 199;
     }
     .stage-bg {
-      border-radius: 18px;
-      padding: 28px 20px;
+      padding: 26px 20px;
       background: linear-gradient(135deg, #e0f2fe 0%, #ede9fe 52%, #fce7f3 100%);
-      display: flex; justify-content: center; align-items: center;
-      min-height: 310px;
+      display: flex; justify-content: center; align-items: center; min-height: 280px;
     }
-    .tab-pane { display: none; width: 100%; max-width: 560px; }
-    .tab-pane.active { display: block; animation: fadeIn 0.22s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-
     .mac-glass-panel {
-      background: rgba(255,255,255,0.76);
+      background: rgba(255,255,255,0.78);
       backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
       border: 1px solid rgba(255,255,255,0.92);
-      border-radius: 18px;
-      padding: 16px;
+      border-radius: 18px; padding: 16px;
       box-shadow: 0 18px 44px rgba(15,23,42,0.14);
     }
     .search-bar {
       display: flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.85); border: 1px solid #e2e8f0; border-radius: 11px;
+      background: rgba(255,255,255,0.88); border: 1px solid #e2e8f0; border-radius: 11px;
       padding: 8px 12px; font-size: 0.85rem; color: #64748b; margin-bottom: 10px;
     }
     .pills { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-    .pill { font-size: 0.75rem; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.8); color: #475569; border: 1px solid #e2e8f0; }
+    .pill { font-size: 0.75rem; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.85); color: #475569; border: 1px solid #e2e8f0; }
     .pill.active { background: #0284c7; color: #fff; border-color: #0284c7; }
     .clip-row {
-      background: rgba(255,255,255,0.88); border: 1px solid #e2e8f0; border-radius: 12px;
-      padding: 10px 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
-      font-size: 0.84rem;
+      background: rgba(255,255,255,0.9); border: 1px solid #e2e8f0; border-radius: 12px;
+      padding: 10px 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 0.84rem;
     }
     .clip-row:last-child { margin-bottom: 0; }
-    .kbd {
-      font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.72rem; font-weight: 600;
-      background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; padding: 2px 6px; border-radius: 6px;
-    }
-
-    /* Bento Features */
-    .section-title { text-align: center; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
-    .section-sub { text-align: center; color: var(--muted); margin-bottom: 32px; }
-    .bento { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 64px; }
-    .card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 24px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(15,23,42,0.06); }
-    .card-icon {
-      width: 40px; height: 40px; border-radius: 11px; background: #f0f9ff;
-      display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 14px;
-    }
-    .card h3 { font-size: 1.04rem; margin-bottom: 6px; }
-    .card p { color: var(--muted); font-size: 0.91rem; }
-
-    /* Install Box */
-    .install-box {
-      background: #0f172a; color: #e2e8f0; border-radius: 22px; padding: 32px; margin-bottom: 64px;
-      box-shadow: 0 20px 50px rgba(15,23,42,0.16);
-    }
-    .install-box h2 { font-size: 1.35rem; margin-bottom: 16px; color: #fff; }
-    .steps { display: grid; gap: 14px; }
-    .step { display: flex; gap: 14px; align-items: flex-start; }
-    .step-num {
-      width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%;
-      background: linear-gradient(135deg, #0284c7, #6366f1); color: #fff;
-      font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px;
-    }
-    .cmd-bar {
-      margin-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px;
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
-      padding: 8px 12px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.84rem;
-    }
-    .copy-btn {
-      background: rgba(255,255,255,0.15); color: #fff; border: none; border-radius: 7px;
-      padding: 4px 10px; font-size: 0.76rem; font-weight: 600; cursor: pointer;
-    }
-    .copy-btn:hover { background: rgba(255,255,255,0.25); }
-    footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; color: var(--muted); font-size: 0.88rem; }
   </style>
 </head>
 <body>
@@ -201,68 +76,76 @@
       </div>
     </section>
 
-    <section class="showcase" id="preview">
-      <div class="showcase-tabs">
-        <button class="tab-btn active" onclick="showTab('clipboard', this)">📋 Clipboard History</button>
-        <button class="tab-btn" onclick="showTab('translator', this)">🌐 Selection Translator</button>
-        <button class="tab-btn" onclick="showTab('shortcuts', this)">⌨️ Power Shortcuts</button>
-      </div>
-      <div class="stage-bg">
-        <!-- Tab 1: Clipboard -->
-        <div class="tab-pane active" id="tab-clipboard">
-          <div class="mac-glass-panel">
-            <div class="search-bar">🔍 Search clipboard history… <span style="margin-left:auto" class="kbd">⌘⇧V</span></div>
-            <div class="pills">
-              <span class="pill active">All</span>
-              <span class="pill">Text</span>
-              <span class="pill">Images</span>
-              <span class="pill">Pinned</span>
-            </div>
-            <div class="clip-row">
-              <div><strong>#0284C7</strong><br><span style="font-size:0.75rem;color:#64748b">Figma · Hex Color Swatch</span></div>
-              <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;border-radius:5px;background:#0284c7;display:inline-block"></span><span class="kbd">⌘1</span></div>
-            </div>
-            <div class="clip-row">
-              <div><strong>🖼️ Screenshot (OCR Ready)</strong><br><span style="font-size:0.75rem;color:#64748b">Preview · Offline Apple Vision Text Extract</span></div>
-              <span class="kbd">⌘2</span>
-            </div>
-            <div class="clip-row">
-              <div><strong>https://pakkawatkh.github.io/tiffy-app/</strong><br><span style="font-size:0.75rem;color:#64748b">Chrome · Quick Open URL</span></div>
-              <span class="kbd">⌘3</span>
+    <section class="preview-section" id="preview">
+      <div class="preview-window">
+        <div class="preview-bar">
+          <div class="dots">
+            <span style="background:#ef4444"></span>
+            <span style="background:#f59e0b"></span>
+            <span style="background:#22c55e"></span>
+          </div>
+          <span>Monkey Tools — Interactive UI Preview</span>
+          <span style="color:#0284c7">Liquid Glass</span>
+        </div>
+        <div class="showcase-tabs">
+          <button class="tab-btn active" onclick="showTab('clipboard', this)">📋 Clipboard History</button>
+          <button class="tab-btn" onclick="showTab('translator', this)">🌐 Selection Translator</button>
+          <button class="tab-btn" onclick="showTab('shortcuts', this)">⌨️ Power Shortcuts</button>
+        </div>
+        <div class="stage-bg" style="margin: 16px; border-radius: 16px;">
+          <div class="tab-pane active" id="tab-clipboard">
+            <div class="mac-glass-panel">
+              <div class="search-bar">🔍 Search clipboard history… <span style="margin-left:auto" class="kbd">⌘⇧V</span></div>
+              <div class="pills">
+                <span class="pill active">All</span>
+                <span class="pill">Text</span>
+                <span class="pill">Images</span>
+                <span class="pill">Pinned</span>
+              </div>
+              <div class="clip-row">
+                <div><strong>#0284C7</strong><br><span style="font-size:0.75rem;color:#64748b">Figma · Hex Color Swatch</span></div>
+                <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;border-radius:5px;background:#0284c7;display:inline-block"></span><span class="kbd">⌘1</span></div>
+              </div>
+              <div class="clip-row">
+                <div><strong>🖼️ Screenshot (OCR Ready)</strong><br><span style="font-size:0.75rem;color:#64748b">Preview · Offline Apple Vision Text Extract</span></div>
+                <span class="kbd">⌘2</span>
+              </div>
+              <div class="clip-row">
+                <div><strong>https://pakkawatkh.github.io/tiffy-app/</strong><br><span style="font-size:0.75rem;color:#64748b">Chrome · Quick Open URL</span></div>
+                <span class="kbd">⌘3</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Tab 2: Translator -->
-        <div class="tab-pane" id="tab-translator">
-          <div class="mac-glass-panel">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.84rem;font-weight:600">
-              <span>🌐 Smart Translator</span>
-              <span style="color:#0284c7">English ↔ Spanish</span>
-            </div>
-            <div style="background:rgba(255,255,255,0.9);border:1px solid #e2e8f0;border-radius:12px;padding:12px;margin-bottom:10px;font-size:0.86rem">
-              Highlight any text on macOS or press <span class="kbd">⌘⇧E</span> to translate instantly.
-            </div>
-            <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:12px;font-size:0.86rem;color:#0c4a6e">
-              Resalta cualquier texto en macOS o presiona <strong>⌘⇧E</strong> para traducir al instante.
-            </div>
-            <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end;font-size:0.78rem">
-              <span class="pill">🔊 Speak</span>
-              <span class="pill">📋 Copy</span>
-              <span class="pill active">🔄 Replace In-Place</span>
+          <div class="tab-pane" id="tab-translator">
+            <div class="mac-glass-panel">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.84rem;font-weight:600">
+                <span>🌐 Smart Translator</span>
+                <span style="color:#0284c7">English ↔ Spanish</span>
+              </div>
+              <div style="background:rgba(255,255,255,0.92);border:1px solid #e2e8f0;border-radius:12px;padding:12px;margin-bottom:10px;font-size:0.86rem">
+                Highlight any text on macOS or press <span class="kbd">⌘⇧E</span> to translate instantly.
+              </div>
+              <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:12px;font-size:0.86rem;color:#0c4a6e">
+                Resalta cualquier texto en macOS o presiona <strong>⌘⇧E</strong> para traducir al instante.
+              </div>
+              <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end;font-size:0.78rem">
+                <span class="pill">🔊 Speak</span>
+                <span class="pill">📋 Copy</span>
+                <span class="pill active">🔄 Replace In-Place</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Tab 3: Shortcuts -->
-        <div class="tab-pane" id="tab-shortcuts">
-          <div class="mac-glass-panel" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-            <div class="clip-row" style="margin:0"><span>Open Clipboard</span><span class="kbd">⌘⇧V</span></div>
-            <div class="clip-row" style="margin:0"><span>Quick Translate</span><span class="kbd">⌘⇧E</span></div>
-            <div class="clip-row" style="margin:0"><span>Quick Paste #1–9</span><span class="kbd">⌘1–9</span></div>
-            <div class="clip-row" style="margin:0"><span>Quick Preview</span><span class="kbd">⌘Y</span></div>
-            <div class="clip-row" style="margin:0"><span>Pin / Unpin Item</span><span class="kbd">⌘P</span></div>
-            <div class="clip-row" style="margin:0"><span>Translate Item</span><span class="kbd">⌘T</span></div>
+          <div class="tab-pane" id="tab-shortcuts">
+            <div class="mac-glass-panel" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div class="clip-row" style="margin:0"><span>Open Clipboard</span><span class="kbd">⌘⇧V</span></div>
+              <div class="clip-row" style="margin:0"><span>Quick Translate</span><span class="kbd">⌘⇧E</span></div>
+              <div class="clip-row" style="margin:0"><span>Quick Paste #1–9</span><span class="kbd">⌘1–9</span></div>
+              <div class="clip-row" style="margin:0"><span>Quick Preview</span><span class="kbd">⌘Y</span></div>
+              <div class="clip-row" style="margin:0"><span>Pin / Unpin Item</span><span class="kbd">⌘P</span></div>
+              <div class="clip-row" style="margin:0"><span>Translate Item</span><span class="kbd">⌘T</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -290,7 +173,7 @@
       <div class="card">
         <div class="card-icon">😊</div>
         <h3>Continuous Emoji Picker</h3>
-        <p>Search emojis in Thai or English and insert multiple emojis continuously without the window closing.</p>
+        <p>Search emojis and insert multiple emojis continuously without the window closing.</p>
       </div>
       <div class="card">
         <div class="card-icon">📶</div>
@@ -299,8 +182,8 @@
       </div>
       <div class="card">
         <div class="card-icon">🌍</div>
-        <h3>TH / EN / ZH + Auto-Update</h3>
-        <p>Full Thai, English, and Chinese interface with built-in one-click Auto-Updater and per-app exclusion lists.</p>
+        <h3>Multi-Language &amp; Auto-Update</h3>
+        <p>Full English, Thai, and Chinese interface with built-in one-click Auto-Updater and per-app exclusion lists.</p>
       </div>
     </section>
 
