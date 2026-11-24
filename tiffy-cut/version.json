@@ -1,8 +1,0 @@
-{
-  "latestVersion": "2.1.0",
-  "releaseDate": "2026-11-24",
-  "downloadUrl": "https://pakkawatkh.github.io/Tiffy-App/tiffy-cut/tiffy-cut-Installer.dmg",
-  "zipUrl": "https://pakkawatkh.github.io/Tiffy-App/tiffy-cut/tiffy-cut.zip",
-  "pageUrl": "https://pakkawatkh.github.io/Tiffy-App/tiffy-cut/",
-  "releaseNotes": "Added one-click In-App Auto-Updater (auto-checks on launch + Check for Updates button & menu item) and dynamic version display."
-}
