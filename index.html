@@ -1248,9 +1248,8 @@
 
       <!-- 2.5 Featured App Card: Tiffy Geo -->
       <article class="app-card-featured">
-        <div class="card-badge-row">
-          <span class="badge-live">● Live Extension</span>
-          <span class="badge-ver">v1.0.1 • Chrome / Brave / Edge</span>
+        <div class="card-ribbon">
+          <span class="badge-status" style="background: #ecfdf5; color: #047857; border-color: #a7f3d0;">● Released v1.0.1 • Extension</span>
         </div>
 
         <div>
@@ -1279,9 +1278,63 @@
             <a href="tiffy-geo/" class="btn-primary">
               View App Details &amp; Setup →
             </a>
+            <a href="tiffy-geo/#install" class="btn-secondary" style="border-color: #a7f3d0;">
+              📘 Quick Setup Guide
+            </a>
             <a href="tiffy-geo/tiffy-geo-v1.0.1.zip" download class="btn-secondary">
               Download ZIP (16 KB)
             </a>
+          </div>
+        </div>
+
+        <div class="app-card-media-col">
+          <div class="hub-extension-window" style="background: linear-gradient(145deg, #ecfdf5 0%, #e0f2fe 100%); border-color: #a7f3d0;">
+            <div class="hub-ext-header" style="background: rgba(255,255,255,0.88); border-bottom-color: #e2e8f0;">
+              <div class="traffic-lights">
+                <span class="traffic-dot dot-close"></span>
+                <span class="traffic-dot dot-min"></span>
+                <span class="traffic-dot dot-max"></span>
+              </div>
+              <span class="hub-window-title" style="color: #0f172a;">📍 Tiffy Geo • Live GPS Simulator</span>
+              <span style="font-size: 0.7rem; font-weight: 700; color: #047857; background: #d1fae5; padding: 2px 8px; border-radius: 10px;">Spoofing ON</span>
+            </div>
+            <div style="height: 156px; position: relative; overflow: hidden; background-image: linear-gradient(rgba(16,185,129,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.12) 1px, transparent 1px); background-size: 22px 22px; display: flex; align-items: center; justify-content: center;">
+              <!-- Decorative map roads -->
+              <div style="position: absolute; width: 120%; height: 6px; background: rgba(255,255,255,0.75); transform: rotate(-14deg); top: 48%;"></div>
+              <div style="position: absolute; height: 120%; width: 5px; background: rgba(255,255,255,0.65); transform: rotate(18deg); left: 42%;"></div>
+              <!-- Interactive GPS Pin -->
+              <div id="hub-geo-pin" style="position: relative; display: flex; flex-direction: column; align-items: center; transition: transform 0.2s ease;">
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(16,185,129,0.22); display: flex; align-items: center; justify-content: center;">
+                  <div style="width: 12px; height: 12px; border-radius: 50%; background: #10b981; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(16,185,129,0.55);"></div>
+                </div>
+              </div>
+              <!-- Coordinate Pill -->
+              <div id="hub-geo-coords" style="position: absolute; top: 10px; left: 10px; background: rgba(15,23,42,0.84); color: #f8fafc; font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.7rem; padding: 4px 9px; border-radius: 8px;">
+                35.6762° N, 139.6503° E
+              </div>
+              <!-- Interactive N/S/E/W Nudge Pad -->
+              <div style="position: absolute; bottom: 10px; right: 10px; display: flex; gap: 4px;">
+                <button type="button" onclick="nudgeHubGeo(0.002, 0)" style="width: 24px; height: 24px; border-radius: 6px; border: 1px solid #cbd5e1; background: rgba(255,255,255,0.92); color: #0f172a; font-size: 0.7rem; font-weight: 700; cursor: pointer;">N</button>
+                <button type="button" onclick="nudgeHubGeo(-0.002, 0)" style="width: 24px; height: 24px; border-radius: 6px; border: 1px solid #cbd5e1; background: rgba(255,255,255,0.92); color: #0f172a; font-size: 0.7rem; font-weight: 700; cursor: pointer;">S</button>
+                <button type="button" onclick="nudgeHubGeo(0, -0.002)" style="width: 24px; height: 24px; border-radius: 6px; border: 1px solid #cbd5e1; background: rgba(255,255,255,0.92); color: #0f172a; font-size: 0.7rem; font-weight: 700; cursor: pointer;">W</button>
+                <button type="button" onclick="nudgeHubGeo(0, 0.002)" style="width: 24px; height: 24px; border-radius: 6px; border: 1px solid #cbd5e1; background: rgba(255,255,255,0.92); color: #0f172a; font-size: 0.7rem; font-weight: 700; cursor: pointer;">E</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hub-quick-specs">
+            <div class="spec-pill">
+              <span class="spec-lbl">Browsers</span>
+              <span class="spec-val">Chrome / Brave / Edge</span>
+            </div>
+            <div class="spec-pill">
+              <span class="spec-lbl">Package</span>
+              <span class="spec-val">16 KB ZIP</span>
+            </div>
+            <div class="spec-pill">
+              <span class="spec-lbl">Injection</span>
+              <span class="spec-val">MV3 MAIN World</span>
+            </div>
           </div>
         </div>
       </article>
@@ -1370,22 +1423,16 @@
   </footer>
 
   <script>
-    function toggleHubMute() {
-      const vid = document.getElementById('hub-promo-video');
-      const btn = document.getElementById('hub-unmute-btn');
-      if (!vid || !btn) return;
-
-      if (vid.muted) {
-        vid.muted = false;
-        vid.currentTime = 0;
-        vid.play().catch(() => {});
-        btn.textContent = '🔊 Voiceover Mute';
-        btn.style.background = '#16a34a';
-      } else {
-        vid.muted = true;
-        btn.textContent = '🔊 Voiceover Sound';
-        btn.style.background = '#0284c7';
-      }
+    let hubGeoLat = 35.6762, hubGeoLng = 139.6503, hubGeoX = 0, hubGeoY = 0;
+    function nudgeHubGeo(dLat, dLng) {
+      hubGeoLat += dLat;
+      hubGeoLng += dLng;
+      hubGeoY = Math.max(-36, Math.min(36, hubGeoY - dLat * 4000));
+      hubGeoX = Math.max(-64, Math.min(64, hubGeoX + dLng * 4000));
+      const pin = document.getElementById('hub-geo-pin');
+      const coords = document.getElementById('hub-geo-coords');
+      if (pin) pin.style.transform = `translate(${hubGeoX}px, ${hubGeoY}px)`;
+      if (coords) coords.textContent = `${hubGeoLat.toFixed(4)}° N, ${hubGeoLng.toFixed(4)}° E`;
     }
 
     document.addEventListener('DOMContentLoaded', () => {
