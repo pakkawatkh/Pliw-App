@@ -11,7 +11,7 @@
 | :--- | :--- | :---: | :--- | :--- | :--- |
 | 🐵 **Monkey Tools** | macOS 13+ | `v2.3.2` | [DMG (1.3 MB)](monkey-tools/monkey-tools-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/monkey-tools/) | [GitHub](https://github.com/pakkawatkh/monkey-tools) |
 | 🖱️ **Tiffy Click** | macOS 13+ | `v1.2.2` | [DMG (2.1 MB)](tiffy-click/tiffy-click-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-click/) | [GitHub](https://github.com/pakkawatkh/Tiffy-Click) |
-| ✂️ **Tiffy Cut** | macOS 13+ | `v2.0.2` | [DMG (2.0 MB)](tiffy-cut/tiffy-cut-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-cut/) | [GitHub](https://github.com/pakkawatkh/Tiffy-Cut) |
+| ✂️ **Tiffy Cut** | macOS 13+ | `v2.1.0` | [DMG (2.0 MB)](tiffy-cut/tiffy-cut-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-cut/) | [GitHub](https://github.com/pakkawatkh/Tiffy-Cut) |
 | 📸 **Tiffy Scroll** | Chrome / Brave / Edge | `v1.0.1` | [ZIP (121 KB)](tiffy-scroll/tiffy-scroll-v1.0.1.zip) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-scroll/) | [GitHub](https://github.com/pakkawatkh/tiffy-extension) |
 | 📍 **Tiffy Geo** | Chrome / Brave / Edge | `v1.0.1` | [ZIP (16 KB)](tiffy-geo/tiffy-geo-v1.0.1.zip) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-geo/) | [GitHub](https://github.com/pakkawatkh/tiffy-extension) |
 
@@ -27,7 +27,7 @@
 - **What it does:** Windows-style Browser Autoscroll with a compact `28pt` Apple Liquid Glass 360° orb, 2–10 finger Trackpad Middle-Click & Tap, full Middle-Drag (`otherMouseDragged`), Thai/English UI, and auto-fading glass update toast.
 - **Preview:** [Try Interactive 360° Orb Preview](https://pakkawatkh.github.io/Tiffy-App/tiffy-click/#preview)
 
-### ✂️ Tiffy Cut (`v2.0.2`)
+### ✂️ Tiffy Cut (`v2.1.0`)
 - **What it does:** Native macOS CapCut-style 4-Pane Video Editor (Multi-track timeline, Split `⌘B`, Speed, 7 Filters, Text, Audio) & Collage Studio (`9:16`, `4:5`, `1:1`, `16:9`, custom up to `6×6`) with Metal-accelerated 720p–4K MP4 export.
 - **Preview:** [Studio Workspace Overview](https://pakkawatkh.github.io/Tiffy-App/tiffy-cut/#preview)
 

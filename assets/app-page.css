@@ -393,3 +393,25 @@ footer {
   .hero { padding: 48px 0 32px; }
   .install-box { padding: 24px 20px; }
 }
+
+/* Compact Compatibility Strip */
+.compat-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.compat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
