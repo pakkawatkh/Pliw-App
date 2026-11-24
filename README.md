@@ -12,7 +12,7 @@
 | 🐵 **Monkey Tools** | macOS 13+ | `v2.3.2` | [DMG (1.3 MB)](monkey-tools/monkey-tools-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/monkey-tools/) | [GitHub](https://github.com/pakkawatkh/monkey-tools) |
 | 🖱️ **Tiffy Click** | macOS 13+ | `v1.2.2` | [DMG (2.1 MB)](tiffy-click/tiffy-click-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-click/) | [GitHub](https://github.com/pakkawatkh/Tiffy-Click) |
 | 🧩 **Tiffy Collage** | macOS 13+ | `v3.0.0` | [DMG (1.7 MB)](tiffy-collage/tiffy-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-collage/) | [GitHub](https://github.com/pakkawatkh/Tiffy-Collage) |
-| 📸 **Tiffy Scroll** | Chrome / Brave / Edge | `v1.1.0` | [ZIP (132 KB)](tiffy-scroll/tiffy-scroll-v1.1.0.zip) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-scroll/) | [GitHub](https://github.com/pakkawatkh/tiffy-extension) |
+| 📸 **Tiffy Scroll** | Chrome / Brave / Edge | `v1.1.1` | [ZIP (132 KB)](tiffy-scroll/tiffy-scroll-v1.1.1.zip) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-scroll/) | [GitHub](https://github.com/pakkawatkh/tiffy-extension) |
 | 📍 **Tiffy Geo** | Chrome / Brave / Edge | `v1.0.1` | [ZIP (16 KB)](tiffy-geo/tiffy-geo-v1.0.1.zip) | [Website](https://pakkawatkh.github.io/Tiffy-App/tiffy-geo/) | [GitHub](https://github.com/pakkawatkh/tiffy-extension) |
 
 ---
@@ -31,7 +31,7 @@
 - **What it does:** Native macOS Video Collage Studio (`9:16`, `4:5`, `1:1`, `16:9`, custom grids up to `6×6`), pan/zoom framing, trim, border/corner styling, per-slot audio, and fast MP4 export.
 - **Preview:** [Collage Studio Overview](https://pakkawatkh.github.io/Tiffy-App/tiffy-collage/#preview)
 
-### 📸 Tiffy Scroll (`v1.1.0`) & 📍 Tiffy Geo (`v1.0.1`)
+### 📸 Tiffy Scroll (`v1.1.1`) & 📍 Tiffy Geo (`v1.0.1`)
 - **Tiffy Scroll:** Full-page scrolling screenshot with sticky header protection, freehand drawing & annotation studio (pen, highlighter, arrows, shapes, text, blur, eraser, undo/redo), 8-handle Crop Studio, and one-click `⌘V` copy.
 - **Tiffy Geo:** Interactive browser geolocation spoofer with map picker, search, favorites, GPS jitter, and live N/S/E/W movement controls.
 
