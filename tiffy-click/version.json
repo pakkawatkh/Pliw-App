@@ -1,7 +1,7 @@
 {
-  "latestVersion": "1.0.1",
+  "latestVersion": "1.0.2",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-click/tiffy-click-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/tiffy-click/tiffy-click.zip",
-  "releaseNotes": "- Added Menu Bar Finger Count submenu (2–10 fingers) and Allow More Fingers toggle\n- Expanded Trackpad Settings stepper to 2–10 fingers with quick-pick buttons (2, 3, 4, 5)\n- Full Thai (th) & English (en) bilingual UI support",
-  "publishedAt": "2026-11-24T03:28:00Z"
+  "releaseNotes": "- Added custom macOS App Icon (AppIcon.icns) & About window icon\n- Added Menu Bar Finger Count submenu (2–10 fingers) and Allow More Fingers toggle\n- Full Thai (th) & English (en) bilingual UI support",
+  "publishedAt": "2026-11-24T03:33:00Z"
 }
