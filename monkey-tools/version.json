@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.2.0",
-  "releaseDate": "2026-11-22",
+  "latestVersion": "2.3.0",
+  "releaseDate": "2026-11-24",
   "downloadUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/tiffy-app/monkey-tools/",
-  "releaseNotes": "Instant Background Pre-Translation: warms translation while the translate bubble is visible (180ms settle delay, 4000-char cap) and immediately cancels & clears if dismissed without clicking"
+  "releaseNotes": "v2.3.0: Source app icons & search, Quick Preview (⌘Y), Offline Image OCR (Apple Vision), Hex color swatch & URL quick-open, keyboard shortcuts (⌘P/⌘⌫/⌘T), Pause/Resume capture, Translation History & Translator Excluded Apps, async background storage, and removed Network Speed Monitor for a cleaner Menu Bar."
 }
