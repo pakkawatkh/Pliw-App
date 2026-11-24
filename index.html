@@ -243,15 +243,35 @@
       box-shadow: 0 0 6px #10b981;
     }
 
+    .hero-brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .hero-brand-icon {
+      width: clamp(52px, 6.5vw, 68px);
+      height: clamp(52px, 6.5vw, 68px);
+      border-radius: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.22);
+    }
+
+    .hero-brand-icon svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
     .hero-title {
-      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
       font-weight: 800;
       letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      max-width: 820px;
-      margin-left: auto;
-      margin-right: auto;
+      line-height: 1.1;
+      margin: 0;
       color: var(--text-main);
     }
 
@@ -262,12 +282,12 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
       color: var(--text-sub);
-      max-width: 680px;
-      margin: 0 auto 36px;
-      font-weight: 400;
-      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto 30px;
+      font-weight: 500;
+      line-height: 1.6;
     }
 
     .hero-actions {
@@ -926,10 +946,26 @@
         <span>Free &amp; Open Source · macOS &amp; Chrome</span>
       </div>
 
-      <h1 class="hero-title" style="margin-bottom: 32px;">
-        Small Mac tools<br>
-        <span class="gradient-text">you’ll use every day.</span>
-      </h1>
+      <div class="hero-brand">
+        <div class="hero-brand-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="heroMacBg" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#2c2c2e"/>
+                <stop offset="100%" stop-color="#141416"/>
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="15" fill="url(#heroMacBg)"/>
+            <path d="M23 44.5V20.5H34.5C40 20.5 43.5 23.8 43.5 28.5C43.5 33.2 40 36.5 34.5 36.5H23" stroke="#f5f5f7" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="42.5" cy="43" r="2.6" fill="#a1a1a6"/>
+          </svg>
+        </div>
+        <h1 class="hero-title">Pliw App</h1>
+      </div>
+
+      <p class="hero-subtitle">
+        Small Mac tools <span class="gradient-text" style="font-weight: 600;">you’ll use every day.</span>
+      </p>
 
       <div class="hero-actions">
         <a href="#apps" class="btn-primary">
