@@ -1,7 +1,7 @@
 # 🚀 Pliw App — macOS Productivity Suite & Browser Extensions Hub
 
 > Official public distribution portal and release hub for native macOS utilities and Manifest V3 Chromium extensions crafted by **Pakkawat.k**.  
-> 🌐 **Live Website:** https://pakkawatkh.github.io/Pliw-App/
+> 🌐 **Live Website:** https://pakkawatkh.github.io/pliw-public/
 
 ---
 
@@ -9,11 +9,11 @@
 
 | App / Extension | Platform | Latest Version | Download | Live Page | Source Code |
 | :--- | :--- | :---: | :--- | :--- | :--- |
-| 🐵 **Monkey Tools** | macOS 13+ | `v2.3.5` | [DMG (1.8 MB)](monkey-tools/monkey-tools-Installer.dmg) | [Website](https://pakkawatkh.github.io/Pliw-App/monkey-tools/) | [GitHub](https://github.com/pakkawatkh/monkey-tools) |
-| 🖱️ **Pliw Click** | macOS 13+ | `v1.3.2` | [DMG (2.2 MB)](pliw-click/pliw-click-Installer.dmg) | [Website](https://pakkawatkh.github.io/Pliw-App/pliw-click/) | [GitHub](https://github.com/pakkawatkh/Pliw-Click) |
-| 🧩 **Pliw Collage** | macOS 13+ | `v3.1.2` | [DMG (1.8 MB)](pliw-collage/pliw-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/Pliw-App/pliw-collage/) | [GitHub](https://github.com/pakkawatkh/Pliw-Collage) |
-| 📸 **Pliw Scroll** | Chrome / Brave / Edge | `v1.2.2` | [ZIP (61 KB)](pliw-scroll/pliw-scroll-v1.2.2.zip) | [Website](https://pakkawatkh.github.io/Pliw-App/pliw-scroll/) | [GitHub](https://github.com/pakkawatkh/pliw-extension) |
-| 📍 **Pliw Geo** | Chrome / Brave / Edge | `v1.1.2` | [ZIP (32 KB)](pliw-geo/pliw-geo-v1.1.2.zip) | [Website](https://pakkawatkh.github.io/Pliw-App/pliw-geo/) | [GitHub](https://github.com/pakkawatkh/pliw-extension) |
+| 🐵 **Monkey Tools** | macOS 13+ | `v2.3.5` | [DMG (1.8 MB)](monkey-tools/monkey-tools-Installer.dmg) | [Website](https://pakkawatkh.github.io/pliw-public/monkey-tools/) | [GitHub](https://github.com/pakkawatkh/monkey-tools) |
+| 🖱️ **Pliw Click** | macOS 13+ | `v1.3.2` | [DMG (2.2 MB)](pliw-click/pliw-click-Installer.dmg) | [Website](https://pakkawatkh.github.io/pliw-public/pliw-click/) | [GitHub](https://github.com/pakkawatkh/Pliw-Click) |
+| 🧩 **Pliw Collage** | macOS 13+ | `v3.1.2` | [DMG (1.8 MB)](pliw-collage/pliw-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/pliw-public/pliw-collage/) | [GitHub](https://github.com/pakkawatkh/Pliw-Collage) |
+| 📸 **Pliw Scroll** | Chrome / Brave / Edge | `v1.2.2` | [ZIP (61 KB)](pliw-scroll/pliw-scroll-v1.2.2.zip) | [Website](https://pakkawatkh.github.io/pliw-public/pliw-scroll/) | [GitHub](https://github.com/pakkawatkh/pliw-extension) |
+| 📍 **Pliw Geo** | Chrome / Brave / Edge | `v1.1.2` | [ZIP (32 KB)](pliw-geo/pliw-geo-v1.1.2.zip) | [Website](https://pakkawatkh.github.io/pliw-public/pliw-geo/) | [GitHub](https://github.com/pakkawatkh/pliw-extension) |
 
 ---
 
@@ -21,15 +21,15 @@
 
 ### 🐵 Monkey Tools (`v2.3.5`)
 - **What it does:** Liquid Glass Clipboard History (`⌘⇧V` / `⌥V`), Offline Image OCR (Apple Vision), Continuous Emoji Picker, Smart Selection Translator (`⌘⇧E`), and live Menu Bar Network Speed.
-- **Preview:** [Interactive Showcase & Details](https://pakkawatkh.github.io/Pliw-App/monkey-tools/)
+- **Preview:** [Interactive Showcase & Details](https://pakkawatkh.github.io/pliw-public/monkey-tools/)
 
 ### 🖱️ Pliw Click (`v1.3.2`)
 - **What it does:** Windows-style Browser Autoscroll with a compact `28pt` Apple Liquid Glass 360° orb, 2–10 finger Trackpad Middle-Click & Tap, full Middle-Drag (`otherMouseDragged`), Thai/English UI, and auto-fading glass update toast.
-- **Preview:** [Try Interactive 360° Orb Preview](https://pakkawatkh.github.io/Pliw-App/pliw-click/#preview)
+- **Preview:** [Try Interactive 360° Orb Preview](https://pakkawatkh.github.io/pliw-public/pliw-click/#preview)
 
 ### 🧩 Pliw Collage (`v3.1.2`)
 - **What it does:** Native macOS Video Collage Studio (`9:16`, `4:5`, `1:1`, `16:9`, custom grids up to `6×6`), pan/zoom framing, trim, border/corner styling, per-slot audio, and fast MP4 export.
-- **Preview:** [Collage Studio Overview](https://pakkawatkh.github.io/Pliw-App/pliw-collage/#preview)
+- **Preview:** [Collage Studio Overview](https://pakkawatkh.github.io/pliw-public/pliw-collage/#preview)
 
 ### 📸 Pliw Scroll (`v1.2.2`) & 📍 Pliw Geo (`v1.1.2`)
 - **Pliw Scroll:** Full-page scrolling screenshot with sticky header protection, freehand drawing & annotation studio (pen, highlighter, arrows, shapes, text, blur, eraser, undo/redo), 8-handle Crop Studio, and one-click `⌘V` copy.
