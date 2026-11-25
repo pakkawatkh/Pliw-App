@@ -1,5 +1,1 @@
-# Local sub-project codebases & nested git repositories
-apps/
-
-# macOS Finder metadata
 .DS_Store
