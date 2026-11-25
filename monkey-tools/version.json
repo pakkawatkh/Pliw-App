@@ -1,8 +1,8 @@
 {
-  "latestVersion": "2.3.5",
-  "releaseDate": "2026-11-24",
+  "latestVersion": "2.3.6",
+  "releaseDate": "2026-11-25",
   "downloadUrl": "https://pakkawatkh.github.io/public/monkey-tools/monkey-tools-Installer.dmg",
   "zipUrl": "https://pakkawatkh.github.io/public/monkey-tools/monkey-tools.zip",
   "pageUrl": "https://pakkawatkh.github.io/public/monkey-tools/",
-  "releaseNotes": "v2.3.5: Refined Monkey Tools icon by removing the overlapping clipboard graphic for a cleaner Pliw App badge."
+  "releaseNotes": "v2.3.6: Added persistent Menu Bar popover matching Pliw Click (stays open when toggling options and closes when clicking outside) and updated auto-updater endpoint URL."
 }
