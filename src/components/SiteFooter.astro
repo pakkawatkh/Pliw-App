@@ -1,0 +1,23 @@
+---
+import { APPS, withBase } from '../data/apps';
+
+interface Props {
+  detail?: boolean;
+}
+
+const { detail = false } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class:list={['container', detail && 'container--detail', 'footer-inner']}>
+    <p class="footer-copy">© 2026 Pakkawat.k • Open Source (MIT)</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href={withBase('')}>All Apps</a>
+      {APPS.map((app) => <a href={app.pageUrl}>{app.name}</a>)}
+      <a href={withBase('LICENSE')}>License</a>
+      <a href="https://github.com/pakkawatkh/public" target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+    </nav>
+  </div>
+</footer>

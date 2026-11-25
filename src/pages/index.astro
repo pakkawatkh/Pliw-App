@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CatalogExplorer from '../components/CatalogExplorer';
+import { APPS, withBase } from '../data/apps';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Pliw App',
+  operatingSystem: 'macOS 13+, Google Chrome, Brave Browser, Microsoft Edge',
+  applicationCategory: 'ProductivityApplication',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Pakkawat.k',
+  },
+};
+---
+
+<BaseLayout
+  title="Pliw App — Native macOS Tools & Browser Extensions"
+  description="Open-source macOS productivity utilities and Chromium browser extensions by Pakkawat.k, including Monkey Tools, Pliw Collage, Pliw Click, Pliw Scroll, and Pliw Geo."
+  jsonLd={jsonLd}
+>
+  <SiteHeader variant="home" />
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-brand">
+          <img
+            src={withBase('assets/favicon.svg')}
+            alt="Pliw App"
+            width="104"
+            height="104"
+            class="hero-brand-icon"
+          />
+          <h1 class="hero-title">Pliw App</h1>
+        </div>
+
+        <p class="hero-lead">
+          Open-source macOS utilities and Chromium browser extensions.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#apps" class="btn btn-primary">Browse Apps ↓</a>
+          <a
+            href="https://github.com/pakkawatkh/public"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            GitHub
+          </a>
+        </div>
+
+        <div>
+          <div class="hero-badge">
+            <span class="dot"></span>
+            <span>Free &amp; Open Source · macOS &amp; Chrome</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="apps">
+      <div class="section-header">
+        <div class="section-tag">Catalog</div>
+        <h2 class="section-title">Apps &amp; Extensions</h2>
+      </div>
+
+      <CatalogExplorer client:load apps={APPS} />
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

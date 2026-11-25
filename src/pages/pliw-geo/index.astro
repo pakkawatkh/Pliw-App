@@ -1,0 +1,11 @@
+---
+import AppDetailLayout from '../../layouts/AppDetailLayout.astro';
+import PliwGeoPreview from '../../components/previews/PliwGeoPreview';
+import { getAppBySlug } from '../../data/apps';
+
+const app = getAppBySlug('pliw-geo');
+---
+
+<AppDetailLayout app={app}>
+  <PliwGeoPreview client:load mode="full" />
+</AppDetailLayout>

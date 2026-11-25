@@ -1,0 +1,11 @@
+---
+import AppDetailLayout from '../../layouts/AppDetailLayout.astro';
+import PliwCollagePreview from '../../components/previews/PliwCollagePreview';
+import { getAppBySlug } from '../../data/apps';
+
+const app = getAppBySlug('pliw-collage');
+---
+
+<AppDetailLayout app={app}>
+  <PliwCollagePreview client:load mode="full" />
+</AppDetailLayout>

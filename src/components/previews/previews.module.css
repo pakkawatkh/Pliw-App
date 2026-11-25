@@ -1,0 +1,1059 @@
+/* Scoped CSS Module for Pliw Interactive React Previews */
+
+.pvWindow,
+.pvWindow * {
+  box-sizing: border-box;
+}
+
+.pvWindow {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  position: relative;
+}
+
+.pvCompact {
+  border-radius: 14px;
+  box-shadow: 0 12px 30px -10px rgba(15, 23, 42, 0.14);
+}
+
+.pvFull {
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.pvDark {
+  background: #0b1120;
+  border-color: #1e293b;
+  color: #e2e8f0;
+}
+
+.pvBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.pvCompact .pvBar {
+  padding: 8px 12px;
+  font-size: 0.74rem;
+}
+
+.pvFull .pvBar {
+  padding: 12px 18px;
+  font-size: 0.84rem;
+}
+
+.pvDark .pvBar {
+  background: #111827;
+  border-bottom-color: #1f2937;
+  color: #94a3b8;
+}
+
+.pvBarTitle {
+  color: var(--text);
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.pvDark .pvBarTitle {
+  color: #f8fafc;
+}
+
+.pvDots {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.pvDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pvDotClose {
+  background: #ff5f56;
+  border: 1px solid #e0443e;
+}
+
+.pvDotMin {
+  background: #ffbd2e;
+  border: 1px solid #dea123;
+}
+
+.pvDotMax {
+  background: #27c93f;
+  border: 1px solid #1aab29;
+}
+
+.pvBody {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.pvCompact .pvBody {
+  padding: 10px;
+}
+
+.pvFull .pvBody {
+  padding: 18px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Shared pills / buttons / controls */
+.pillRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.pillBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-sub);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+  white-space: nowrap;
+}
+
+.pillBtn:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.pillBtnActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.pillBtnActive:hover {
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.pillBtnDark {
+  border-color: #334155;
+  background: #1e293b;
+  color: #cbd5e1;
+}
+
+.pillBtnDark:hover {
+  border-color: #475569;
+  color: #ffffff;
+}
+
+.pillBtnDarkActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.pvInput,
+.pvSelect,
+.pvTextarea {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text);
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+}
+
+.pvTextarea {
+  resize: vertical;
+  min-height: 58px;
+  line-height: 1.45;
+}
+
+.pvRange {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ===========================
+   1. Monkey Tools Preview
+   =========================== */
+.mtSurface {
+  background: linear-gradient(145deg, #f8fafc 0%, #eff6ff 55%, #f5f3ff 100%);
+}
+
+.mtTabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 0;
+  margin-bottom: 10px;
+}
+
+.mtTab {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--text-sub);
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  white-space: nowrap;
+}
+
+.pvFull .mtTab {
+  padding: 7px 14px;
+  font-size: 0.82rem;
+}
+
+.mtTab:hover {
+  border-color: var(--accent-border);
+  color: var(--text);
+}
+
+.mtTabActive {
+  background: var(--text);
+  border-color: var(--text);
+  color: #ffffff;
+}
+
+.mtPanel {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 14px;
+  padding: 10px;
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.pvFull .mtPanel {
+  padding: 16px;
+  gap: 12px;
+}
+
+.mtSearchWrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.mtClearBtn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.mtList {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.mtClipRow {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.mtClipMain {
+  min-width: 0;
+  flex: 1;
+}
+
+.mtClipTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.mtClipMeta {
+  font-size: 0.69rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mtClipActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.mtIconBtn {
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text-sub);
+  border-radius: 7px;
+  padding: 3px 7px;
+  font-size: 0.69rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mtIconBtnActive {
+  background: var(--accent-soft);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.mtSwatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.mtOcrBox {
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  font-size: 0.73rem;
+  color: #0c4a6e;
+  display: grid;
+  gap: 3px;
+}
+
+.mtEmojiGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.pvFull .mtEmojiGrid {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.mtEmojiCell {
+  border: 1px solid transparent;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 5px 0;
+  font-size: 1.08rem;
+  line-height: 1.2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.mtEmojiCell:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+  transform: scale(1.06);
+}
+
+.mtLangRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 6px;
+  align-items: center;
+}
+
+.mtSwapBtn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 5px 9px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mtTransOut {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  padding: 9px 10px;
+  font-size: 0.82rem;
+  color: #0c4a6e;
+  word-break: break-word;
+}
+
+.mtNetGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.mtNetCard {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mtNetLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.mtNetVal {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===========================
+   2. Pliw Click Preview
+   =========================== */
+.clickStage {
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+  background: linear-gradient(155deg, #f8fafc 0%, #e0f2fe 54%, #ede9fe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border);
+}
+
+.pvCompact .clickStage {
+  height: 146px;
+}
+
+.pvFull .clickStage {
+  height: 230px;
+}
+
+.clickMockPage {
+  position: absolute;
+  inset: 16px 28px;
+  display: grid;
+  gap: 9px;
+  opacity: 0.45;
+  pointer-events: none;
+  transition: transform 0.14s ease-out;
+}
+
+.clickLine {
+  height: 9px;
+  border-radius: 5px;
+  background: #94a3b8;
+}
+
+.clickOrb {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.2px solid rgba(255, 255, 255, 0.94);
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.pvCompact .clickOrb {
+  width: 34px;
+  height: 34px;
+}
+
+.pvFull .clickOrb {
+  width: 38px;
+  height: 38px;
+}
+
+.clickStageHud {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  pointer-events: none;
+  flex-wrap: wrap;
+}
+
+.clickHudBadge {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.clickControls {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.controlRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.controlLabel {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  font-variant-numeric: tabular-nums;
+}
+
+.sliderWrap {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* ===========================
+   3. Pliw Collage Preview
+   =========================== */
+.collageLayout {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.pvFull .collageLayout {
+  grid-template-columns: 200px minmax(0, 1fr) 210px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .pvFull .collageLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.collagePane {
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.collagePaneTitle {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: 0.02em;
+}
+
+.collageCanvasWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.collageFrame {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 6px;
+  display: grid;
+  overflow: hidden;
+  max-height: 280px;
+}
+
+.pvCompact .collageFrame {
+  max-height: 158px;
+}
+
+.collageSlot {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collageSlotSelected {
+  border-color: #f472b6;
+  box-shadow: 0 0 0 2px rgba(244, 114, 182, 0.35);
+}
+
+.collageSlotFill {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.18s ease, background-position 0.18s ease;
+}
+
+.collageSlotLabel {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.74rem;
+  text-shadow: 0 1px 4px rgba(15, 23, 42, 0.55);
+  pointer-events: none;
+}
+
+.collageMuteBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(15, 23, 42, 0.72);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 2px 5px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.collageMetaLabel {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===========================
+   4. Pliw Scroll Preview
+   =========================== */
+.scrollToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  min-width: 0;
+}
+
+.scrollToolsGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.scrollToolBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-sub);
+  border-radius: 7px;
+  padding: 4px 7px;
+  font-size: 0.71rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.scrollToolBtnActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.scrollColorRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.scrollSwatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.scrollSwatchActive {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--accent);
+}
+
+.scrollStage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  background: #f8fafc;
+  user-select: none;
+  touch-action: none;
+}
+
+.pvCompact .scrollStage {
+  height: 165px;
+}
+
+.pvFull .scrollStage {
+  height: 290px;
+}
+
+.scrollMockPage {
+  position: absolute;
+  inset: 0;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #ffffff;
+  pointer-events: none;
+}
+
+.scrollSvgLayer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  z-index: 2;
+}
+
+.cropBox {
+  position: absolute;
+  border: 2px solid #0284c7;
+  box-shadow: 0 0 0 9999px rgba(15, 23, 42, 0.28);
+  border-radius: 3px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.cropHandle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border: 2px solid #0284c7;
+  border-radius: 2px;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+.cropTag {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.scrollFooter {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.toastPill {
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: #065f46;
+  background: #d1fae5;
+  border: 1px solid #6ee7b7;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===========================
+   5. Pliw Geo Preview
+   =========================== */
+.geoFullGrid {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.pvFull .geoFullGrid {
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .pvFull .geoFullGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.geoMapStage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border);
+  background: linear-gradient(145deg, #ecfdf5 0%, #e0f2fe 100%);
+  cursor: crosshair;
+  user-select: none;
+}
+
+.pvCompact .geoMapStage {
+  height: 156px;
+}
+
+.pvFull .geoMapStage {
+  height: 260px;
+}
+
+.geoMapSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.geoPin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.16s ease, top 0.16s ease;
+}
+
+.geoPinHalo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.geoPinHaloMuted {
+  background: rgba(100, 116, 139, 0.22);
+}
+
+.geoPinCore {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.55);
+}
+
+.geoPinCoreMuted {
+  background: #64748b;
+  box-shadow: none;
+}
+
+.geoCoordsHud {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(15, 23, 42, 0.88);
+  color: #f8fafc;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 8px;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  max-width: calc(100% - 16px);
+}
+
+.geoCityBadge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.geoSidePanel {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.geoControlsCompact {
+  margin-top: 8px;
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.geoNudgePad {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.geoNudgeBtn {
+  width: 28px;
+  height: 26px;
+  border-radius: 7px;
+  border: 1px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.geoNudgeBtn:hover {
+  background: #059669;
+  border-color: #059669;
+  color: #ffffff;
+}
+
+.geoStatusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.71rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.geoStatusActive {
+  background: #ecfdf5;
+  border-color: #6ee7b7;
+  color: #047857;
+}
+
+.geoStatusIdle {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+.geoCodeOut {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 9px;
+  padding: 8px 10px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.7rem;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+  overflow-x: auto;
+}

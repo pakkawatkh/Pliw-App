@@ -1,0 +1,11 @@
+---
+import AppDetailLayout from '../../layouts/AppDetailLayout.astro';
+import MonkeyToolsPreview from '../../components/previews/MonkeyToolsPreview';
+import { getAppBySlug } from '../../data/apps';
+
+const app = getAppBySlug('monkey-tools');
+---
+
+<AppDetailLayout app={app}>
+  <MonkeyToolsPreview client:load mode="full" />
+</AppDetailLayout>

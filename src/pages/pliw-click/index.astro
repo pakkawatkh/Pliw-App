@@ -1,0 +1,11 @@
+---
+import AppDetailLayout from '../../layouts/AppDetailLayout.astro';
+import PliwClickPreview from '../../components/previews/PliwClickPreview';
+import { getAppBySlug } from '../../data/apps';
+
+const app = getAppBySlug('pliw-click');
+---
+
+<AppDetailLayout app={app}>
+  <PliwClickPreview client:load mode="full" />
+</AppDetailLayout>
