@@ -1,8 +1,8 @@
 {
   "latestVersion": "3.1.2",
   "releaseDate": "2026-11-24",
-  "downloadUrl": "https://pakkawatkh.github.io/pliw-public/pliw-collage/pliw-collage-Installer.dmg",
-  "zipUrl": "https://pakkawatkh.github.io/pliw-public/pliw-collage/pliw-collage.zip",
-  "pageUrl": "https://pakkawatkh.github.io/pliw-public/pliw-collage/",
+  "downloadUrl": "https://pakkawatkh.github.io/public/pliw-collage/pliw-collage-Installer.dmg",
+  "zipUrl": "https://pakkawatkh.github.io/public/pliw-collage/pliw-collage.zip",
+  "pageUrl": "https://pakkawatkh.github.io/public/pliw-collage/",
   "releaseNotes": "Redesigned Pliw Collage app icon with frosted-glass collage tiles matching the Pliw App suite."
 }

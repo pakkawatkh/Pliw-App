@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pakkawatkh.github.io/pliw-public/monkey-tools/sitemap.xml
+Sitemap: https://pakkawatkh.github.io/public/monkey-tools/sitemap.xml
