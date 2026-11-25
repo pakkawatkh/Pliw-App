@@ -9,11 +9,11 @@
 
 | App / Extension | Platform | Latest Version | Download | Live Page | Source Code |
 | :--- | :--- | :---: | :--- | :--- | :--- |
-| 🐵 **Monkey Tools** | macOS 13+ | `v2.3.5` | [DMG (1.8 MB)](monkey-tools/monkey-tools-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/monkey-tools/) | [GitHub](https://github.com/pakkawatkh/monkey-tools) |
+| 🐵 **Monkey Tools** | macOS 13+ | `v2.3.5` | [DMG (1.8 MB)](monkey-tools/monkey-tools-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/monkey-tools/) | [GitHub](https://github.com/pakkawatkh/Monkey-Tools) |
 | 🖱️ **Pliw Click** | macOS 13+ | `v1.3.2` | [DMG (2.2 MB)](pliw-click/pliw-click-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-click/) | [GitHub](https://github.com/pakkawatkh/Pliw-Click) |
 | 🧩 **Pliw Collage** | macOS 13+ | `v3.1.2` | [DMG (1.8 MB)](pliw-collage/pliw-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-collage/) | [GitHub](https://github.com/pakkawatkh/Pliw-Collage) |
-| 📸 **Pliw Scroll** | Chrome / Brave / Edge | `v1.2.2` | [ZIP (61 KB)](pliw-scroll/pliw-scroll-v1.2.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-scroll/) | [GitHub](https://github.com/pakkawatkh/pliw-extension) |
-| 📍 **Pliw Geo** | Chrome / Brave / Edge | `v1.1.2` | [ZIP (32 KB)](pliw-geo/pliw-geo-v1.1.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-geo/) | [GitHub](https://github.com/pakkawatkh/pliw-extension) |
+| 📸 **Pliw Scroll** | Chrome / Brave / Edge | `v1.2.2` | [ZIP (61 KB)](pliw-scroll/pliw-scroll-v1.2.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-scroll/) | [GitHub](https://github.com/pakkawatkh/Pliw-Extension) |
+| 📍 **Pliw Geo** | Chrome / Brave / Edge | `v1.1.2` | [ZIP (32 KB)](pliw-geo/pliw-geo-v1.1.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-geo/) | [GitHub](https://github.com/pakkawatkh/Pliw-Extension) |
 
 ---
 
