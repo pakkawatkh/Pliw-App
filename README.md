@@ -11,7 +11,7 @@
 | :--- | :--- | :---: | :--- | :--- | :--- |
 | **Monkey Tools** | macOS 13.0+ | `v2.3.6` | [DMG (1.8 MB)](https://pakkawatkh.github.io/public/monkey-tools/monkey-tools-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/monkey-tools/) | [GitHub](https://github.com/pakkawatkh/Monkey-Tools) |
 | **Pliw Click** | macOS 13.0+ | `v1.3.4` | [DMG (2.1 MB)](https://pakkawatkh.github.io/public/pliw-click/pliw-click-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-click/) | [GitHub](https://github.com/pakkawatkh/Pliw-Click) |
-| **Pliw Collage** | macOS 13.0+ | `v3.1.2` | [DMG (1.8 MB)](https://pakkawatkh.github.io/public/pliw-collage/pliw-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-collage/) | [GitHub](https://github.com/pakkawatkh/Pliw-Collage) |
+| **Pliw Collage** | macOS 13.0+ | `v3.1.3` | [DMG (1.8 MB)](https://pakkawatkh.github.io/public/pliw-collage/pliw-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-collage/) | [GitHub](https://github.com/pakkawatkh/Pliw-Collage) |
 | **Pliw Scroll** | Chrome / Brave / Edge | `v1.2.2` | [ZIP (61 KB)](https://pakkawatkh.github.io/public/pliw-scroll/pliw-scroll-v1.2.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-scroll/) | [GitHub](https://github.com/pakkawatkh/Pliw-Extension) |
 | **Pliw Geo** | Chrome / Brave / Edge | `v1.1.2` | [ZIP (32 KB)](https://pakkawatkh.github.io/public/pliw-geo/pliw-geo-v1.1.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-geo/) | [GitHub](https://github.com/pakkawatkh/Pliw-Extension) |
 
@@ -27,7 +27,7 @@
 - **Overview:** Windows-style browser autoscroll with a compact `28pt` frosted-glass 360° orb, 2–10 finger Trackpad middle-click & tap, full Middle-Drag, Thai/English UI, and floating glass update toast.
 - **Interactive Preview:** [360° Orb Preview](https://pakkawatkh.github.io/public/pliw-click/#preview)
 
-### Pliw Collage (`v3.1.2`)
+### Pliw Collage (`v3.1.3`)
 - **Overview:** Native macOS Video Collage Studio (`9:16`, `4:5`, `1:1`, `16:9`, custom grids up to `6×6`), pan/zoom framing, trim, border/corner styling, per-slot audio, and fast MP4 export.
 - **Interactive Preview:** [Collage Studio Preview](https://pakkawatkh.github.io/public/pliw-collage/#preview)
 
