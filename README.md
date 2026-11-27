@@ -13,6 +13,7 @@
 | **Pliw Click** | macOS 13.0+ | `v1.3.4` | [DMG (2.1 MB)](https://pakkawatkh.github.io/public/pliw-click/pliw-click-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-click/) | [GitHub](https://github.com/pakkawatkh/Pliw-Click) |
 | **Pliw Collage** | macOS 13.0+ | `v3.1.3` | [DMG (1.8 MB)](https://pakkawatkh.github.io/public/pliw-collage/pliw-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-collage/) | [GitHub](https://github.com/pakkawatkh/Pliw-Collage) |
 | **Pliw Face** | macOS 13.0+ | `v1.0.0` | [DMG (8.0 MB)](https://pakkawatkh.github.io/public/pliw-face/pliw-face-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-face/) | [GitHub](https://github.com/pakkawatkh/Pliw-face) |
+| **Pliw Mix** | macOS 14.2+ | `v1.0.0` | [DMG (1.9 MB)](https://pakkawatkh.github.io/public/pliw-mix/pliw-mix-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-mix/) | [GitHub](https://github.com/pakkawatkh/Pliw-Mix) |
 | **Pliw Scroll** | Chrome / Brave / Edge | `v1.2.2` | [ZIP (61 KB)](https://pakkawatkh.github.io/public/pliw-scroll/pliw-scroll-v1.2.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-scroll/) | [GitHub](https://github.com/pakkawatkh/Pliw-Extension) |
 | **Pliw Geo** | Chrome / Brave / Edge | `v1.1.2` | [ZIP (32 KB)](https://pakkawatkh.github.io/public/pliw-geo/pliw-geo-v1.1.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-geo/) | [GitHub](https://github.com/pakkawatkh/Pliw-Extension) |
 
@@ -27,6 +28,10 @@
 ### Pliw Face (`v1.0.0`)
 - **Overview:** On-device macOS Face Unlock with 17-angle circular enrollment, anti-spoofing liveness modes, and Dynamic Island / Notch Wings Lock Screen HUD.
 - **Interactive Preview:** [Pliw Face HUD Preview](https://pakkawatkh.github.io/public/pliw-face/#preview)
+
+### Pliw Mix (`v1.0.0`)
+- **Overview:** Native macOS 14.2+ Menu Bar per-app audio mixer with volume control, mute, per-app output routing via Core Audio Process Taps, and automatic browser helper grouping.
+- **Interactive Preview:** [Pliw Mix Audio Mixer Preview](https://pakkawatkh.github.io/public/pliw-mix/#preview)
 
 ### Pliw Click (`v1.3.4`)
 - **Overview:** Windows-style browser autoscroll with a compact `28pt` frosted-glass 360° orb, 2–10 finger Trackpad middle-click & tap, full Middle-Drag, Thai/English UI, and floating glass update toast.
@@ -44,15 +49,16 @@
 
 ## Installation Guide
 
-### macOS Native Apps (`Monkey Tools`, `Pliw Click`, `Pliw Collage`, `Pliw Face`)
+### macOS Native Apps (`Monkey Tools`, `Pliw Click`, `Pliw Collage`, `Pliw Face`, `Pliw Mix`)
 1. Download the `.dmg` installer from the table above and open it.
-2. Drag the app bundle into your **Applications** folder (`monkey-tools.app`, `Pliw Click.app`, `Pliw Collage.app`, or `Pliw Face.app`).
+2. Drag the app bundle into your **Applications** folder (`monkey-tools.app`, `Pliw Click.app`, `Pliw Collage.app`, `Pliw Face.app`, or `Pliw Mix.app`).
 3. **First-time Gatekeeper unblock:** If macOS reports that the developer cannot be verified, allow the app in **System Settings → Privacy & Security → Open Anyway**, or run the corresponding command in Terminal:
    ```bash
    xattr -cr "/Applications/monkey-tools.app"
    xattr -cr "/Applications/Pliw Click.app"
    xattr -cr "/Applications/Pliw Collage.app"
    xattr -cr "/Applications/Pliw Face.app"
+   xattr -cr "/Applications/Pliw Mix.app"
    ```
 4. **Accessibility Permission** *(required for `Monkey Tools`, `Pliw Click`, and `Pliw Face`)*:
    - Enable the app in **System Settings → Privacy & Security → Accessibility**.

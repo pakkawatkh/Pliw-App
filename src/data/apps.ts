@@ -380,6 +380,52 @@ const APP_SPECS: StaticAppSpec[] = [
     }),
   },
   {
+    slug: 'pliw-mix',
+    name: 'Pliw Mix',
+    category: 'app',
+    platformLabel: 'macOS 14.2+',
+    compatibilityPill: 'macOS 14.2+ (Apple Silicon & Intel)',
+    footerPlatform: 'macOS 14.2+',
+    description:
+      'Control per-app volume, mute, and audio output routing from the macOS Menu Bar using Core Audio Process Taps.',
+    seoTitle: 'Pliw Mix — Per-App Audio Mixer for macOS',
+    seoDescription:
+      'Native macOS 14.2+ Menu Bar per-app audio mixer with volume control, mute, and per-app output routing without virtual audio drivers.',
+    githubUrl: 'https://github.com/pakkawatkh/Pliw-Mix',
+    iconRelPath: 'pliw-mix/assets/icon.png',
+    bundleOrFolderName: 'Pliw Mix.app',
+    gatekeeperCommand: 'xattr -cr "/Applications/Pliw Mix.app"',
+    requiresAccessibility: false,
+    theme: {
+      accent: '#f97316',
+      accent2: '#e11d48',
+      accentSoft: '#fff7ed',
+      accentBorder: '#fed7aa',
+      glowRgb: '249, 115, 22',
+      badgeBg: '#fff7ed',
+      badgeColor: '#c2410c',
+      badgeBorder: '#fed7aa',
+    },
+    buildQuickInstall: (downloadFilename) => ({
+      packageLabel: downloadFilename,
+      bundleOrFolderName: 'Pliw Mix.app',
+      gatekeeperCommand: 'xattr -cr "/Applications/Pliw Mix.app"',
+      requiresAccessibility: false,
+      steps: [
+        {
+          text: `Open ${downloadFilename} and drag Pliw Mix.app to Applications.`,
+        },
+        {
+          text: 'If blocked by Gatekeeper, allow in System Settings → Privacy & Security or run:',
+          terminalCommand: 'xattr -cr "/Applications/Pliw Mix.app"',
+        },
+        {
+          text: 'Allow Pliw Mix under System Settings → Privacy & Security → Screen & System Audio Recording (System Audio Recording Only).',
+        },
+      ],
+    }),
+  },
+  {
     slug: 'pliw-scroll',
     name: 'Pliw Scroll',
     category: 'extension',

@@ -7,6 +7,7 @@ export type AppSlug =
   | 'pliw-collage'
   | 'pliw-click'
   | 'pliw-face'
+  | 'pliw-mix'
   | 'pliw-scroll'
   | 'pliw-geo';
 

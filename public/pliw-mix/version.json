@@ -1,0 +1,8 @@
+{
+  "latestVersion": "1.0.0",
+  "releaseDate": "2026-11-27",
+  "downloadUrl": "https://pakkawatkh.github.io/public/pliw-mix/pliw-mix-Installer.dmg",
+  "zipUrl": "https://pakkawatkh.github.io/public/pliw-mix/pliw-mix.zip",
+  "pageUrl": "https://pakkawatkh.github.io/public/pliw-mix/",
+  "releaseNotes": "Initial release with per-app volume and mute control, per-app output device routing via Core Audio Process Taps, automatic browser and Electron helper grouping, and Launch at Login."
+}

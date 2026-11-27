@@ -1,0 +1,11 @@
+---
+import AppDetailLayout from '../../layouts/AppDetailLayout.astro';
+import PliwMixPreview from '../../components/previews/PliwMixPreview';
+import { getAppBySlug } from '../../data/apps';
+
+const app = getAppBySlug('pliw-mix');
+---
+
+<AppDetailLayout app={app}>
+  <PliwMixPreview client:load mode="full" />
+</AppDetailLayout>
