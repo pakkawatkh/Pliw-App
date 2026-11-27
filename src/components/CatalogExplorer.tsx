@@ -3,6 +3,7 @@ import type { AppEntry, AppSlug } from '../data/types';
 import { MonkeyToolsPreview } from './previews/MonkeyToolsPreview';
 import { PliwClickPreview } from './previews/PliwClickPreview';
 import { PliwCollagePreview } from './previews/PliwCollagePreview';
+import { PliwFacePreview } from './previews/PliwFacePreview';
 import { PliwScrollPreview } from './previews/PliwScrollPreview';
 import { PliwGeoPreview } from './previews/PliwGeoPreview';
 
@@ -35,6 +36,8 @@ function CompactPreviewSwitch({ slug }: { slug: AppSlug }) {
       return <PliwCollagePreview mode="compact" />;
     case 'pliw-click':
       return <PliwClickPreview mode="compact" />;
+    case 'pliw-face':
+      return <PliwFacePreview mode="compact" />;
     case 'pliw-scroll':
       return <PliwScrollPreview mode="compact" />;
     case 'pliw-geo':

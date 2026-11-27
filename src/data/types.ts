@@ -6,6 +6,7 @@ export type AppSlug =
   | 'monkey-tools'
   | 'pliw-collage'
   | 'pliw-click'
+  | 'pliw-face'
   | 'pliw-scroll'
   | 'pliw-geo';
 

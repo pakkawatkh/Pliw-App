@@ -7,10 +7,9 @@ export interface MonkeyToolsPreviewProps {
   mode?: PreviewMode;
 }
 
-type ModuleTab = 'clipboard' | 'emoji' | 'translator' | 'network';
+type ModuleTab = 'clipboard' | 'emoji' | 'translator';
 type ClipboardFilter = 'all' | 'text' | 'image' | 'pinned';
 type EmojiCategory = 'recent' | 'smileys' | 'people' | 'animals' | 'food' | 'symbols';
-type SpeedUnit = 'auto' | 'bits' | 'kb' | 'mb';
 
 interface ClipboardItem {
   id: string;
@@ -36,7 +35,6 @@ const MODULE_TABS: ReadonlyArray<{ id: ModuleTab; label: string }> = [
   { id: 'clipboard', label: 'Clipboard' },
   { id: 'emoji', label: 'Emoji' },
   { id: 'translator', label: 'Translator' },
-  { id: 'network', label: 'Network' },
 ];
 
 const INITIAL_CLIPBOARD_ITEMS: ClipboardItem[] = [
@@ -144,40 +142,6 @@ const SAMPLE_TRANSLATIONS: Record<string, string> = {
   en: 'Select any text on screen or type to translate.',
 };
 
-const NETWORK_SAMPLES: ReadonlyArray<[number, number]> = [
-  [18.4 * 1024 * 1024, 4.2 * 1024 * 1024],
-  [21.6 * 1024 * 1024, 4.9 * 1024 * 1024],
-  [16.8 * 1024 * 1024, 3.7 * 1024 * 1024],
-  [24.1 * 1024 * 1024, 5.4 * 1024 * 1024],
-  [19.2 * 1024 * 1024, 4.5 * 1024 * 1024],
-];
-
-function formatNetworkRate(bytesPerSec: number, unit: SpeedUnit): string {
-  if (unit === 'bits') {
-    const bits = bytesPerSec * 8;
-    if (bits >= 1_000_000_000) return `${(bits / 1_000_000_000).toFixed(2)} Gbps`;
-    if (bits >= 1_000_000) return `${(bits / 1_000_000).toFixed(1)} Mbps`;
-    if (bits >= 1_000) return `${(bits / 1_000).toFixed(0)} Kbps`;
-    return `${Math.round(bits)} bps`;
-  }
-  if (unit === 'kb') {
-    return `${Math.round(bytesPerSec / 1024)} KB/s`;
-  }
-  if (unit === 'mb') {
-    return `${(bytesPerSec / (1024 * 1024)).toFixed(2)} MB/s`;
-  }
-  if (bytesPerSec >= 1024 * 1024 * 1024) {
-    return `${(bytesPerSec / (1024 * 1024 * 1024)).toFixed(2)} GB/s`;
-  }
-  if (bytesPerSec >= 1024 * 1024) {
-    return `${(bytesPerSec / (1024 * 1024)).toFixed(1)} MB/s`;
-  }
-  if (bytesPerSec >= 1024) {
-    return `${Math.round(bytesPerSec / 1024)} KB/s`;
-  }
-  return `${Math.round(bytesPerSec)} B/s`;
-}
-
 export function MonkeyToolsPreview({ mode = 'full' }: MonkeyToolsPreviewProps) {
   const isCompact = mode === 'compact';
   const [activeTab, setActiveTab] = useState<ModuleTab>('clipboard');
@@ -206,13 +170,6 @@ export function MonkeyToolsPreview({ mode = 'full' }: MonkeyToolsPreviewProps) {
   const speakTimerRef = useRef<number | null>(null);
   const replaceTimerRef = useRef<number | null>(null);
 
-  // Network state
-  const [isNetworkLive, setIsNetworkLive] = useState(true);
-  const [speedUnit, setSpeedUnit] = useState<SpeedUnit>('auto');
-  const [sampleIndex, setSampleIndex] = useState(0);
-  const [sessionDownBytes, setSessionDownBytes] = useState(142.8 * 1024 * 1024);
-  const [sessionUpBytes, setSessionUpBytes] = useState(28.4 * 1024 * 1024);
-
   useEffect(() => {
     return () => {
       if (ocrTimerRef.current !== null) window.clearTimeout(ocrTimerRef.current);
@@ -220,20 +177,6 @@ export function MonkeyToolsPreview({ mode = 'full' }: MonkeyToolsPreviewProps) {
       if (replaceTimerRef.current !== null) window.clearTimeout(replaceTimerRef.current);
     };
   }, []);
-
-  useEffect(() => {
-    if (activeTab !== 'network' || !isNetworkLive) return;
-    const intervalId = window.setInterval(() => {
-      setSampleIndex((prev) => {
-        const next = (prev + 1) % NETWORK_SAMPLES.length;
-        const [down, up] = NETWORK_SAMPLES[next];
-        setSessionDownBytes((total) => total + down);
-        setSessionUpBytes((total) => total + up);
-        return next;
-      });
-    }, 1000);
-    return () => window.clearInterval(intervalId);
-  }, [activeTab, isNetworkLive]);
 
   const handleTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, idx: number) => {
     let nextIdx: number | null = null;
@@ -345,7 +288,6 @@ export function MonkeyToolsPreview({ mode = 'full' }: MonkeyToolsPreviewProps) {
     }, 1800);
   };
 
-  const [downBps, upBps] = NETWORK_SAMPLES[sampleIndex];
 
   return (
     <div
@@ -656,71 +598,6 @@ export function MonkeyToolsPreview({ mode = 'full' }: MonkeyToolsPreviewProps) {
                 >
                   {replacedNotice ? 'Replaced in active field' : 'Replace In-Place'}
                 </button>
-              </div>
-            </>
-          )}
-
-          {activeTab === 'network' && (
-            <>
-              <div className={styles.controlRow}>
-                <span className={styles.statusBadge}>
-                  {isNetworkLive ? 'Live · 1s' : 'Paused'}
-                </span>
-                <button
-                  type="button"
-                  className={`${styles.pillBtn} ${isNetworkLive ? styles.pillBtnActive : ''}`}
-                  onClick={() => setIsNetworkLive((prev) => !prev)}
-                >
-                  {isNetworkLive ? 'Pause' : 'Resume'}
-                </button>
-              </div>
-
-              <div className={styles.mtNetGrid}>
-                <div className={styles.mtNetCard}>
-                  <span className={styles.mtNetLabel}>⬇ Download</span>
-                  <span className={styles.mtNetVal}>{formatNetworkRate(downBps, speedUnit)}</span>
-                </div>
-                <div className={styles.mtNetCard}>
-                  <span className={styles.mtNetLabel}>⬆ Upload</span>
-                  <span className={styles.mtNetVal}>{formatNetworkRate(upBps, speedUnit)}</span>
-                </div>
-                {!isCompact && (
-                  <>
-                    <div className={styles.mtNetCard}>
-                      <span className={styles.mtNetLabel}>Session Down</span>
-                      <span className={styles.mtNetVal}>
-                        {(sessionDownBytes / (1024 * 1024)).toFixed(1)} MB
-                      </span>
-                    </div>
-                    <div className={styles.mtNetCard}>
-                      <span className={styles.mtNetLabel}>Session Up</span>
-                      <span className={styles.mtNetVal}>
-                        {(sessionUpBytes / (1024 * 1024)).toFixed(1)} MB
-                      </span>
-                    </div>
-                  </>
-                )}
-              </div>
-
-              <div className={styles.pillRow}>
-                {(
-                  [
-                    { id: 'auto', label: 'Auto Bytes' },
-                    { id: 'bits', label: 'Bits' },
-                    { id: 'kb', label: 'KB/s' },
-                    { id: 'mb', label: 'MB/s' },
-                  ] as const
-                ).map((u) => (
-                  <button
-                    key={u.id}
-                    type="button"
-                    aria-pressed={speedUnit === u.id}
-                    className={`${styles.pillBtn} ${speedUnit === u.id ? styles.pillBtnActive : ''}`}
-                    onClick={() => setSpeedUnit(u.id)}
-                  >
-                    {u.label}
-                  </button>
-                ))}
               </div>
             </>
           )}

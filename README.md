@@ -12,6 +12,7 @@
 | **Monkey Tools** | macOS 13.0+ | `v2.3.6` | [DMG (1.8 MB)](https://pakkawatkh.github.io/public/monkey-tools/monkey-tools-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/monkey-tools/) | [GitHub](https://github.com/pakkawatkh/Monkey-Tools) |
 | **Pliw Click** | macOS 13.0+ | `v1.3.4` | [DMG (2.1 MB)](https://pakkawatkh.github.io/public/pliw-click/pliw-click-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-click/) | [GitHub](https://github.com/pakkawatkh/Pliw-Click) |
 | **Pliw Collage** | macOS 13.0+ | `v3.1.3` | [DMG (1.8 MB)](https://pakkawatkh.github.io/public/pliw-collage/pliw-collage-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-collage/) | [GitHub](https://github.com/pakkawatkh/Pliw-Collage) |
+| **Pliw Face** | macOS 13.0+ | `v1.0.0` | [DMG (8.0 MB)](https://pakkawatkh.github.io/public/pliw-face/pliw-face-Installer.dmg) | [Website](https://pakkawatkh.github.io/public/pliw-face/) | [GitHub](https://github.com/pakkawatkh/Pliw-face) |
 | **Pliw Scroll** | Chrome / Brave / Edge | `v1.2.2` | [ZIP (61 KB)](https://pakkawatkh.github.io/public/pliw-scroll/pliw-scroll-v1.2.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-scroll/) | [GitHub](https://github.com/pakkawatkh/Pliw-Extension) |
 | **Pliw Geo** | Chrome / Brave / Edge | `v1.1.2` | [ZIP (32 KB)](https://pakkawatkh.github.io/public/pliw-geo/pliw-geo-v1.1.2.zip) | [Website](https://pakkawatkh.github.io/public/pliw-geo/) | [GitHub](https://github.com/pakkawatkh/Pliw-Extension) |
 
@@ -20,8 +21,12 @@
 ## App Highlights & Previews
 
 ### Monkey Tools (`v2.3.6`)
-- **Overview:** Clipboard history, offline image OCR (Apple Vision), continuous emoji picker, smart selection translator, and live Menu Bar network speed monitor.
+- **Overview:** Clipboard history, offline image OCR (Apple Vision), continuous emoji picker, and smart selection translator.
 - **Interactive Preview:** [Monkey Tools Showcase](https://pakkawatkh.github.io/public/monkey-tools/#preview)
+
+### Pliw Face (`v1.0.0`)
+- **Overview:** On-device macOS Face Unlock with 17-angle circular enrollment, anti-spoofing liveness modes, and Dynamic Island / Notch Wings Lock Screen HUD.
+- **Interactive Preview:** [Pliw Face HUD Preview](https://pakkawatkh.github.io/public/pliw-face/#preview)
 
 ### Pliw Click (`v1.3.4`)
 - **Overview:** Windows-style browser autoscroll with a compact `28pt` frosted-glass 360° orb, 2–10 finger Trackpad middle-click & tap, full Middle-Drag, Thai/English UI, and floating glass update toast.
@@ -39,16 +44,17 @@
 
 ## Installation Guide
 
-### macOS Native Apps (`Monkey Tools`, `Pliw Click`, `Pliw Collage`)
+### macOS Native Apps (`Monkey Tools`, `Pliw Click`, `Pliw Collage`, `Pliw Face`)
 1. Download the `.dmg` installer from the table above and open it.
-2. Drag the app bundle into your **Applications** folder (`monkey-tools.app`, `Pliw Click.app`, or `Pliw Collage.app`).
+2. Drag the app bundle into your **Applications** folder (`monkey-tools.app`, `Pliw Click.app`, `Pliw Collage.app`, or `Pliw Face.app`).
 3. **First-time Gatekeeper unblock:** If macOS reports that the developer cannot be verified, allow the app in **System Settings → Privacy & Security → Open Anyway**, or run the corresponding command in Terminal:
    ```bash
    xattr -cr "/Applications/monkey-tools.app"
    xattr -cr "/Applications/Pliw Click.app"
    xattr -cr "/Applications/Pliw Collage.app"
+   xattr -cr "/Applications/Pliw Face.app"
    ```
-4. **Accessibility Permission** *(required for `Monkey Tools` and `Pliw Click`)*:
+4. **Accessibility Permission** *(required for `Monkey Tools`, `Pliw Click`, and `Pliw Face`)*:
    - Enable the app in **System Settings → Privacy & Security → Accessibility**.
 
 ### Chromium Browser Extensions (`Pliw Scroll`, `Pliw Geo`)

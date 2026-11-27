@@ -1,0 +1,8 @@
+{
+  "latestVersion": "1.0.0",
+  "releaseDate": "2026-11-27",
+  "downloadUrl": "https://pakkawatkh.github.io/public/pliw-face/pliw-face-Installer.dmg",
+  "zipUrl": "https://pakkawatkh.github.io/public/pliw-face/pliw-face.zip",
+  "pageUrl": "https://pakkawatkh.github.io/public/pliw-face/",
+  "releaseNotes": "Initial release with on-device Apple Neural Engine face recognition, 17-angle circular enrollment, anti-spoofing liveness modes, and Dynamic Island / Notch Wings Lock Screen HUD."
+}

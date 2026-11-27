@@ -334,6 +334,52 @@ const APP_SPECS: StaticAppSpec[] = [
     }),
   },
   {
+    slug: 'pliw-face',
+    name: 'Pliw Face',
+    category: 'app',
+    platformLabel: 'macOS 13.0+',
+    compatibilityPill: 'macOS 13.0+ (Apple Silicon & Intel)',
+    footerPlatform: 'macOS 13.0+',
+    description:
+      'On-device Face Unlock for macOS with 17-angle enrollment, anti-spoofing liveness checks, and a Dynamic Island Notch HUD.',
+    seoTitle: 'Pliw Face — On-Device Face Unlock for macOS',
+    seoDescription:
+      'Unlock your Mac on-device with Apple Neural Engine face recognition, anti-spoofing liveness checks, and Dynamic Island or Notch Wings HUD.',
+    githubUrl: 'https://github.com/pakkawatkh/Pliw-face',
+    iconRelPath: 'pliw-face/assets/icon.png',
+    bundleOrFolderName: 'Pliw Face.app',
+    gatekeeperCommand: 'xattr -cr "/Applications/Pliw Face.app"',
+    requiresAccessibility: true,
+    theme: {
+      accent: '#10b981',
+      accent2: '#0d9488',
+      accentSoft: '#ecfdf5',
+      accentBorder: '#a7f3d0',
+      glowRgb: '16, 185, 129',
+      badgeBg: '#ecfdf5',
+      badgeColor: '#047857',
+      badgeBorder: '#a7f3d0',
+    },
+    buildQuickInstall: (downloadFilename) => ({
+      packageLabel: downloadFilename,
+      bundleOrFolderName: 'Pliw Face.app',
+      gatekeeperCommand: 'xattr -cr "/Applications/Pliw Face.app"',
+      requiresAccessibility: true,
+      steps: [
+        {
+          text: `Open ${downloadFilename} and drag Pliw Face.app to Applications.`,
+        },
+        {
+          text: 'If blocked by Gatekeeper, allow in System Settings → Privacy & Security or run:',
+          terminalCommand: 'xattr -cr "/Applications/Pliw Face.app"',
+        },
+        {
+          text: 'Grant Camera and Accessibility permissions in System Settings, then enroll your face inside Setup.',
+        },
+      ],
+    }),
+  },
+  {
     slug: 'pliw-scroll',
     name: 'Pliw Scroll',
     category: 'extension',

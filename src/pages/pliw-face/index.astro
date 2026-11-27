@@ -1,0 +1,11 @@
+---
+import AppDetailLayout from '../../layouts/AppDetailLayout.astro';
+import PliwFacePreview from '../../components/previews/PliwFacePreview';
+import { getAppBySlug } from '../../data/apps';
+
+const app = getAppBySlug('pliw-face');
+---
+
+<AppDetailLayout app={app}>
+  <PliwFacePreview client:load mode="full" />
+</AppDetailLayout>
