@@ -1057,3 +1057,240 @@
   font-variant-numeric: tabular-nums;
   overflow-x: auto;
 }
+
+/* ===========================
+   6. Pliw Face Preview
+   =========================== */
+.pfStage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(16, 185, 129, 0.34), transparent 52%),
+    radial-gradient(circle at 82% 84%, rgba(14, 165, 233, 0.28), transparent 54%),
+    linear-gradient(155deg, #0b1120 0%, #0f172a 50%, #06282d 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.pvCompact .pfStage {
+  height: 174px;
+  padding-bottom: 12px;
+}
+
+.pvFull .pfStage {
+  height: 268px;
+  padding-bottom: 20px;
+}
+
+.pfMenuBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.64rem;
+  font-weight: 600;
+  color: rgba(248, 250, 252, 0.78);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pfNotchAnchor {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pfNotchBody {
+  position: relative;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    width 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.36);
+}
+
+.pfNotchBody::before,
+.pfNotchBody::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+
+.pfNotchBody::before {
+  left: -12px;
+  background: radial-gradient(circle at 0 100%, transparent 11.5px, #000000 12px);
+}
+
+.pfNotchBody::after {
+  right: -12px;
+  background: radial-gradient(circle at 100% 100%, transparent 11.5px, #000000 12px);
+}
+
+.pfShake {
+  animation: pfShakeAnim 0.42s ease-in-out;
+}
+
+@keyframes pfShakeAnim {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(4px); }
+}
+
+.pfFaceScan {
+  animation: pfFaceLook 1.3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes pfFaceLook {
+  0%, 100% { transform: perspective(120px) rotateY(-12deg) scale(0.96); }
+  50% { transform: perspective(120px) rotateY(12deg) scale(1.03); }
+}
+
+.pfRingDraw {
+  stroke-dasharray: 126;
+  stroke-dashoffset: 126;
+  animation: pfStrokeReveal 0.32s ease-out forwards;
+}
+
+.pfCheckDraw {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: pfStrokeReveal 0.24s ease-out 0.16s forwards;
+}
+
+@keyframes pfStrokeReveal {
+  to { stroke-dashoffset: 0; }
+}
+
+.pfWingsRow {
+  width: 100%;
+  height: 100%;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.pfClockWrap {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.94);
+  z-index: 2;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.pfClockDate {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(226, 232, 240, 0.72);
+  letter-spacing: 0.01em;
+}
+
+.pfClockTime {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+
+.pvCompact .pfClockTime {
+  font-size: 1.65rem;
+}
+
+.pvFull .pfClockTime {
+  font-size: 2.65rem;
+}
+
+.pfLoginPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 6px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.56);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  z-index: 2;
+}
+
+.pfAvatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2c2c2e, #141416);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #f8fafc;
+  font-size: 0.62rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pfPassDots {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  min-width: 92px;
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+}
+
+.pfEnrollStage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: radial-gradient(circle at 50% 42%, #132234 0%, #0a0f1a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: crosshair;
+  user-select: none;
+}
+
+.pvCompact .pfEnrollStage {
+  height: 174px;
+}
+
+.pvFull .pfEnrollStage {
+  height: 268px;
+}
+
+.pfEnrollCaption {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(248, 250, 252, 0.88);
+}
+
+.pfEnrollSub {
+  font-size: 0.64rem;
+  color: rgba(148, 163, 184, 0.85);
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
