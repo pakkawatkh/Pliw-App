@@ -345,7 +345,7 @@ const APP_SPECS: StaticAppSpec[] = [
     seoTitle: 'Pliw Face — On-Device Face Unlock for macOS',
     seoDescription:
       'Unlock your Mac on-device with Apple Neural Engine face recognition, anti-spoofing liveness checks, and Dynamic Island or Notch Wings HUD.',
-    githubUrl: 'https://github.com/pakkawatkh/Pliw-face',
+    githubUrl: 'https://github.com/pakkawatkh/Pliw-Face',
     iconRelPath: 'pliw-face/assets/icon.png',
     bundleOrFolderName: 'Pliw Face.app',
     gatekeeperCommand: 'xattr -cr "/Applications/Pliw Face.app"',
