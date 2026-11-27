@@ -3,13 +3,22 @@ import { withBase } from '../utils/paths';
 
 interface Props {
   variant: 'home' | 'detail';
+  activePage?: 'home' | 'about';
   appName?: string;
   appSlug?: string;
   appIcon?: string;
 }
 
-const { variant, appName = 'Pliw App', appSlug = '', appIcon = 'assets/favicon.svg' } = Astro.props;
+const {
+  variant,
+  activePage = 'home',
+  appName = 'Pliw App',
+  appSlug = '',
+  appIcon = 'assets/favicon.svg',
+} = Astro.props;
 const homeUrl = withBase('');
+const aboutUrl = withBase('about/');
+const isAbout = activePage === 'about';
 ---
 
 <header class="site-header">
@@ -31,10 +40,20 @@ const homeUrl = withBase('');
           <nav aria-label="Primary">
             <ul class="nav-links">
               <li>
-                <a href="#apps" data-nav-filter="app">Apps</a>
+                <a href={isAbout ? `${homeUrl}#apps` : '#apps'} data-nav-filter={isAbout ? undefined : 'app'}>
+                  Apps
+                </a>
               </li>
               <li>
-                <a href="#extensions" data-nav-filter="extension">Extensions</a>
+                <a
+                  href={isAbout ? `${homeUrl}#extensions` : '#extensions'}
+                  data-nav-filter={isAbout ? undefined : 'extension'}
+                >
+                  Extensions
+                </a>
+              </li>
+              <li>
+                <a href={aboutUrl} aria-current={isAbout ? 'page' : undefined}>About</a>
               </li>
             </ul>
           </nav>

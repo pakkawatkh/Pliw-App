@@ -1,0 +1,336 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { APPS } from '../../data/apps';
+
+const techStack = [
+  'Swift',
+  'SwiftUI',
+  'AppKit',
+  'Core ML & Vision',
+  'TypeScript',
+  'React',
+  'Astro',
+  'Chrome Manifest V3',
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Pakkawat Khotarut',
+  alternateName: 'Pakkawat.k',
+  url: 'https://pakkawatkh.github.io/public/about/',
+  sameAs: ['https://github.com/pakkawatkh'],
+  jobTitle: 'Indie macOS & Web Developer',
+};
+---
+
+<BaseLayout
+  title="About — Pakkawat.k · Pliw App"
+  description="About Pakkawat Khotarut (Pakkawat.k), indie developer building open-source macOS utilities and Chromium browser extensions under Pliw App."
+  ogType="profile"
+  jsonLd={jsonLd}
+>
+  <SiteHeader variant="home" activePage="about" />
+
+  <main class="about-main">
+    <div class="container container--detail">
+      <section class="about-hero">
+        <img
+          src="https://avatars.githubusercontent.com/u/87006506?v=4"
+          alt="Pakkawat Khotarut"
+          width="88"
+          height="88"
+          class="about-avatar"
+          loading="eager"
+        />
+        <div class="about-intro">
+          <p class="about-eyebrow">About Me</p>
+          <h1 class="about-name">Pakkawat Khotarut</h1>
+          <p class="about-role">Indie macOS &amp; Web Developer · @pakkawatkh</p>
+          <div class="about-actions">
+            <a
+              href="https://github.com/pakkawatkh"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              GitHub Profile
+            </a>
+            <a
+              href="https://github.com/pakkawatkh/public/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              Report a Bug / Say Hi
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-card">
+        <h2 class="about-heading">Why Pliw App</h2>
+        <p class="about-copy">
+          I build small, focused macOS utilities and browser extensions to fix everyday friction on
+          my own Mac — from clipboard history and offline OCR to trackpad middle-click, video
+          collages, and on-device face unlock.
+        </p>
+        <p class="about-copy">
+          Everything here is built to run locally on your machine using native Swift, AppKit,
+          Apple Vision, and Core ML, or lightweight Manifest V3 extensions. No accounts, no
+          tracking, and all source code is open under the MIT license.
+        </p>
+      </section>
+
+      <section class="about-card">
+        <h2 class="about-heading">Tech Stack</h2>
+        <ul class="stack-list" aria-label="Technologies">
+          {techStack.map((item) => <li class="stack-pill">{item}</li>)}
+        </ul>
+      </section>
+
+      <section class="about-card">
+        <div class="about-card-head">
+          <h2 class="about-heading">Published Projects</h2>
+          <span class="about-count">{APPS.length} open-source tools</span>
+        </div>
+        <div class="projects-grid">
+          {
+            APPS.map((app) => (
+              <a href={app.pageUrl} class="project-row">
+                <img
+                  src={app.iconUrl}
+                  alt={app.name}
+                  width="40"
+                  height="40"
+                  class="project-icon"
+                  loading="lazy"
+                />
+                <div class="project-meta">
+                  <div class="project-title-row">
+                    <span class="project-name">{app.name}</span>
+                    <span class="project-ver">{app.versionTag}</span>
+                  </div>
+                  <p class="project-desc">{app.description}</p>
+                </div>
+                <span class="project-arrow" aria-hidden="true">
+                  →
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <SiteFooter detail={true} />
+</BaseLayout>
+
+<style>
+  .about-main {
+    flex: 1;
+    padding: 56px 0 72px;
+  }
+
+  .about-hero {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    margin-bottom: 20px;
+  }
+
+  .about-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .about-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .about-name {
+    font-size: clamp(1.6rem, 3vw, 2.05rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .about-role {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    margin-top: 4px;
+  }
+
+  .about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .about-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+
+  .about-card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .about-card-head .about-heading {
+    margin-bottom: 0;
+  }
+
+  .about-count {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .about-heading {
+    font-size: 1.05rem;
+    font-weight: 650;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+
+  .about-copy {
+    color: var(--text-sub);
+    font-size: 0.95rem;
+    line-height: 1.68;
+  }
+
+  .about-copy + .about-copy {
+    margin-top: 10px;
+  }
+
+  .stack-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .stack-pill {
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--text-sub);
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface-alt);
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+  }
+
+  .project-row:hover {
+    background: var(--surface);
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
+  }
+
+  .project-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .project-meta {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .project-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+  }
+
+  .project-name {
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .project-ver {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1px 7px;
+    border-radius: 999px;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .project-arrow {
+    color: var(--text-muted);
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .about-main {
+      padding: 36px 0 56px;
+    }
+
+    .about-hero {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 22px;
+      gap: 16px;
+    }
+
+    .about-card {
+      padding: 20px;
+    }
+  }
+</style>
