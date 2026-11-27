@@ -1259,38 +1259,21 @@
   font-variant-numeric: tabular-nums;
 }
 
-.pfEnrollStage {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  background: radial-gradient(circle at 50% 42%, #132234 0%, #0a0f1a 100%);
+.pfControls {
+  margin-top: 12px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  cursor: crosshair;
-  user-select: none;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.pvCompact .pfEnrollStage {
-  height: 174px;
-}
-
-.pvFull .pfEnrollStage {
-  height: 268px;
-}
-
-.pfEnrollCaption {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: rgba(248, 250, 252, 0.88);
-}
-
-.pfEnrollSub {
-  font-size: 0.64rem;
-  color: rgba(148, 163, 184, 0.85);
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  font-variant-numeric: tabular-nums;
+.pfSegmented {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 9px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
 }

@@ -7,10 +7,8 @@ export interface PliwFacePreviewProps {
   mode?: PreviewMode;
 }
 
-type StageView = 'lockscreen' | 'enroll';
 type HudStyle = 'dynamicIsland' | 'notchWings';
 type HudPhase = 'idle' | 'scanning' | 'unlocked' | 'retry';
-type LivenessOption = 'Fast' | 'Balanced' | 'Strict';
 
 function FaceIdSvg({ size = 34, color = '#ffffff', className }: { size?: number; color?: string; className?: string }) {
   return (
@@ -77,18 +75,9 @@ function PadlockSvg({ open, size = 13, color }: { open: boolean; size?: number; 
 
 export function PliwFacePreview({ mode = 'full' }: PliwFacePreviewProps) {
   const isCompact = mode === 'compact';
-  const [stageView, setStageView] = useState<StageView>('lockscreen');
   const [hudStyle, setHudStyle] = useState<HudStyle>('dynamicIsland');
   const [phase, setPhase] = useState<HudPhase>('unlocked');
   const [animKey, setAnimKey] = useState(0);
-  const [liveness, setLiveness] = useState<LivenessOption>('Balanced');
-
-  // Interactive 17-angle circular enrollment state
-  const [capturedSectors, setCapturedSectors] = useState<Set<number>>(
-    () => new Set([0, 1, 2, 3, 4, 5, 13, 14, 15])
-  );
-  const [liveAngleDeg, setLiveAngleDeg] = useState<number | null>(null);
-
   const timersRef = useRef<number[]>([]);
 
   const clearTimers = () => {
@@ -100,7 +89,6 @@ export function PliwFacePreview({ mode = 'full' }: PliwFacePreviewProps) {
 
   const runDemo = (outcome: 'unlocked' | 'retry') => {
     clearTimers();
-    setStageView('lockscreen');
     setPhase('scanning');
     setAnimKey((k) => k + 1);
 
@@ -114,28 +102,6 @@ export function PliwFacePreview({ mode = 'full' }: PliwFacePreviewProps) {
     }, outcome === 'unlocked' ? 2350 : 2100);
 
     timersRef.current.push(t1, t2);
-  };
-
-  const handleEnrollPointer = (e: React.PointerEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const dx = e.clientX - (rect.left + rect.width / 2);
-    const dy = e.clientY - (rect.top + rect.height / 2);
-    const dist = Math.hypot(dx, dy);
-    if (dist < 18) {
-      setLiveAngleDeg(null);
-      return;
-    }
-    let deg = (Math.atan2(dx, -dy) * 180) / Math.PI;
-    if (deg < 0) deg += 360;
-    setLiveAngleDeg(deg);
-
-    const sector = Math.floor(((deg + 11.25) / 22.5) % 16);
-    setCapturedSectors((prev) => {
-      if (prev.has(sector)) return prev;
-      const next = new Set(prev);
-      next.add(sector);
-      return next;
-    });
   };
 
   const isActive = phase !== 'idle';
@@ -176,9 +142,6 @@ export function PliwFacePreview({ mode = 'full' }: PliwFacePreviewProps) {
           ? { text: 'Hover notch to retry', color: '#ff6961' }
           : { text: 'Hover notch to unlock', color: 'rgba(226,232,240,0.68)' };
 
-  const enrolledCount = Math.min(17, capturedSectors.size + 1);
-  const ringRadius = isCompact ? 50 : 68;
-
   return (
     <div className={`${styles.pvWindow} ${isCompact ? styles.pvCompact : styles.pvFull}`}>
       <div className={styles.pvBar}>
@@ -187,194 +150,110 @@ export function PliwFacePreview({ mode = 'full' }: PliwFacePreviewProps) {
           <span className={`${styles.pvDot} ${styles.pvDotMin}`} />
           <span className={`${styles.pvDot} ${styles.pvDotMax}`} />
         </div>
-        <span className={styles.pvBarTitle}>
-          {stageView === 'lockscreen' ? 'Pliw Face · Lock Screen' : 'Pliw Face · 17-Angle Setup'}
-        </span>
+        <span className={styles.pvBarTitle}>Pliw Face · Lock Screen</span>
         <span className={styles.statusBadge}>
-          {stageView === 'lockscreen' ? liveness : `${enrolledCount} / 17`}
+          {hudStyle === 'dynamicIsland' ? 'Dynamic Island' : 'Notch Wings'}
         </span>
       </div>
 
       <div className={styles.pvBody}>
-        {stageView === 'lockscreen' ? (
-          <div className={styles.pfStage}>
-            <div className={styles.pfMenuBar} aria-hidden="true">
-              <span>MacBook Pro</span>
-              <span>Wi-Fi · 100%</span>
-            </div>
-
-            {/* Interactive MacBook Notch HUD (hover or click to scan) */}
-            <div
-              className={styles.pfNotchAnchor}
-              onMouseEnter={() => {
-                if (phase === 'idle' || phase === 'retry') runDemo('unlocked');
-              }}
-              onClick={() => runDemo('unlocked')}
-              role="button"
-              tabIndex={0}
-              aria-label="Hover or click notch to trigger Face ID scan"
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  runDemo('unlocked');
-                }
-              }}
-            >
-              <div
-                key={phase === 'retry' ? `shake-${animKey}` : 'notch'}
-                className={`${styles.pfNotchBody} ${phase === 'retry' ? styles.pfShake : ''}`}
-                style={{
-                  width: notchW,
-                  height: notchH,
-                  borderBottomLeftRadius: notchRadius,
-                  borderBottomRightRadius: notchRadius,
-                  paddingTop: islandExpanded ? 20 : 0,
-                }}
-              >
-                {hudStyle === 'dynamicIsland' && islandExpanded && (
-                  <>
-                    {phase === 'scanning' && (
-                      <FaceIdSvg
-                        size={isCompact ? 34 : 42}
-                        color="#ffffff"
-                        className={styles.pfFaceScan}
-                      />
-                    )}
-                    {phase === 'unlocked' && (
-                      <UnlockCheckSvg key={`chk-${animKey}`} size={isCompact ? 36 : 44} />
-                    )}
-                    {phase === 'retry' && (
-                      <FaceIdSvg size={isCompact ? 34 : 42} color="#ff453a" />
-                    )}
-                  </>
-                )}
-
-                {hudStyle === 'notchWings' && wingsExpanded && (
-                  <div className={styles.pfWingsRow}>
-                    <PadlockSvg
-                      open={phase === 'unlocked'}
-                      size={12}
-                      color={phase === 'unlocked' ? '#30d158' : phase === 'retry' ? '#ff453a' : '#f8fafc'}
-                    />
-                    {phase === 'scanning' && (
-                      <FaceIdSvg size={14} color="#30d158" className={styles.pfFaceScan} />
-                    )}
-                    {phase === 'unlocked' && (
-                      <UnlockCheckSvg key={`wchk-${animKey}`} size={16} />
-                    )}
-                    {phase === 'retry' && (
-                      <span style={{ color: '#ff453a', fontSize: 12, fontWeight: 800, lineHeight: 1 }}>✕</span>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Lock Screen Clock */}
-            <div
-              className={styles.pfClockWrap}
-              style={{
-                opacity: islandExpanded && isCompact ? 0.25 : 0.96,
-                transform: islandExpanded && isCompact ? 'translateY(4px)' : 'translateY(0)',
-              }}
-            >
-              {!isCompact && <div className={styles.pfClockDate}>Thursday, November 27</div>}
-              <div className={styles.pfClockTime}>09:41</div>
-            </div>
-
-            {/* Bottom Lock Screen User Pill */}
-            <div className={styles.pfLoginPill}>
-              <span className={styles.pfAvatar}>P.</span>
-              <span className={styles.pfPassDots} style={{ color: passStatus.color }}>
-                {passStatus.text}
-              </span>
-            </div>
+        <div className={styles.pfStage}>
+          <div className={styles.pfMenuBar} aria-hidden="true">
+            <span>MacBook Pro</span>
+            <span>Wi-Fi · 100%</span>
           </div>
-        ) : (
+
           <div
-            className={styles.pfEnrollStage}
-            onPointerMove={handleEnrollPointer}
-            onPointerLeave={() => setLiveAngleDeg(null)}
-            aria-label="Interactive 17-angle circular face enrollment ring"
+            className={styles.pfNotchAnchor}
+            onMouseEnter={() => {
+              if (phase === 'idle' || phase === 'retry') runDemo('unlocked');
+            }}
+            onClick={() => runDemo('unlocked')}
+            role="button"
+            tabIndex={0}
+            aria-label="Hover or click notch to trigger Face ID scan"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                runDemo('unlocked');
+              }
+            }}
           >
             <div
+              key={phase === 'retry' ? `shake-${animKey}` : 'notch'}
+              className={`${styles.pfNotchBody} ${phase === 'retry' ? styles.pfShake : ''}`}
               style={{
-                position: 'relative',
-                width: ringRadius * 2 + 28,
-                height: ringRadius * 2 + 28,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                width: notchW,
+                height: notchH,
+                borderBottomLeftRadius: notchRadius,
+                borderBottomRightRadius: notchRadius,
+                paddingTop: islandExpanded ? 20 : 0,
               }}
             >
-              {Array.from({ length: 36 }).map((_, idx) => {
-                const tickDeg = idx * 10;
-                const sector = Math.floor(((tickDeg + 11.25) / 22.5) % 16);
-                const done = capturedSectors.has(sector);
-                const isLive =
-                  !done &&
-                  liveAngleDeg !== null &&
-                  Math.abs((((tickDeg - liveAngleDeg + 540) % 360) - 180)) <= 16;
+              {hudStyle === 'dynamicIsland' && islandExpanded && (
+                <>
+                  {phase === 'scanning' && (
+                    <FaceIdSvg
+                      size={isCompact ? 34 : 42}
+                      color="#ffffff"
+                      className={styles.pfFaceScan}
+                    />
+                  )}
+                  {phase === 'unlocked' && (
+                    <UnlockCheckSvg key={`chk-${animKey}`} size={isCompact ? 36 : 44} />
+                  )}
+                  {phase === 'retry' && (
+                    <FaceIdSvg size={isCompact ? 34 : 42} color="#ff453a" />
+                  )}
+                </>
+              )}
 
-                return (
-                  <span
-                    key={idx}
-                    style={{
-                      position: 'absolute',
-                      width: done || isLive ? 3 : 2.2,
-                      height: done ? 11 : isLive ? 10 : 7,
-                      borderRadius: 99,
-                      background: done
-                        ? '#30d158'
-                        : isLive
-                          ? 'rgba(255,255,255,0.92)'
-                          : 'rgba(255,255,255,0.16)',
-                      transform: `rotate(${tickDeg}deg) translateY(-${ringRadius}px)`,
-                      transition: 'background 150ms ease, height 150ms ease',
-                    }}
+              {hudStyle === 'notchWings' && wingsExpanded && (
+                <div className={styles.pfWingsRow}>
+                  <PadlockSvg
+                    open={phase === 'unlocked'}
+                    size={12}
+                    color={phase === 'unlocked' ? '#30d158' : phase === 'retry' ? '#ff453a' : '#f8fafc'}
                   />
-                );
-              })}
-
-              <div
-                style={{
-                  width: ringRadius * 1.48,
-                  height: ringRadius * 1.48,
-                  borderRadius: '50%',
-                  background: 'radial-gradient(circle at 50% 35%, rgba(48, 209, 88, 0.16), rgba(15, 23, 42, 0.85))',
-                  border: `1.5px solid ${enrolledCount === 17 ? '#30d158' : 'rgba(255,255,255,0.14)'}`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                {enrolledCount === 17 ? (
-                  <UnlockCheckSvg size={isCompact ? 34 : 44} />
-                ) : (
-                  <FaceIdSvg size={isCompact ? 32 : 42} color="#30d158" />
-                )}
-              </div>
+                  {phase === 'scanning' && (
+                    <FaceIdSvg size={14} color="#30d158" className={styles.pfFaceScan} />
+                  )}
+                  {phase === 'unlocked' && (
+                    <UnlockCheckSvg key={`wchk-${animKey}`} size={16} />
+                  )}
+                  {phase === 'retry' && (
+                    <span style={{ color: '#ff453a', fontSize: 12, fontWeight: 800, lineHeight: 1 }}>✕</span>
+                  )}
+                </div>
+              )}
             </div>
-
-            <div className={styles.pfEnrollCaption}>
-              {enrolledCount === 17 ? 'Face ID Ready' : 'Move cursor around the ring'}
-            </div>
-            {!isCompact && (
-              <div className={styles.pfEnrollSub}>
-                {enrolledCount} of 17 angles captured · 3D pose calibrated
-              </div>
-            )}
           </div>
-        )}
 
-        {/* Controls */}
-        <div className={styles.controlRow}>
-          <div className={styles.pillRow}>
+          <div
+            className={styles.pfClockWrap}
+            style={{
+              opacity: islandExpanded && isCompact ? 0.25 : 0.96,
+              transform: islandExpanded && isCompact ? 'translateY(4px)' : 'translateY(0)',
+            }}
+          >
+            {!isCompact && <div className={styles.pfClockDate}>Thursday, November 27</div>}
+            <div className={styles.pfClockTime}>09:41</div>
+          </div>
+
+          <div className={styles.pfLoginPill}>
+            <span className={styles.pfAvatar}>P.</span>
+            <span className={styles.pfPassDots} style={{ color: passStatus.color }}>
+              {passStatus.text}
+            </span>
+          </div>
+        </div>
+
+        <div className={styles.pfControls}>
+          <div className={styles.pfSegmented}>
             <button
               type="button"
-              className={`${styles.pillBtn} ${stageView === 'lockscreen' && hudStyle === 'dynamicIsland' ? styles.pillBtnActive : ''}`}
+              className={`${styles.pillBtn} ${hudStyle === 'dynamicIsland' ? styles.pillBtnActive : ''}`}
               onClick={() => {
-                setStageView('lockscreen');
                 setHudStyle('dynamicIsland');
                 runDemo('unlocked');
               }}
@@ -383,70 +262,33 @@ export function PliwFacePreview({ mode = 'full' }: PliwFacePreviewProps) {
             </button>
             <button
               type="button"
-              className={`${styles.pillBtn} ${stageView === 'lockscreen' && hudStyle === 'notchWings' ? styles.pillBtnActive : ''}`}
+              className={`${styles.pillBtn} ${hudStyle === 'notchWings' ? styles.pillBtnActive : ''}`}
               onClick={() => {
-                setStageView('lockscreen');
                 setHudStyle('notchWings');
                 runDemo('unlocked');
               }}
             >
               Notch Wings
             </button>
-            <button
-              type="button"
-              className={`${styles.pillBtn} ${stageView === 'enroll' ? styles.pillBtnActive : ''}`}
-              onClick={() => setStageView('enroll')}
-            >
-              17-Angle Ring
-            </button>
           </div>
 
-          {stageView === 'lockscreen' ? (
-            <div className={styles.pillRow}>
-              <button
-                type="button"
-                className={`${styles.pillBtn} ${phase === 'unlocked' ? styles.pillBtnActive : ''}`}
-                onClick={() => runDemo('unlocked')}
-              >
-                Unlock
-              </button>
-              <button
-                type="button"
-                className={`${styles.pillBtn} ${phase === 'retry' ? styles.pillBtnActive : ''}`}
-                onClick={() => runDemo('retry')}
-              >
-                Retry
-              </button>
-            </div>
-          ) : (
+          <div className={styles.pfSegmented}>
             <button
               type="button"
-              className={styles.pillBtn}
-              onClick={() => setCapturedSectors(new Set())}
+              className={`${styles.pillBtn} ${phase === 'unlocked' ? styles.pillBtnActive : ''}`}
+              onClick={() => runDemo('unlocked')}
             >
-              Reset Ring
+              Unlock
             </button>
-          )}
+            <button
+              type="button"
+              className={`${styles.pillBtn} ${phase === 'retry' ? styles.pillBtnActive : ''}`}
+              onClick={() => runDemo('retry')}
+            >
+              Retry
+            </button>
+          </div>
         </div>
-
-        {!isCompact && stageView === 'lockscreen' && (
-          <div className={styles.controlRow}>
-            <span className={styles.controlLabel}>Liveness</span>
-            <div className={styles.pillRow}>
-              {(['Fast', 'Balanced', 'Strict'] as const).map((opt) => (
-                <button
-                  key={opt}
-                  type="button"
-                  aria-pressed={liveness === opt}
-                  className={`${styles.pillBtn} ${liveness === opt ? styles.pillBtnActive : ''}`}
-                  onClick={() => setLiveness(opt)}
-                >
-                  {opt}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
